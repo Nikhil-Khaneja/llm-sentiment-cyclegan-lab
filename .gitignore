@@ -1,0 +1,22 @@
+# Raw datasets (shared, large) — download via scripts, don't commit
+task1_llm/data/*
+!task1_llm/data/.gitkeep
+task2_sentiment/data/*
+!task2_sentiment/data/.gitkeep
+task3_gan/data/monet_jpg/*
+!task3_gan/data/monet_jpg/.gitkeep
+task3_gan/data/photo_jpg/*
+!task3_gan/data/photo_jpg/.gitkeep
+
+# Generated files not required to be committed
+*/member_*/submission.csv
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+venv/
+.venv/
+
+# OS
+.DS_Store
