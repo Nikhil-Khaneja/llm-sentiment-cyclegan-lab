@@ -1,0 +1,47 @@
+# Task 3 — Nikhil's CycleGAN (Plan 1 / Member A): 6 residual blocks, 64 base channels, batch 2.
+run_name: cyclegan_nikhil_r6c64
+seed: 7
+device: auto
+write_metrics_report: true   # copy final metrics to member_nikhil/full_metrics_report.csv
+log_every: 500               # iterations
+
+data:
+  root: task3_gan/data       # see task3_gan/data/README.md
+  monet_dir: monet_jpg       # domain A
+  photo_dir: photo_jpg       # domain B
+  image_size: 128            # training crop
+  load_size: 143             # resize before random crop (same 1.12 ratio as 286 -> 256 in the paper)
+  monet_holdout: 0           # only ~300 Monets: all used for training; Monet->Photo eval uses them too
+  photo_holdout: 1000        # photos never trained on; Photo->Monet eval + human audit use these
+  epoch_size: null           # null = size of the larger training domain (photos)
+  max_images: null
+
+model:
+  ngf: 64                    # generator base channels
+  n_blocks: 6                # residual blocks
+  ndf: 64                    # discriminator base channels
+
+train:
+  batch_size: 2
+  num_workers: 4
+  lr: 2.0e-4
+  betas: [0.5, 0.999]
+  epochs_constant: 25
+  epochs_decay: 25           # linear decay to 0 -> 50 epochs total
+  lambda_cycle: 10
+  lambda_identity: 5
+  pool_size: 50              # history of generated images shown to the discriminators
+  checkpoint_every: 5
+
+eval:
+  batch_size: 32
+  kid_subset_size: 1000
+  prdc_k: 5
+  audit_samples: 30
+  save_predictions: true     # -> outputs/pred_A2B, outputs/pred_B2A
+  make_submission: true
+
+submission:                  # Photo -> Monet on ALL photos, direct generator output
+  infer_size: 256            # the generator is fully convolutional; run it at Kaggle resolution
+  output_size: 256
+  zip_name: images.zip
