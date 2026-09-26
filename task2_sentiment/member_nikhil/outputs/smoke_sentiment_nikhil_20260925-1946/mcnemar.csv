@@ -1,0 +1,3 @@
+baseline,experiment,b_base_right_exp_wrong,c_base_wrong_exp_right,chi2_cc,p_chi2,p_exact
+A1_baseline_meanpool,A2_cnn_k345,165,350,65.73980582524271,5.145603441974402e-16,2.462014435761614e-16
+A1_baseline_meanpool,A3_bigru,258,384,24.338006230529594,8.082843656615773e-07,7.478375826353664e-07
