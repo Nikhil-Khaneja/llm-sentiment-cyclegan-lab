@@ -12,6 +12,7 @@ task3_gan/data/photo_jpg/*
 
 # Generated files not required to be committed
 */member_*/submission.csv
+*/member_*/*images.zip
 
 # Python
 __pycache__/
