@@ -71,6 +71,10 @@ def data_splits(cfg):
     b = D.list_images(root / d["photo_dir"])
     if d.get("max_images"):
         a, b = a[:d["max_images"]], b[:d["max_images"]]
+    if d.get("max_monet"):
+        a = a[:d["max_monet"]]
+    if d.get("max_photo"):
+        b = b[:d["max_photo"]]
     a_tr, a_ev = D.split_domain(a, d["monet_holdout"], cfg["seed"])
     b_tr, b_ev = D.split_domain(b, d["photo_holdout"], cfg["seed"])
     # Monet has only ~300 images; if none are held out, evaluate Monet->Photo on the training Monets.
