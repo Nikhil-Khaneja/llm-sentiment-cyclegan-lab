@@ -1,0 +1,35 @@
+metric,value,notes
+train_cross_entropy,2.68642520904541,"best ckpt, eval mode, 10k-seq train subset (nats/char)"
+train_cross_entropy_running_last_epoch,3.1585509452819824,"mean step loss over final epoch, dropout on"
+val_cross_entropy,2.6722521781921387,"best ckpt, 10k val sequences (nats/char)"
+val_perplexity,14.472527225998212,exp(val CE)
+val_bits_per_char,3.8552449654825294,val CE / ln 2
+generalization_gap,-0.014173030853271484,val CE - train CE (eval mode)
+val_top1_next_char_accuracy,0.3032421875,
+train_top1_next_char_accuracy,0.3064453125,
+distinct_1_temp0.8,0.921875,"word-level, pooled over temperature samples"
+distinct_2_temp0.8,1.0,
+distinct_3_temp0.8,1.0,
+repeated_4gram_rate_temp0.8,0.0,within-sample repeated word 4-grams
+distinct_1_greedy,0.05263157894736842,
+distinct_2_greedy,0.11267605633802817,
+distinct_3_greedy,0.19696969696969696,
+repeated_4gram_rate_greedy,0.47564102564102556,
+grad_norm_mean,1.9089400134980679,pre-clip L2 norm over all steps
+grad_norm_max,6.830512523651123,
+grad_norm_p99,6.744305214881897,
+grad_clip_fraction,0.75,share of steps with norm > 1.0
+loss_spike_count,0,step loss > 1.3x EMA after warm-up
+nan_inf_steps,0,
+parameter_count,3233360,
+train_tokens_per_sec,57513.560178772714,"training steps only, excludes eval"
+generation_tokens_per_sec,154.99480776822836,"batch 1, full forward per token (no KV cache)"
+peak_accelerator_memory_mb,2269.9,mps
+peak_process_rss_mb,770.4,
+total_training_time_sec,5.038712332999999,train + per-epoch eval
+pure_training_time_sec,4.4511242079999995,
+epochs,1,
+best_epoch,1,
+hardware,Apple M5 (mps),
+checkpoint,task1_llm/member_nikhil/checkpoints/smoke_gpt_nikhil_20260925-1736_best.pt,
+run_id,smoke_gpt_nikhil_20260925-1736,

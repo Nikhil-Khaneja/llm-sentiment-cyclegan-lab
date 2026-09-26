@@ -55,4 +55,30 @@ git checkout <your-branch>   # nikhil or anushka
 
 Model weights are tracked with [Git LFS](https://git-lfs.com/). Run `git lfs install` once per machine before committing any `.pt`/`.pth`/`.ckpt` file.
 
-Raw datasets are not committed (see `.gitignore`) — download them into the relevant `data/` folder per the links in `docs/assignment/`.
+Raw datasets are not committed (see `.gitignore`). Download them with the shared scripts:
+
+```bash
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+
+python task1_llm/data/download_tinystories.py   # -> task1_llm/data/tinystories_raw.txt (40k stories)
+python task2_sentiment/data/download_yelp.py    # -> task2_sentiment/data/{train,test}.csv
+```
+
+## Reproduce a run (smoke test = one command)
+
+After the setup above, from the repo root:
+
+```bash
+python task1_llm/member_nikhil/src/train.py --config task1_llm/member_nikhil/src/configs/smoke.yaml
+```
+
+This trains Nikhil's Task 1 GPT for one epoch on 2,000 sequences (~15 s on an Apple M-series GPU) and writes the log, manifest, outputs, and checkpoint to the same places a full run does. Device is picked automatically (CUDA > Apple MPS > CPU).
+
+| Run | Command (`--config ...`) | Where results land |
+|---|---|---|
+| Task 1 full (Nikhil) | `task1_llm/member_nikhil/src/configs/gpt_nikhil.yaml` | `task1_llm/member_nikhil/{metrics_report.csv,outputs/<run_id>/,checkpoints/}` |
+| Task 2 smoke (Nikhil) | `task2_sentiment/member_nikhil/src/configs/smoke.yaml` | `task2_sentiment/member_nikhil/outputs/<run_id>/` |
+| Task 2 full (Nikhil) | `task2_sentiment/member_nikhil/src/configs/sentiment_nikhil.yaml` | `task2_sentiment/member_nikhil/{metrics_report.csv,outputs/<run_id>/,checkpoints/}` |
+
+Use the `train.py` inside the same folder as the config. Every run also writes an unedited raw log to `reproducibility/raw_logs/<member>/` and a manifest (package versions, hardware, git commit, config, checkpoint ↔ result mapping) to `reproducibility/manifests/<member>/`. The executed notebooks in each `src/` folder run the same `train.run(config)` and show the outputs inline.

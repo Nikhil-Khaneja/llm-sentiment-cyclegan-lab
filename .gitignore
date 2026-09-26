@@ -1,8 +1,10 @@
 # Raw datasets (shared, large) — download via scripts, don't commit
 task1_llm/data/*
 !task1_llm/data/.gitkeep
+!task1_llm/data/download_tinystories.py
 task2_sentiment/data/*
 !task2_sentiment/data/.gitkeep
+!task2_sentiment/data/download_yelp.py
 task3_gan/data/monet_jpg/*
 !task3_gan/data/monet_jpg/.gitkeep
 task3_gan/data/photo_jpg/*
@@ -20,3 +22,7 @@ venv/
 
 # OS
 .DS_Store
+
+# Smoke-test weights and cached preprocessing (reproducible in ~1-3 min; logs/outputs are kept)
+*/member_*/checkpoints/smoke_*
+*/member_*/data_processed/smoke/
