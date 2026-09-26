@@ -1,0 +1,47 @@
+[2026-09-25 17:36:55] run_id=smoke_gpt_nikhil_20260925-1736 config=task1_llm/member_nikhil/src/configs/smoke.yaml device=mps hardware=Apple M5 (mps)
+[2026-09-25 17:36:55] config: {"run_name": "smoke_gpt_nikhil", "seed": 1337, "device": "auto", "write_metrics_report": false, "data": {"raw_path": "task1_llm/data/tinystories_raw.txt", "processed_dir": "data_processed/smoke", "block_size": 128, "n_train": 2000, "n_val": 200, "val_story_frac": 0.1}, "model": {"d_model": 256, "n_heads": 4, "n_layers": 4, "d_ff": 1024, "dropout": 0.1}, "train": {"batch_size": 64, "eval_batch_size": 256, "epochs": 1, "lr": 0.0003, "min_lr": 1e-05, "warmup_steps": 10, "weight_decay": 0.01, "grad_clip": 1.0, "spike_ratio": 1.3, "log_every": 10}, "generate": {"max_new_tokens": 60, "temperature": 0.8, "samples_per_prompt": 1, "prompts": ["Once upon a time, there was a little girl named", "Tom and his dog went to the park. ", "One day, a big bear", "The sun was hot and", "Lily wanted to"]}}
+[2026-09-25 17:36:56] data: {'stories': 208918, 'train_chars_pool': 32212131, 'val_chars_pool': 3578896, 'vocab_size': 80, 'train_seqs': 2000, 'val_seqs': 200, 'block_size': 128}
+[2026-09-25 17:36:57] model: {'d_model': 256, 'n_heads': 4, 'n_layers': 4, 'd_ff': 1024, 'dropout': 0.1} params=3,233,360
+[2026-09-25 17:36:57] steps/epoch=32 total_steps=32
+[2026-09-25 17:36:58] ep 1 step 0/32 loss 4.4659 lr 3.00e-05 grad 6.831
+[2026-09-25 17:36:59] ep 1 step 10/32 loss 3.2650 lr 3.00e-04 grad 1.656
+[2026-09-25 17:37:00] ep 1 step 20/32 loss 2.8230 lr 1.76e-04 grad 1.231
+[2026-09-25 17:37:01] ep 1 step 30/32 loss 2.7374 lr 1.59e-05 grad 0.718
+[2026-09-25 17:37:02] epoch epoch=1 step=32 train_loss_running=3.1586 train_eval_loss=2.6864 train_eval_acc=0.3064 val_loss=2.6723 val_acc=0.3032 val_ppl=14.4725 val_bpc=3.8552 lr_end=0.0000
+[2026-09-25 17:37:02] saved best checkpoint -> task1_llm/member_nikhil/checkpoints/smoke_gpt_nikhil_20260925-1736_best.pt
+[2026-09-25 17:37:02] saved last checkpoint -> task1_llm/member_nikhil/checkpoints/smoke_gpt_nikhil_20260925-1736_last.pt
+[2026-09-25 17:37:06] metric train_cross_entropy = 2.68642520904541
+[2026-09-25 17:37:06] metric train_cross_entropy_running_last_epoch = 3.1585509452819824
+[2026-09-25 17:37:06] metric val_cross_entropy = 2.6722521781921387
+[2026-09-25 17:37:06] metric val_perplexity = 14.472527225998212
+[2026-09-25 17:37:06] metric val_bits_per_char = 3.8552449654825294
+[2026-09-25 17:37:06] metric generalization_gap = -0.014173030853271484
+[2026-09-25 17:37:06] metric val_top1_next_char_accuracy = 0.3032421875
+[2026-09-25 17:37:06] metric train_top1_next_char_accuracy = 0.3064453125
+[2026-09-25 17:37:06] metric distinct_1_temp0.8 = 0.921875
+[2026-09-25 17:37:06] metric distinct_2_temp0.8 = 1.0
+[2026-09-25 17:37:06] metric distinct_3_temp0.8 = 1.0
+[2026-09-25 17:37:06] metric repeated_4gram_rate_temp0.8 = 0.0
+[2026-09-25 17:37:06] metric distinct_1_greedy = 0.05263157894736842
+[2026-09-25 17:37:06] metric distinct_2_greedy = 0.11267605633802817
+[2026-09-25 17:37:06] metric distinct_3_greedy = 0.19696969696969696
+[2026-09-25 17:37:06] metric repeated_4gram_rate_greedy = 0.47564102564102556
+[2026-09-25 17:37:06] metric grad_norm_mean = 1.9089400134980679
+[2026-09-25 17:37:06] metric grad_norm_max = 6.830512523651123
+[2026-09-25 17:37:06] metric grad_norm_p99 = 6.744305214881897
+[2026-09-25 17:37:06] metric grad_clip_fraction = 0.75
+[2026-09-25 17:37:06] metric loss_spike_count = 0
+[2026-09-25 17:37:06] metric nan_inf_steps = 0
+[2026-09-25 17:37:06] metric parameter_count = 3233360
+[2026-09-25 17:37:06] metric train_tokens_per_sec = 57513.560178772714
+[2026-09-25 17:37:06] metric generation_tokens_per_sec = 154.99480776822836
+[2026-09-25 17:37:06] metric peak_accelerator_memory_mb = 2269.9
+[2026-09-25 17:37:06] metric peak_process_rss_mb = 770.4
+[2026-09-25 17:37:06] metric total_training_time_sec = 5.038712332999999
+[2026-09-25 17:37:06] metric pure_training_time_sec = 4.4511242079999995
+[2026-09-25 17:37:06] metric epochs = 1
+[2026-09-25 17:37:06] metric best_epoch = 1
+[2026-09-25 17:37:06] metric hardware = Apple M5 (mps)
+[2026-09-25 17:37:06] metric checkpoint = task1_llm/member_nikhil/checkpoints/smoke_gpt_nikhil_20260925-1736_best.pt
+[2026-09-25 17:37:06] metric run_id = smoke_gpt_nikhil_20260925-1736
+[2026-09-25 17:37:09] done: outputs -> task1_llm/member_nikhil/outputs/smoke_gpt_nikhil_20260925-1736
