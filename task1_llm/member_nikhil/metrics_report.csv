@@ -1,0 +1,35 @@
+metric,value,notes
+train_cross_entropy,0.7382899780273438,"best ckpt, eval mode, 10k-seq train subset (nats/char)"
+train_cross_entropy_running_last_epoch,0.7918385327911377,"mean step loss over final epoch, dropout on"
+val_cross_entropy,0.7679348930358887,"best ckpt, 10k val sequences (nats/char)"
+val_perplexity,2.155310707626523,exp(val CE)
+val_bits_per_char,1.1078958619084731,val CE / ln 2
+generalization_gap,0.029644915008544936,val CE - train CE (eval mode)
+val_top1_next_char_accuracy,0.75485078125,
+train_top1_next_char_accuracy,0.76250234375,
+distinct_1_temp0.8,0.3083807973962571,"word-level, pooled over temperature samples"
+distinct_2_temp0.8,0.7487644151565074,
+distinct_3_temp0.8,0.914095079232694,
+repeated_4gram_rate_temp0.8,0.005796811759589373,within-sample repeated word 4-grams
+distinct_1_greedy,0.16666666666666666,
+distinct_2_greedy,0.3002309468822171,
+distinct_3_greedy,0.37149532710280375,
+repeated_4gram_rate_greedy,0.3939938970412106,
+grad_norm_mean,0.6172471777189386,pre-clip L2 norm over all steps
+grad_norm_max,6.919741630554199,
+grad_norm_p99,1.1032086312770844,
+grad_clip_fraction,0.023565792279803797,share of steps with norm > 1.0
+loss_spike_count,0,step loss > 1.3x EMA after warm-up
+nan_inf_steps,0,
+parameter_count,3233360,
+train_tokens_per_sec,57145.60151270594,"training steps only, excludes eval"
+generation_tokens_per_sec,141.04258394166476,"batch 1, full forward per token (no KV cache)"
+peak_accelerator_memory_mb,2222.2,mps
+peak_process_rss_mb,1047.6,
+total_training_time_sec,2859.286977875,train + per-epoch eval
+pure_training_time_sec,2687.8709110419995,
+epochs,12,
+best_epoch,12,
+hardware,Apple M5 (mps),
+checkpoint,task1_llm/member_nikhil/checkpoints/gpt_nikhil_4L4H_20260925-1737_best.pt,
+run_id,gpt_nikhil_4L4H_20260925-1737,
