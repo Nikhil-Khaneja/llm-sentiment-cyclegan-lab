@@ -1,0 +1,267 @@
+run_id=20260929_213922 run_type=full config={"member": "Anushka", "seed": 3963, "sequence_length": 256, "train_sequences": 100000, "validation_sequences": 10000, "n_blocks": 6, "n_heads": 6, "d_model": 384, "d_ff": 1536, "dropout": 0.15, "batch_size": 128, "epochs": 15, "min_epochs_required": 10, "learning_rate": 0.0006, "weight_decay": 0.1, "warmup_steps": 800, "min_learning_rate": 3e-05, "gradient_clip_norm": 1.0, "use_bf16_autocast": true, "temperature": 0.8, "max_generation_tokens": 300, "log_every_steps": 50}
+device=cuda gpu=NVIDIA GeForce RTX 5090 torch=2.8.0+cu128 bf16_autocast=True
+step=50 loss=3.026294 grad_norm=1.120114 lr=0.00003825
+step=100 loss=2.490290 grad_norm=0.300168 lr=0.00007575
+step=150 loss=2.350765 grad_norm=0.217233 lr=0.00011325
+step=200 loss=2.308126 grad_norm=0.402657 lr=0.00015075
+step=250 loss=2.258924 grad_norm=0.315394 lr=0.00018825
+step=300 loss=2.234264 grad_norm=0.325593 lr=0.00022575
+step=350 loss=2.169990 grad_norm=0.383890 lr=0.00026325
+step=400 loss=2.062532 grad_norm=0.836472 lr=0.00030075
+step=450 loss=1.918936 grad_norm=0.401441 lr=0.00033825
+step=500 loss=1.819851 grad_norm=0.566120 lr=0.00037575
+step=550 loss=1.689221 grad_norm=0.487604 lr=0.00041325
+step=600 loss=1.602863 grad_norm=0.431825 lr=0.00045075
+step=650 loss=1.518562 grad_norm=0.362468 lr=0.00048825
+step=700 loss=1.453495 grad_norm=0.380045 lr=0.00052575
+step=750 loss=1.373941 grad_norm=0.373068 lr=0.00056325
+Epoch 1: train_loss=2.102037, val_loss=1.281592, gradient_norm_mean=0.529217, gradient_norm_max=2.407002, tokens_per_sec=578951.8, time_seconds=44.22
+Saved best checkpoint at epoch 1 (val_loss=1.281592)
+step=800 loss=1.335751 grad_norm=0.395381 lr=0.00060000
+step=850 loss=1.242614 grad_norm=0.372997 lr=0.00059997
+step=900 loss=1.222182 grad_norm=0.458073 lr=0.00059988
+step=950 loss=1.198447 grad_norm=0.344967 lr=0.00059974
+step=1000 loss=1.154863 grad_norm=0.315046 lr=0.00059953
+step=1050 loss=1.141442 grad_norm=0.321768 lr=0.00059926
+step=1100 loss=1.090114 grad_norm=0.285744 lr=0.00059894
+step=1150 loss=1.075792 grad_norm=0.290434 lr=0.00059856
+step=1200 loss=1.061004 grad_norm=0.280206 lr=0.00059812
+step=1250 loss=1.022647 grad_norm=0.263224 lr=0.00059762
+step=1300 loss=1.014523 grad_norm=0.297586 lr=0.00059706
+step=1350 loss=0.976786 grad_norm=0.253090 lr=0.00059645
+step=1400 loss=0.964032 grad_norm=0.252106 lr=0.00059577
+step=1450 loss=0.990340 grad_norm=0.250131 lr=0.00059504
+step=1500 loss=0.962926 grad_norm=0.255139 lr=0.00059425
+step=1550 loss=0.957415 grad_norm=0.253524 lr=0.00059340
+Epoch 2: train_loss=1.088044, val_loss=0.908106, gradient_norm_mean=0.299108, gradient_norm_max=0.553658, tokens_per_sec=585428.0, time_seconds=43.73
+Saved best checkpoint at epoch 2 (val_loss=0.908106)
+step=1600 loss=0.932989 grad_norm=0.216863 lr=0.00059250
+step=1650 loss=0.918843 grad_norm=0.237228 lr=0.00059154
+step=1700 loss=0.916106 grad_norm=0.226868 lr=0.00059052
+step=1750 loss=0.914902 grad_norm=0.244422 lr=0.00058944
+step=1800 loss=0.871043 grad_norm=0.235464 lr=0.00058831
+step=1850 loss=0.894006 grad_norm=0.220477 lr=0.00058712
+step=1900 loss=0.877137 grad_norm=0.238662 lr=0.00058587
+step=1950 loss=0.860600 grad_norm=0.233079 lr=0.00058457
+step=2000 loss=0.869449 grad_norm=0.209050 lr=0.00058321
+step=2050 loss=0.860192 grad_norm=0.211323 lr=0.00058180
+step=2100 loss=0.832822 grad_norm=0.220140 lr=0.00058033
+step=2150 loss=0.872202 grad_norm=0.222190 lr=0.00057881
+step=2200 loss=0.853620 grad_norm=0.246381 lr=0.00057724
+step=2250 loss=0.836965 grad_norm=0.224725 lr=0.00057560
+step=2300 loss=0.842297 grad_norm=0.226485 lr=0.00057392
+Epoch 3: train_loss=0.882337, val_loss=0.793632, gradient_norm_mean=0.230693, gradient_norm_max=0.387179, tokens_per_sec=584599.9, time_seconds=43.79
+Saved best checkpoint at epoch 3 (val_loss=0.793632)
+step=2350 loss=0.830593 grad_norm=0.235486 lr=0.00057218
+step=2400 loss=0.834212 grad_norm=0.236683 lr=0.00057039
+step=2450 loss=0.815470 grad_norm=0.206538 lr=0.00056855
+step=2500 loss=0.828882 grad_norm=0.218280 lr=0.00056665
+step=2550 loss=0.822190 grad_norm=0.205354 lr=0.00056470
+step=2600 loss=0.810440 grad_norm=0.206158 lr=0.00056270
+step=2650 loss=0.814660 grad_norm=0.213234 lr=0.00056065
+step=2700 loss=0.802888 grad_norm=0.225885 lr=0.00055855
+step=2750 loss=0.810100 grad_norm=0.218244 lr=0.00055639
+step=2800 loss=0.797303 grad_norm=0.203226 lr=0.00055419
+step=2850 loss=0.796740 grad_norm=0.209710 lr=0.00055194
+step=2900 loss=0.805297 grad_norm=0.207688 lr=0.00054964
+step=2950 loss=0.798464 grad_norm=0.219759 lr=0.00054729
+step=3000 loss=0.803339 grad_norm=0.196318 lr=0.00054489
+step=3050 loss=0.782648 grad_norm=0.203374 lr=0.00054245
+step=3100 loss=0.786501 grad_norm=0.187291 lr=0.00053996
+Epoch 4: train_loss=0.802588, val_loss=0.747525, gradient_norm_mean=0.208611, gradient_norm_max=0.346344, tokens_per_sec=584245.4, time_seconds=43.82
+Saved best checkpoint at epoch 4 (val_loss=0.747525)
+step=3150 loss=0.762244 grad_norm=0.201471 lr=0.00053742
+step=3200 loss=0.787323 grad_norm=0.200312 lr=0.00053484
+step=3250 loss=0.754086 grad_norm=0.197152 lr=0.00053221
+step=3300 loss=0.777517 grad_norm=0.193570 lr=0.00052953
+step=3350 loss=0.763700 grad_norm=0.195200 lr=0.00052681
+step=3400 loss=0.755829 grad_norm=0.192906 lr=0.00052405
+step=3450 loss=0.768072 grad_norm=0.202474 lr=0.00052125
+step=3500 loss=0.777826 grad_norm=0.205438 lr=0.00051840
+step=3550 loss=0.761144 grad_norm=0.198056 lr=0.00051551
+step=3600 loss=0.767828 grad_norm=0.208953 lr=0.00051258
+step=3650 loss=0.743367 grad_norm=0.198389 lr=0.00050961
+step=3700 loss=0.736709 grad_norm=0.182159 lr=0.00050659
+step=3750 loss=0.750804 grad_norm=0.201066 lr=0.00050354
+step=3800 loss=0.747003 grad_norm=0.203619 lr=0.00050045
+step=3850 loss=0.757490 grad_norm=0.188189 lr=0.00049732
+step=3900 loss=0.740467 grad_norm=0.189997 lr=0.00049415
+Epoch 5: train_loss=0.761368, val_loss=0.719112, gradient_norm_mean=0.196882, gradient_norm_max=0.336482, tokens_per_sec=586204.7, time_seconds=43.67
+Saved best checkpoint at epoch 5 (val_loss=0.719112)
+step=3950 loss=0.733830 grad_norm=0.194468 lr=0.00049095
+step=4000 loss=0.741332 grad_norm=0.197174 lr=0.00048771
+step=4050 loss=0.726765 grad_norm=0.191364 lr=0.00048443
+step=4100 loss=0.739614 grad_norm=0.190648 lr=0.00048112
+step=4150 loss=0.733150 grad_norm=0.188987 lr=0.00047778
+step=4200 loss=0.725051 grad_norm=0.194317 lr=0.00047440
+step=4250 loss=0.745296 grad_norm=0.188664 lr=0.00047099
+step=4300 loss=0.729347 grad_norm=0.192924 lr=0.00046754
+step=4350 loss=0.744184 grad_norm=0.189563 lr=0.00046407
+step=4400 loss=0.727694 grad_norm=0.185378 lr=0.00046056
+step=4450 loss=0.737843 grad_norm=0.197227 lr=0.00045703
+step=4500 loss=0.728157 grad_norm=0.187181 lr=0.00045346
+step=4550 loss=0.731579 grad_norm=0.197932 lr=0.00044987
+step=4600 loss=0.740576 grad_norm=0.180153 lr=0.00044625
+step=4650 loss=0.724213 grad_norm=0.185024 lr=0.00044260
+Epoch 6: train_loss=0.733290, val_loss=0.698451, gradient_norm_mean=0.192824, gradient_norm_max=0.352823, tokens_per_sec=586816.5, time_seconds=43.63
+Saved best checkpoint at epoch 6 (val_loss=0.698451)
+step=4700 loss=0.702243 grad_norm=0.190002 lr=0.00043892
+step=4750 loss=0.707349 grad_norm=0.189986 lr=0.00043522
+step=4800 loss=0.705549 grad_norm=0.187433 lr=0.00043149
+step=4850 loss=0.718352 grad_norm=0.199568 lr=0.00042774
+step=4900 loss=0.708463 grad_norm=0.196568 lr=0.00042397
+step=4950 loss=0.716716 grad_norm=0.183530 lr=0.00042017
+step=5000 loss=0.707870 grad_norm=0.182992 lr=0.00041636
+step=5050 loss=0.710948 grad_norm=0.195392 lr=0.00041252
+step=5100 loss=0.707061 grad_norm=0.191599 lr=0.00040866
+step=5150 loss=0.710826 grad_norm=0.192752 lr=0.00040478
+step=5200 loss=0.713620 grad_norm=0.187051 lr=0.00040089
+step=5250 loss=0.705681 grad_norm=0.190517 lr=0.00039697
+step=5300 loss=0.712994 grad_norm=0.196010 lr=0.00039304
+step=5350 loss=0.684246 grad_norm=0.184092 lr=0.00038909
+step=5400 loss=0.712274 grad_norm=0.195445 lr=0.00038513
+step=5450 loss=0.717819 grad_norm=0.189797 lr=0.00038115
+Epoch 7: train_loss=0.711482, val_loss=0.685743, gradient_norm_mean=0.190221, gradient_norm_max=0.343527, tokens_per_sec=583786.5, time_seconds=43.85
+Saved best checkpoint at epoch 7 (val_loss=0.685743)
+step=5500 loss=0.690841 grad_norm=0.189236 lr=0.00037716
+step=5550 loss=0.709404 grad_norm=0.188252 lr=0.00037316
+step=5600 loss=0.678481 grad_norm=0.197014 lr=0.00036914
+step=5650 loss=0.693448 grad_norm=0.200074 lr=0.00036512
+step=5700 loss=0.667834 grad_norm=0.190243 lr=0.00036108
+step=5750 loss=0.684835 grad_norm=0.178882 lr=0.00035703
+step=5800 loss=0.703845 grad_norm=0.192504 lr=0.00035298
+step=5850 loss=0.694006 grad_norm=0.195868 lr=0.00034892
+step=5900 loss=0.693656 grad_norm=0.193590 lr=0.00034484
+step=5950 loss=0.690955 grad_norm=0.185863 lr=0.00034077
+step=6000 loss=0.676951 grad_norm=0.190474 lr=0.00033669
+step=6050 loss=0.696004 grad_norm=0.179401 lr=0.00033260
+step=6100 loss=0.687463 grad_norm=0.187217 lr=0.00032851
+step=6150 loss=0.679253 grad_norm=0.195734 lr=0.00032442
+step=6200 loss=0.677284 grad_norm=0.189898 lr=0.00032032
+step=6250 loss=0.709306 grad_norm=0.188830 lr=0.00031623
+Epoch 8: train_loss=0.693541, val_loss=0.671882, gradient_norm_mean=0.190818, gradient_norm_max=0.356347, tokens_per_sec=586343.1, time_seconds=43.66
+Saved best checkpoint at epoch 8 (val_loss=0.671882)
+step=6300 loss=0.670188 grad_norm=0.182145 lr=0.00031213
+step=6350 loss=0.679888 grad_norm=0.183539 lr=0.00030804
+step=6400 loss=0.683920 grad_norm=0.184041 lr=0.00030394
+step=6450 loss=0.686176 grad_norm=0.198374 lr=0.00029985
+step=6500 loss=0.690090 grad_norm=0.194151 lr=0.00029576
+step=6550 loss=0.679992 grad_norm=0.192877 lr=0.00029168
+step=6600 loss=0.679084 grad_norm=0.191483 lr=0.00028760
+step=6650 loss=0.677539 grad_norm=0.188050 lr=0.00028353
+step=6700 loss=0.670331 grad_norm=0.190331 lr=0.00027946
+step=6750 loss=0.671211 grad_norm=0.187916 lr=0.00027540
+step=6800 loss=0.660592 grad_norm=0.190270 lr=0.00027135
+step=6850 loss=0.681999 grad_norm=0.186371 lr=0.00026730
+step=6900 loss=0.685782 grad_norm=0.193369 lr=0.00026327
+step=6950 loss=0.678969 grad_norm=0.190321 lr=0.00025925
+step=7000 loss=0.676982 grad_norm=0.190874 lr=0.00025524
+Epoch 9: train_loss=0.678189, val_loss=0.663024, gradient_norm_mean=0.191977, gradient_norm_max=0.352460, tokens_per_sec=586014.8, time_seconds=43.68
+Saved best checkpoint at epoch 9 (val_loss=0.663024)
+step=7050 loss=0.669575 grad_norm=0.203420 lr=0.00025124
+step=7100 loss=0.655315 grad_norm=0.191274 lr=0.00024725
+step=7150 loss=0.645939 grad_norm=0.192717 lr=0.00024328
+step=7200 loss=0.667174 grad_norm=0.193694 lr=0.00023933
+step=7250 loss=0.673388 grad_norm=0.190534 lr=0.00023539
+step=7300 loss=0.666863 grad_norm=0.195240 lr=0.00023146
+step=7350 loss=0.646267 grad_norm=0.187937 lr=0.00022755
+step=7400 loss=0.677045 grad_norm=0.203080 lr=0.00022366
+step=7450 loss=0.667404 grad_norm=0.189249 lr=0.00021979
+step=7500 loss=0.662737 grad_norm=0.193307 lr=0.00021594
+step=7550 loss=0.657122 grad_norm=0.189342 lr=0.00021211
+step=7600 loss=0.650928 grad_norm=0.186379 lr=0.00020830
+step=7650 loss=0.676010 grad_norm=0.188058 lr=0.00020452
+step=7700 loss=0.666887 grad_norm=0.189503 lr=0.00020075
+step=7750 loss=0.670405 grad_norm=0.192040 lr=0.00019701
+step=7800 loss=0.671456 grad_norm=0.195615 lr=0.00019330
+Epoch 10: train_loss=0.664801, val_loss=0.656094, gradient_norm_mean=0.193957, gradient_norm_max=0.369090, tokens_per_sec=584962.4, time_seconds=43.76
+Saved best checkpoint at epoch 10 (val_loss=0.656094)
+step=7850 loss=0.647730 grad_norm=0.190312 lr=0.00018961
+step=7900 loss=0.654783 grad_norm=0.192351 lr=0.00018594
+step=7950 loss=0.652062 grad_norm=0.191147 lr=0.00018230
+step=8000 loss=0.640159 grad_norm=0.190367 lr=0.00017869
+step=8050 loss=0.648292 grad_norm=0.194552 lr=0.00017511
+step=8100 loss=0.651287 grad_norm=0.198130 lr=0.00017156
+step=8150 loss=0.666388 grad_norm=0.199843 lr=0.00016803
+step=8200 loss=0.667631 grad_norm=0.197750 lr=0.00016454
+step=8250 loss=0.656380 grad_norm=0.193285 lr=0.00016107
+step=8300 loss=0.635908 grad_norm=0.195074 lr=0.00015764
+step=8350 loss=0.650063 grad_norm=0.191881 lr=0.00015424
+step=8400 loss=0.652131 grad_norm=0.201412 lr=0.00015088
+step=8450 loss=0.653034 grad_norm=0.199635 lr=0.00014755
+step=8500 loss=0.640336 grad_norm=0.193216 lr=0.00014425
+step=8550 loss=0.680219 grad_norm=0.204239 lr=0.00014099
+step=8600 loss=0.663168 grad_norm=0.200357 lr=0.00013776
+Epoch 11: train_loss=0.653167, val_loss=0.650530, gradient_norm_mean=0.196653, gradient_norm_max=0.374275, tokens_per_sec=581596.5, time_seconds=44.02
+Saved best checkpoint at epoch 11 (val_loss=0.650530)
+step=8650 loss=0.647976 grad_norm=0.198780 lr=0.00013457
+step=8700 loss=0.653611 grad_norm=0.200580 lr=0.00013142
+step=8750 loss=0.633623 grad_norm=0.196241 lr=0.00012831
+step=8800 loss=0.662903 grad_norm=0.209914 lr=0.00012523
+step=8850 loss=0.646838 grad_norm=0.191501 lr=0.00012220
+step=8900 loss=0.647162 grad_norm=0.201261 lr=0.00011920
+step=8950 loss=0.652844 grad_norm=0.201183 lr=0.00011624
+step=9000 loss=0.625610 grad_norm=0.194394 lr=0.00011333
+step=9050 loss=0.637571 grad_norm=0.196597 lr=0.00011046
+step=9100 loss=0.643096 grad_norm=0.198805 lr=0.00010763
+step=9150 loss=0.641175 grad_norm=0.197612 lr=0.00010484
+step=9200 loss=0.639109 grad_norm=0.199172 lr=0.00010209
+step=9250 loss=0.635685 grad_norm=0.195166 lr=0.00009939
+step=9300 loss=0.636551 grad_norm=0.197902 lr=0.00009674
+step=9350 loss=0.649803 grad_norm=0.199758 lr=0.00009412
+Epoch 12: train_loss=0.643188, val_loss=0.646000, gradient_norm_mean=0.199118, gradient_norm_max=0.380984, tokens_per_sec=581563.8, time_seconds=44.02
+Saved best checkpoint at epoch 12 (val_loss=0.646000)
+step=9400 loss=0.642095 grad_norm=0.201758 lr=0.00009156
+step=9450 loss=0.626929 grad_norm=0.198292 lr=0.00008904
+step=9500 loss=0.617167 grad_norm=0.191442 lr=0.00008657
+step=9550 loss=0.653160 grad_norm=0.198791 lr=0.00008414
+step=9600 loss=0.639568 grad_norm=0.200440 lr=0.00008176
+step=9650 loss=0.649877 grad_norm=0.204289 lr=0.00007943
+step=9700 loss=0.631775 grad_norm=0.201866 lr=0.00007715
+step=9750 loss=0.632416 grad_norm=0.201451 lr=0.00007492
+step=9800 loss=0.641614 grad_norm=0.206624 lr=0.00007274
+step=9850 loss=0.635254 grad_norm=0.203336 lr=0.00007061
+step=9900 loss=0.632798 grad_norm=0.203775 lr=0.00006852
+step=9950 loss=0.635592 grad_norm=0.200130 lr=0.00006649
+step=10000 loss=0.649594 grad_norm=0.204618 lr=0.00006451
+step=10050 loss=0.617951 grad_norm=0.198626 lr=0.00006259
+step=10100 loss=0.639947 grad_norm=0.204198 lr=0.00006071
+step=10150 loss=0.653864 grad_norm=0.205342 lr=0.00005889
+Epoch 13: train_loss=0.635213, val_loss=0.643836, gradient_norm_mean=0.201583, gradient_norm_max=0.414214, tokens_per_sec=580839.5, time_seconds=44.07
+Saved best checkpoint at epoch 13 (val_loss=0.643836)
+step=10200 loss=0.630292 grad_norm=0.201073 lr=0.00005712
+step=10250 loss=0.620196 grad_norm=0.203971 lr=0.00005540
+step=10300 loss=0.627988 grad_norm=0.204223 lr=0.00005374
+step=10350 loss=0.653983 grad_norm=0.207088 lr=0.00005213
+step=10400 loss=0.641705 grad_norm=0.203751 lr=0.00005057
+step=10450 loss=0.613553 grad_norm=0.205118 lr=0.00004907
+step=10500 loss=0.619045 grad_norm=0.198663 lr=0.00004763
+step=10550 loss=0.630967 grad_norm=0.201912 lr=0.00004624
+step=10600 loss=0.628071 grad_norm=0.204057 lr=0.00004490
+step=10650 loss=0.616502 grad_norm=0.198138 lr=0.00004362
+step=10700 loss=0.636771 grad_norm=0.205869 lr=0.00004240
+step=10750 loss=0.617166 grad_norm=0.202926 lr=0.00004123
+step=10800 loss=0.634765 grad_norm=0.207718 lr=0.00004012
+step=10850 loss=0.609687 grad_norm=0.195182 lr=0.00003907
+step=10900 loss=0.629923 grad_norm=0.203320 lr=0.00003807
+Epoch 14: train_loss=0.629508, val_loss=0.642255, gradient_norm_mean=0.203608, gradient_norm_max=0.408115, tokens_per_sec=583395.3, time_seconds=43.88
+Saved best checkpoint at epoch 14 (val_loss=0.642255)
+step=10950 loss=0.602781 grad_norm=0.204034 lr=0.00003713
+step=11000 loss=0.625384 grad_norm=0.207271 lr=0.00003625
+step=11050 loss=0.615272 grad_norm=0.202875 lr=0.00003543
+step=11100 loss=0.618577 grad_norm=0.204813 lr=0.00003466
+step=11150 loss=0.615112 grad_norm=0.203298 lr=0.00003395
+step=11200 loss=0.625510 grad_norm=0.205937 lr=0.00003330
+step=11250 loss=0.621360 grad_norm=0.205386 lr=0.00003271
+step=11300 loss=0.625869 grad_norm=0.206620 lr=0.00003217
+step=11350 loss=0.623215 grad_norm=0.209366 lr=0.00003170
+step=11400 loss=0.613230 grad_norm=0.209854 lr=0.00003128
+step=11450 loss=0.641995 grad_norm=0.207688 lr=0.00003092
+step=11500 loss=0.630056 grad_norm=0.206486 lr=0.00003062
+step=11550 loss=0.642492 grad_norm=0.211478 lr=0.00003038
+step=11600 loss=0.629223 grad_norm=0.205693 lr=0.00003020
+step=11650 loss=0.628842 grad_norm=0.208318 lr=0.00003008
+step=11700 loss=0.625112 grad_norm=0.207990 lr=0.00003001
+Epoch 15: train_loss=0.625974, val_loss=0.641902, gradient_norm_mean=0.205488, gradient_norm_max=0.405353, tokens_per_sec=583029.2, time_seconds=43.91
+Saved best checkpoint at epoch 15 (val_loss=0.641902)
+DONE nan_count=0 total_training_time_seconds=664.65 best_epoch=15 best_val_loss=0.641902
