@@ -1,7 +1,7 @@
 {
   "member": "Anushka",
   "seed": 3963,
-  "sequence_length": 256,
+  "sequence_length": 512,
   "train_sequences": 100000,
   "validation_sequences": 10000,
   "n_blocks": 6,
@@ -10,7 +10,7 @@
   "d_ff": 1536,
   "dropout": 0.15,
   "batch_size": 128,
-  "epochs": 15,
+  "epochs": 20,
   "min_epochs_required": 10,
   "learning_rate": 0.0006,
   "weight_decay": 0.1,
