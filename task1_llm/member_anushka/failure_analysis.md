@@ -1,46 +1,48 @@
 # Sequence Model Failure Analysis
 
-Model: `checkpoints/best_model.pt` (run `20260929_213922`). All snippets are copied verbatim from `outputs/generated_samples.txt`. The prompt was `"Once upon a time, "`.
+Model: `checkpoints/best_model.pt` (run `20260929_225852`, sequence length 512, epoch 20). All snippets are copied verbatim from `outputs/generated_samples.txt`. The prompt was `"Once upon a time, "`.
 
-## Failure Case 1: Repetition
-Generated snippet (greedy and T=0.5):
+## Failure Case 1: Repetition / circular actions
+Generated snippet (T=0.5):
 
-> Lily said, "I want to play with the box, but I want to play with it."
+> One day, she saw a big box in the garden. She wanted to open it and see what was inside. She opened it and started to open it. Inside was a big box with a ball. Lily was so happy and she picked it up. She was so excited to ope
 
-> "Hi, I am Lily. I am Lily. You are very smart. I want to play with you."
+Failure type: Repetition (the same action and object loop back on themselves)
 
-> The two friends hugged each other and hugged each other. *(T=1.0)*
+Observation: The story keeps returning to "open the box". She *opened it and started to open it*, the box contains *a big box*, and after already opening it she is *so excited to open* it again. At T=0.5 the model mostly picks the most probable continuation, and in TinyStories "box … open … inside" is one of the most frequent patterns. The model has no record of which events already happened, so it re-predicts the likeliest event. Compared with the baseline (seq 256), the repeated 4-gram rate at T=1.0 dropped from 0.187 to 0.102, so repetition is reduced but still visible at low temperature.
 
-Failure type: Repetition (phrase-level looping)
+Possible improvement: At decode time, use a repetition penalty or n-gram blocking, or top-p sampling instead of low-temperature sampling. On the training side, a word/BPE tokenizer would let the model reason over events rather than characters.
 
-Observation: The model repeats high-probability phrases, and it does this more at low temperature. Greedy and T=0.5 decoding always pick the most likely continuation, and in TinyStories "I want to play with…" and "I am Lily" are extremely frequent. Once the phrase is in the context, the model's own output makes the phrase even more likely, so it loops. The "but" in the first example introduces a contrast that never arrives. The repeated 4-gram rate of 0.187 on the T=1.0 sample measures this. A character-level model predicts one letter at a time and has no explicit notion of "I already said this".
+## Failure Case 2: Loss of coherence (speaker and entity confusion)
+Generated snippet (T=1.0):
 
-Possible improvement: Use a repetition penalty or n-gram blocking at decode time, or top-p sampling instead of greedy decoding. On the training side, a word/BPE-level tokenizer would give the model a longer effective context in words.
+> Timmy didn't like it wild, but he told Billy, "No, Timmy, it's not yours."
+>
+> Billy nodded and climbed into Mia's hands.
 
-## Failure Case 2: Loss of coherence / entity drift (hallucination)
-Generated snippet (greedy, T=0.5, T=1.0):
+Also from the greedy sample:
 
-> One day, she saw a big box in the garden. It was so big and shiny and had a long tail.
+> One day, she saw a big bird in the sky. She wanted to fly it and see what was inside.
 
-> One day, she saw a big tree in the sky.
+Failure type: Loss of coherence / hallucinated entities
 
-> Lily went to her friend Benny to play with her. Benny saw a big tree with clothes and Snowy reached out his hand. Snowy wanted to see more dangerous clothes.
+Observation: Each sentence is grammatical, but the meaning does not hold together. Timmy speaks to Billy yet addresses himself ("No, Timmy"). A new character "Mia" appears from nowhere. Billy does something physically impossible (*climbed into Mia's hands*). In the greedy sample a *bird* is something you *fly* and look *inside*, which is clearly a template about kites or boxes applied to the wrong object. The model has learned very strong local phrase templates ("wanted to … and see what was inside", "told X, 'No, …'") but not who is speaking or what an object can do. A 512-character context does contain the earlier sentences, but a 6-layer character model cannot reliably follow who each name and pronoun refers to.
 
-Failure type: Loss of coherence (semantic contradiction) and hallucinated entities
+Possible improvement: Use more depth or width, or subword tokens so attention works over whole words and names, plus more training data. Dialogue and speaker errors could also be measured with targeted prompts (e.g. two named characters talking) to check a fix.
 
-Observation: Each sentence is grammatical, but the meaning does not hold together. A *box* gets a *tail*, a *tree* is *in the sky*, and a new character "Snowy" appears mid-story and takes over the action from Benny. The model has learned local word statistics ("big and shiny and had a long tail" is a common TinyStories phrase about animals) but not a consistent world state. The 256-character context covers only about 50 words, so the model only weakly links an object or character from a few sentences back to the current prediction.
+## Failure Case 3: Broken spelling and grammar at high temperature
+Generated snippet (T=1.5):
 
-Possible improvement: Use a longer context window (512+), or move to subword tokens so the same window covers more of the story. A larger model or more training data would help it learn object–attribute consistency.
+> Once upon a time, there two friends, Mumy and Sally,gas and Sandy. [...]
+>
+> "Look, Sandy?" DadDadonly asks.
+>
+> "Yes, it's a special yutdent: trying tonide!"
+>
+> DSandy and SaY play
 
-## Failure Case 3: Broken grammar at high temperature
-Generated snippet (T=1.5, plus one from T=1.0):
+Failure type: Broken grammar and non-word spelling (character-level breakdown)
 
-> One morning, the girl loved to look deep quietly that she kept walking. She wrapped up the cabin and sat at the table. [...] But, when she tried to take it, be brave.
+Observation: At T=1.5 the output distribution is flattened, so low-probability characters get sampled often. With a character-level model this breaks *inside* words: non-words appear (*yutdent*, *tonide*, *Mumy*), names are glued together (*DadDadonly*, *DSandy*), the verb is missing ("there two friends"), and there's no space after a comma (*Sally,gas*). At T=1.0 and below, spelling stays essentially perfect (82% top-1 character accuracy on validation). So the model knows how to spell and has the right characters ranked first, but high temperature lets wrong ones through. Distinct-n goes up with temperature while quality falls, so diversity metrics alone would reward this failure.
 
-> They decided to play in reasons all day *(T=1.0)*
-
-Failure type: Broken grammar / syntax
-
-Observation: At T=1.5 the softmax is flattened, so low-probability characters and words are sampled far more often. The output drifts into invalid structures: "loved to look deep quietly that" mixes a "so … that" construction with the wrong adverbs, "be brave" is an imperative where a main clause is needed, and "play in reasons" is a real word in a slot where it does not fit. The words themselves are still spelled correctly, which shows the model learned spelling well (79.7% top-1 character accuracy). Syntax across a whole clause is where it is weaker. The Distinct-n scores go up with temperature, but coherence goes down.
-
-Possible improvement: Use a moderate temperature (0.7–0.9) with top-k/top-p truncation, which removes the low-probability tail while keeping diversity. Temperature could also be tuned on a held-out set against a combined diversity/quality score.
+Possible improvement: Use a moderate temperature (0.7–0.9) with top-k/top-p truncation, which removes the low-probability tail while keeping diversity. Temperature could also be tuned on held-out text against a combined diversity/quality score rather than Distinct-n alone.
