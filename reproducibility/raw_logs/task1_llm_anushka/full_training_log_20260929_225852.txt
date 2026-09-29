@@ -51,3 +51,39 @@ step=2200 loss=0.821477 grad_norm=0.243606 lr=0.00058757
 step=2250 loss=0.813484 grad_norm=0.219307 lr=0.00058668
 step=2300 loss=0.805280 grad_norm=0.224167 lr=0.00058575
 Epoch 3: train_loss=0.870571, val_loss=0.764259, gradient_norm_mean=0.245944, gradient_norm_max=0.343146, tokens_per_sec=403895.5, time_seconds=126.77
+Saved best checkpoint at epoch 3 (val_loss=0.764259)
+step=2350 loss=0.802389 grad_norm=0.215104 lr=0.00058479
+step=2400 loss=0.778711 grad_norm=0.215240 lr=0.00058381
+step=2450 loss=0.816307 grad_norm=0.200264 lr=0.00058279
+step=2500 loss=0.797312 grad_norm=0.204695 lr=0.00058174
+step=2550 loss=0.805220 grad_norm=0.239844 lr=0.00058066
+step=2600 loss=0.762834 grad_norm=0.214455 lr=0.00057956
+step=2650 loss=0.779705 grad_norm=0.214784 lr=0.00057842
+step=2700 loss=0.753849 grad_norm=0.202817 lr=0.00057725
+step=2750 loss=0.754890 grad_norm=0.193752 lr=0.00057606
+step=2800 loss=0.777010 grad_norm=0.202228 lr=0.00057483
+step=2850 loss=0.759446 grad_norm=0.212352 lr=0.00057358
+step=2900 loss=0.750756 grad_norm=0.182017 lr=0.00057230
+step=2950 loss=0.760246 grad_norm=0.193069 lr=0.00057099
+step=3000 loss=0.738008 grad_norm=0.196285 lr=0.00056965
+step=3050 loss=0.752671 grad_norm=0.196234 lr=0.00056828
+step=3100 loss=0.758228 grad_norm=0.198072 lr=0.00056688
+Epoch 4: train_loss=0.768182, val_loss=0.706809, gradient_norm_mean=0.203093, gradient_norm_max=0.299834, tokens_per_sec=396022.6, time_seconds=129.29
+Saved best checkpoint at epoch 4 (val_loss=0.706809)
+step=3150 loss=0.749943 grad_norm=0.185169 lr=0.00056545
+step=3200 loss=0.724787 grad_norm=0.189724 lr=0.00056400
+step=3250 loss=0.726242 grad_norm=0.177688 lr=0.00056252
+step=3300 loss=0.707000 grad_norm=0.185904 lr=0.00056101
+step=3350 loss=0.731645 grad_norm=0.178855 lr=0.00055947
+step=3400 loss=0.728512 grad_norm=0.186184 lr=0.00055791
+step=3450 loss=0.728315 grad_norm=0.189546 lr=0.00055632
+step=3500 loss=0.719351 grad_norm=0.188246 lr=0.00055470
+step=3550 loss=0.717056 grad_norm=0.184380 lr=0.00055305
+step=3600 loss=0.715429 grad_norm=0.180288 lr=0.00055138
+step=3650 loss=0.706012 grad_norm=0.181238 lr=0.00054968
+step=3700 loss=0.709104 grad_norm=0.178776 lr=0.00054796
+step=3750 loss=0.715267 grad_norm=0.188210 lr=0.00054621
+step=3800 loss=0.721924 grad_norm=0.191217 lr=0.00054443
+step=3850 loss=0.702358 grad_norm=0.176796 lr=0.00054263
+step=3900 loss=0.704297 grad_norm=0.176254 lr=0.00054080
+Epoch 5: train_loss=0.720499, val_loss=0.674732, gradient_norm_mean=0.185821, gradient_norm_max=0.292292, tokens_per_sec=397500.3, time_seconds=128.80
