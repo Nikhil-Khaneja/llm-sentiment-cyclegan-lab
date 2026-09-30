@@ -1,0 +1,3 @@
+baseline,experiment,b_base_right_exp_wrong,c_base_wrong_exp_right,chi2_cc,p_chi2,p_exact
+B1_baseline_lasttoken,B2_cnn_k7,1112,12075,9112.417077424736,0.0,0.0
+B1_baseline_lasttoken,B3_bilstm_attn,811,12205,9972.3762292563,0.0,0.0

@@ -1,0 +1,120 @@
+{
+  "created": "2026-09-29T19:29:14",
+  "git_commit_at_launch": "1b738252ee955d9a36a2ebbc070764fc67579c0f",
+  "python": "3.12.10",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "hardware": "NVIDIA GeForce RTX 5090",
+  "device": "cuda",
+  "packages": {
+    "torch": "2.8.0+cu128",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "matplotlib": "3.9.4",
+    "scikit-learn": "1.6.1",
+    "scipy": "1.13.1",
+    "datasets": "4.5.0",
+    "nltk": "3.9.2",
+    "pyyaml": "6.0.3"
+  },
+  "config": {
+    "run_name": "sentiment_nikhil_B",
+    "seed": 42,
+    "device": "auto",
+    "write_metrics_report": true,
+    "log_every": 500,
+    "eval_batch_size": 512,
+    "bootstrap": 1000,
+    "data": {
+      "raw_dir": "task2_sentiment/data",
+      "processed_dir": "data_processed",
+      "max_train_samples": null,
+      "max_test_samples": null,
+      "val_frac": 0.1,
+      "vocab_size": 30000,
+      "min_freq": 2,
+      "max_len": 256,
+      "stem": true,
+      "keep_negations": true
+    },
+    "models": [
+      {
+        "name": "B1_baseline_lasttoken",
+        "arch": "last_token",
+        "params": {
+          "emb_dim": 128,
+          "dropout": 0.3
+        },
+        "optim": {
+          "name": "adam",
+          "lr": 0.001,
+          "batch_size": 128,
+          "epochs": 8,
+          "grad_clip": 5.0
+        }
+      },
+      {
+        "name": "B2_cnn_k7",
+        "arch": "cnn",
+        "params": {
+          "emb_dim": 128,
+          "dropout": 0.4,
+          "channels": 128,
+          "kernel_sizes": [
+            7
+          ]
+        },
+        "optim": {
+          "name": "adamw",
+          "lr": 0.0005,
+          "weight_decay": 0.01,
+          "batch_size": 128,
+          "epochs": 8,
+          "grad_clip": 5.0
+        }
+      },
+      {
+        "name": "B3_bilstm_attn",
+        "arch": "bilstm_attn",
+        "params": {
+          "emb_dim": 128,
+          "dropout": 0.3,
+          "hidden": 128
+        },
+        "optim": {
+          "name": "adamw",
+          "lr": 0.0005,
+          "weight_decay": 0.01,
+          "batch_size": 64,
+          "epochs": 8,
+          "grad_clip": 5.0
+        }
+      }
+    ]
+  },
+  "task": "task2_sentiment",
+  "member": "nikhil",
+  "run_id": "sentiment_nikhil_B_20260929-1913",
+  "config_file": "task2_sentiment\\member_nikhil\\src\\configs\\sentiment_nikhil_B.yaml",
+  "raw_log": "reproducibility\\raw_logs\\nikhil\\task2_sentiment_nikhil_B_20260929-1913.log",
+  "outputs_dir": "task2_sentiment\\member_nikhil\\outputs\\sentiment_nikhil_B_20260929-1913",
+  "checkpoints": {
+    "B1_baseline_lasttoken": "task2_sentiment\\member_nikhil\\checkpoints\\sentiment_nikhil_B_20260929-1913_B1_baseline_lasttoken.pt",
+    "B2_cnn_k7": "task2_sentiment\\member_nikhil\\checkpoints\\sentiment_nikhil_B_20260929-1913_B2_cnn_k7.pt",
+    "B3_bilstm_attn": "task2_sentiment\\member_nikhil\\checkpoints\\sentiment_nikhil_B_20260929-1913_B3_bilstm_attn.pt"
+  },
+  "strongest_model_for_error_review": "B3_bilstm_attn",
+  "headline": {
+    "B1_baseline_lasttoken": {
+      "test_accuracy": 0.653921052631579,
+      "test_f1_macro": 0.653920946938461
+    },
+    "B2_cnn_k7": {
+      "test_accuracy": 0.9424210526315789,
+      "test_f1_macro": 0.9424144141780068
+    },
+    "B3_bilstm_attn": {
+      "test_accuracy": 0.9537631578947369,
+      "test_f1_macro": 0.9537587025585376
+    }
+  }
+}

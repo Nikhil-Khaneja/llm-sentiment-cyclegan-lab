@@ -1,0 +1,278 @@
+[2026-09-29 19:13:10] run_id=sentiment_nikhil_B_20260929-1913 config=task2_sentiment\member_nikhil\src\configs\sentiment_nikhil_B.yaml device=cuda hardware=NVIDIA GeForce RTX 5090
+[2026-09-29 19:13:10] config: {"run_name": "sentiment_nikhil_B", "seed": 42, "device": "auto", "write_metrics_report": true, "log_every": 500, "eval_batch_size": 512, "bootstrap": 1000, "data": {"raw_dir": "task2_sentiment/data", "processed_dir": "data_processed", "max_train_samples": null, "max_test_samples": null, "val_frac": 0.1, "vocab_size": 30000, "min_freq": 2, "max_len": 256, "stem": true, "keep_negations": true}, "models": [{"name": "B1_baseline_lasttoken", "arch": "last_token", "params": {"emb_dim": 128, "dropout": 0.3}, "optim": {"name": "adam", "lr": 0.001, "batch_size": 128, "epochs": 8, "grad_clip": 5.0}}, {"name": "B2_cnn_k7", "arch": "cnn", "params": {"emb_dim": 128, "dropout": 0.4, "channels": 128, "kernel_sizes": [7]}, "optim": {"name": "adamw", "lr": 0.0005, "weight_decay": 0.01, "batch_size": 128, "epochs": 8, "grad_clip": 5.0}}, {"name": "B3_bilstm_attn", "arch": "bilstm_attn", "params": {"emb_dim": 128, "dropout": 0.3, "hidden": 128}, "optim": {"name": "adamw", "lr": 0.0005, "weight_decay": 0.01, "batch_size": 64, "epochs": 8, "grad_clip": 5.0}}]}
+[2026-09-29 19:13:30] eda: {"train": {"rows": 560000, "missing_text": 0, "empty_text": 0, "duplicate_text": 0, "class_counts": {"0": 280000, "1": 280000}, "positive_share": 0.5, "words_mean": 133.0288732142857, "words_median": 97.0, "words_p95": 372.0, "words_max": 1052}, "test": {"rows": 38000, "missing_text": 0, "empty_text": 0, "duplicate_text": 0, "class_counts": {"0": 19000, "1": 19000}, "positive_share": 0.5, "words_mean": 132.55863157894737, "words_median": 97.0, "words_p95": 367.0, "words_max": 1007}, "train_test_text_overlap": 0}
+[2026-09-29 19:13:30] train: dropped 0 missing/malformed/duplicate rows (560,000 left)
+[2026-09-29 19:13:30] test: dropped 0 missing/malformed/duplicate rows (38,000 left)
+[2026-09-29 19:13:30] cleaning 598,000 reviews (stem=True, keep_negations=True)
+[2026-09-29 19:13:59] vocab=30,000 (of 139,441 distinct train tokens); tokens/review mean=65.2 p95=180; truncating at max_len=256 (1.64% of reviews truncated)
+[2026-09-29 19:14:03] splits: {'train': 504000, 'val': 56000, 'test': 38000} test_unk_rate=0.666%
+[2026-09-29 19:14:04] preprocessing took 53.4s
+[2026-09-29 19:14:05] [B1_baseline_lasttoken] arch=last_token params=3,840,129 spec={"name": "B1_baseline_lasttoken", "arch": "last_token", "params": {"emb_dim": 128, "dropout": 0.3}, "optim": {"name": "adam", "lr": 0.001, "batch_size": 128, "epochs": 8, "grad_clip": 5.0}}
+[2026-09-29 19:14:06] [B1_baseline_lasttoken] ep 1 step 500 loss 0.6632
+[2026-09-29 19:14:07] [B1_baseline_lasttoken] ep 1 step 1000 loss 0.5851
+[2026-09-29 19:14:07] [B1_baseline_lasttoken] ep 1 step 1500 loss 0.6443
+[2026-09-29 19:14:08] [B1_baseline_lasttoken] ep 1 step 2000 loss 0.6631
+[2026-09-29 19:14:09] [B1_baseline_lasttoken] ep 1 step 2500 loss 0.6039
+[2026-09-29 19:14:10] [B1_baseline_lasttoken] ep 1 step 3000 loss 0.6168
+[2026-09-29 19:14:10] [B1_baseline_lasttoken] ep 1 step 3500 loss 0.5961
+[2026-09-29 19:14:11] [B1_baseline_lasttoken] epoch 1 train_loss=0.6406 val_loss=0.6173 val_acc=0.6453
+[2026-09-29 19:14:12] [B1_baseline_lasttoken] ep 2 step 500 loss 0.5969
+[2026-09-29 19:14:13] [B1_baseline_lasttoken] ep 2 step 1000 loss 0.6608
+[2026-09-29 19:14:14] [B1_baseline_lasttoken] ep 2 step 1500 loss 0.5586
+[2026-09-29 19:14:15] [B1_baseline_lasttoken] ep 2 step 2000 loss 0.6569
+[2026-09-29 19:14:15] [B1_baseline_lasttoken] ep 2 step 2500 loss 0.5722
+[2026-09-29 19:14:16] [B1_baseline_lasttoken] ep 2 step 3000 loss 0.6015
+[2026-09-29 19:14:17] [B1_baseline_lasttoken] ep 2 step 3500 loss 0.5947
+[2026-09-29 19:14:18] [B1_baseline_lasttoken] epoch 2 train_loss=0.6145 val_loss=0.6106 val_acc=0.6507
+[2026-09-29 19:14:19] [B1_baseline_lasttoken] ep 3 step 500 loss 0.5921
+[2026-09-29 19:14:20] [B1_baseline_lasttoken] ep 3 step 1000 loss 0.6401
+[2026-09-29 19:14:20] [B1_baseline_lasttoken] ep 3 step 1500 loss 0.6196
+[2026-09-29 19:14:21] [B1_baseline_lasttoken] ep 3 step 2000 loss 0.5997
+[2026-09-29 19:14:22] [B1_baseline_lasttoken] ep 3 step 2500 loss 0.5977
+[2026-09-29 19:14:23] [B1_baseline_lasttoken] ep 3 step 3000 loss 0.6308
+[2026-09-29 19:14:24] [B1_baseline_lasttoken] ep 3 step 3500 loss 0.5913
+[2026-09-29 19:14:24] [B1_baseline_lasttoken] epoch 3 train_loss=0.6077 val_loss=0.6093 val_acc=0.6526
+[2026-09-29 19:14:25] [B1_baseline_lasttoken] ep 4 step 500 loss 0.6319
+[2026-09-29 19:14:26] [B1_baseline_lasttoken] ep 4 step 1000 loss 0.6659
+[2026-09-29 19:14:27] [B1_baseline_lasttoken] ep 4 step 1500 loss 0.5989
+[2026-09-29 19:14:27] [B1_baseline_lasttoken] ep 4 step 2000 loss 0.6060
+[2026-09-29 19:14:28] [B1_baseline_lasttoken] ep 4 step 2500 loss 0.6192
+[2026-09-29 19:14:29] [B1_baseline_lasttoken] ep 4 step 3000 loss 0.6768
+[2026-09-29 19:14:30] [B1_baseline_lasttoken] ep 4 step 3500 loss 0.6587
+[2026-09-29 19:14:31] [B1_baseline_lasttoken] epoch 4 train_loss=0.6038 val_loss=0.6085 val_acc=0.6528
+[2026-09-29 19:14:32] [B1_baseline_lasttoken] ep 5 step 500 loss 0.5911
+[2026-09-29 19:14:33] [B1_baseline_lasttoken] ep 5 step 1000 loss 0.5725
+[2026-09-29 19:14:33] [B1_baseline_lasttoken] ep 5 step 1500 loss 0.6325
+[2026-09-29 19:14:34] [B1_baseline_lasttoken] ep 5 step 2000 loss 0.6259
+[2026-09-29 19:14:35] [B1_baseline_lasttoken] ep 5 step 2500 loss 0.6070
+[2026-09-29 19:14:36] [B1_baseline_lasttoken] ep 5 step 3000 loss 0.6224
+[2026-09-29 19:14:37] [B1_baseline_lasttoken] ep 5 step 3500 loss 0.6649
+[2026-09-29 19:14:37] [B1_baseline_lasttoken] epoch 5 train_loss=0.6012 val_loss=0.6086 val_acc=0.6554
+[2026-09-29 19:14:38] [B1_baseline_lasttoken] ep 6 step 500 loss 0.5344
+[2026-09-29 19:14:39] [B1_baseline_lasttoken] ep 6 step 1000 loss 0.6116
+[2026-09-29 19:14:40] [B1_baseline_lasttoken] ep 6 step 1500 loss 0.5854
+[2026-09-29 19:14:40] [B1_baseline_lasttoken] ep 6 step 2000 loss 0.6249
+[2026-09-29 19:14:41] [B1_baseline_lasttoken] ep 6 step 2500 loss 0.5547
+[2026-09-29 19:14:42] [B1_baseline_lasttoken] ep 6 step 3000 loss 0.6526
+[2026-09-29 19:14:43] [B1_baseline_lasttoken] ep 6 step 3500 loss 0.6164
+[2026-09-29 19:14:44] [B1_baseline_lasttoken] epoch 6 train_loss=0.5997 val_loss=0.6082 val_acc=0.6543
+[2026-09-29 19:14:45] [B1_baseline_lasttoken] ep 7 step 500 loss 0.6004
+[2026-09-29 19:14:45] [B1_baseline_lasttoken] ep 7 step 1000 loss 0.6139
+[2026-09-29 19:14:46] [B1_baseline_lasttoken] ep 7 step 1500 loss 0.5599
+[2026-09-29 19:14:47] [B1_baseline_lasttoken] ep 7 step 2000 loss 0.5629
+[2026-09-29 19:14:48] [B1_baseline_lasttoken] ep 7 step 2500 loss 0.5940
+[2026-09-29 19:14:49] [B1_baseline_lasttoken] ep 7 step 3000 loss 0.5776
+[2026-09-29 19:14:49] [B1_baseline_lasttoken] ep 7 step 3500 loss 0.5680
+[2026-09-29 19:14:50] [B1_baseline_lasttoken] epoch 7 train_loss=0.5980 val_loss=0.6084 val_acc=0.6547
+[2026-09-29 19:14:51] [B1_baseline_lasttoken] ep 8 step 500 loss 0.6026
+[2026-09-29 19:14:52] [B1_baseline_lasttoken] ep 8 step 1000 loss 0.6263
+[2026-09-29 19:14:53] [B1_baseline_lasttoken] ep 8 step 1500 loss 0.7102
+[2026-09-29 19:14:53] [B1_baseline_lasttoken] ep 8 step 2000 loss 0.5792
+[2026-09-29 19:14:54] [B1_baseline_lasttoken] ep 8 step 2500 loss 0.5927
+[2026-09-29 19:14:55] [B1_baseline_lasttoken] ep 8 step 3000 loss 0.5842
+[2026-09-29 19:14:56] [B1_baseline_lasttoken] ep 8 step 3500 loss 0.5962
+[2026-09-29 19:14:56] [B1_baseline_lasttoken] epoch 8 train_loss=0.5969 val_loss=0.6090 val_acc=0.6557
+[2026-09-29 19:14:56] [B1_baseline_lasttoken] best epoch 6 (val_loss 0.6082) -> task2_sentiment\member_nikhil\checkpoints\sentiment_nikhil_B_20260929-1913_B1_baseline_lasttoken.pt
+[2026-09-29 19:14:57] [B1_baseline_lasttoken] test: accuracy=0.6539 precision_macro=0.6539 recall_macro=0.6539 f1_macro=0.6539 precision_micro=0.6539 recall_micro=0.6539 f1_micro=0.6539 precision_weighted=0.6539 recall_weighted=0.6539 f1_weighted=0.6539 cm_tn=12435.0000 cm_fp=6565.0000 cm_fn=6586.0000 cm_tp=12414.0000 roc_auc=0.7207 pr_auc=0.7091 mcc=0.3078 brier=0.2112 ece_15bin=0.0087 accuracy_ci95_low=0.6488 accuracy_ci95_high=0.6588 macro_f1_ci95_low=0.6488 macro_f1_ci95_high=0.6588 mcc_ci95_low=0.2976 mcc_ci95_high=0.3176
+[2026-09-29 19:14:57] [B2_cnn_k7] arch=cnn params=3,954,945 spec={"name": "B2_cnn_k7", "arch": "cnn", "params": {"emb_dim": 128, "dropout": 0.4, "channels": 128, "kernel_sizes": [7]}, "optim": {"name": "adamw", "lr": 0.0005, "weight_decay": 0.01, "batch_size": 128, "epochs": 8, "grad_clip": 5.0}}
+[2026-09-29 19:14:59] [B2_cnn_k7] ep 1 step 500 loss 0.4302
+[2026-09-29 19:15:00] [B2_cnn_k7] ep 1 step 1000 loss 0.2713
+[2026-09-29 19:15:01] [B2_cnn_k7] ep 1 step 1500 loss 0.3571
+[2026-09-29 19:15:03] [B2_cnn_k7] ep 1 step 2000 loss 0.1648
+[2026-09-29 19:15:04] [B2_cnn_k7] ep 1 step 2500 loss 0.2627
+[2026-09-29 19:15:05] [B2_cnn_k7] ep 1 step 3000 loss 0.3012
+[2026-09-29 19:15:06] [B2_cnn_k7] ep 1 step 3500 loss 0.1659
+[2026-09-29 19:15:08] [B2_cnn_k7] epoch 1 train_loss=0.2780 val_loss=0.1871 val_acc=0.9259
+[2026-09-29 19:15:09] [B2_cnn_k7] ep 2 step 500 loss 0.1832
+[2026-09-29 19:15:10] [B2_cnn_k7] ep 2 step 1000 loss 0.1108
+[2026-09-29 19:15:11] [B2_cnn_k7] ep 2 step 1500 loss 0.2488
+[2026-09-29 19:15:12] [B2_cnn_k7] ep 2 step 2000 loss 0.1153
+[2026-09-29 19:15:13] [B2_cnn_k7] ep 2 step 2500 loss 0.1749
+[2026-09-29 19:15:15] [B2_cnn_k7] ep 2 step 3000 loss 0.1703
+[2026-09-29 19:15:16] [B2_cnn_k7] ep 2 step 3500 loss 0.2858
+[2026-09-29 19:15:17] [B2_cnn_k7] epoch 2 train_loss=0.1866 val_loss=0.1656 val_acc=0.9351
+[2026-09-29 19:15:18] [B2_cnn_k7] ep 3 step 500 loss 0.2450
+[2026-09-29 19:15:19] [B2_cnn_k7] ep 3 step 1000 loss 0.0743
+[2026-09-29 19:15:21] [B2_cnn_k7] ep 3 step 1500 loss 0.1027
+[2026-09-29 19:15:22] [B2_cnn_k7] ep 3 step 2000 loss 0.1850
+[2026-09-29 19:15:23] [B2_cnn_k7] ep 3 step 2500 loss 0.1320
+[2026-09-29 19:15:24] [B2_cnn_k7] ep 3 step 3000 loss 0.0987
+[2026-09-29 19:15:25] [B2_cnn_k7] ep 3 step 3500 loss 0.1551
+[2026-09-29 19:15:27] [B2_cnn_k7] epoch 3 train_loss=0.1617 val_loss=0.1578 val_acc=0.9385
+[2026-09-29 19:15:28] [B2_cnn_k7] ep 4 step 500 loss 0.1777
+[2026-09-29 19:15:29] [B2_cnn_k7] ep 4 step 1000 loss 0.1127
+[2026-09-29 19:15:30] [B2_cnn_k7] ep 4 step 1500 loss 0.2114
+[2026-09-29 19:15:31] [B2_cnn_k7] ep 4 step 2000 loss 0.1995
+[2026-09-29 19:15:32] [B2_cnn_k7] ep 4 step 2500 loss 0.1157
+[2026-09-29 19:15:34] [B2_cnn_k7] ep 4 step 3000 loss 0.2611
+[2026-09-29 19:15:35] [B2_cnn_k7] ep 4 step 3500 loss 0.1636
+[2026-09-29 19:15:36] [B2_cnn_k7] epoch 4 train_loss=0.1442 val_loss=0.1552 val_acc=0.9393
+[2026-09-29 19:15:37] [B2_cnn_k7] ep 5 step 500 loss 0.1095
+[2026-09-29 19:15:39] [B2_cnn_k7] ep 5 step 1000 loss 0.1171
+[2026-09-29 19:15:40] [B2_cnn_k7] ep 5 step 1500 loss 0.1219
+[2026-09-29 19:15:41] [B2_cnn_k7] ep 5 step 2000 loss 0.1429
+[2026-09-29 19:15:42] [B2_cnn_k7] ep 5 step 2500 loss 0.1449
+[2026-09-29 19:15:43] [B2_cnn_k7] ep 5 step 3000 loss 0.1016
+[2026-09-29 19:15:44] [B2_cnn_k7] ep 5 step 3500 loss 0.2254
+[2026-09-29 19:15:45] [B2_cnn_k7] epoch 5 train_loss=0.1314 val_loss=0.1558 val_acc=0.9411
+[2026-09-29 19:15:46] [B2_cnn_k7] ep 6 step 500 loss 0.1213
+[2026-09-29 19:15:47] [B2_cnn_k7] ep 6 step 1000 loss 0.1313
+[2026-09-29 19:15:48] [B2_cnn_k7] ep 6 step 1500 loss 0.0901
+[2026-09-29 19:15:50] [B2_cnn_k7] ep 6 step 2000 loss 0.1143
+[2026-09-29 19:15:51] [B2_cnn_k7] ep 6 step 2500 loss 0.0937
+[2026-09-29 19:15:52] [B2_cnn_k7] ep 6 step 3000 loss 0.2503
+[2026-09-29 19:15:53] [B2_cnn_k7] ep 6 step 3500 loss 0.0887
+[2026-09-29 19:15:54] [B2_cnn_k7] epoch 6 train_loss=0.1197 val_loss=0.1571 val_acc=0.9415
+[2026-09-29 19:15:55] [B2_cnn_k7] ep 7 step 500 loss 0.1731
+[2026-09-29 19:15:57] [B2_cnn_k7] ep 7 step 1000 loss 0.0929
+[2026-09-29 19:15:58] [B2_cnn_k7] ep 7 step 1500 loss 0.0760
+[2026-09-29 19:15:59] [B2_cnn_k7] ep 7 step 2000 loss 0.1206
+[2026-09-29 19:16:00] [B2_cnn_k7] ep 7 step 2500 loss 0.0767
+[2026-09-29 19:16:01] [B2_cnn_k7] ep 7 step 3000 loss 0.0539
+[2026-09-29 19:16:02] [B2_cnn_k7] ep 7 step 3500 loss 0.0790
+[2026-09-29 19:16:04] [B2_cnn_k7] epoch 7 train_loss=0.1106 val_loss=0.1592 val_acc=0.9412
+[2026-09-29 19:16:05] [B2_cnn_k7] ep 8 step 500 loss 0.0752
+[2026-09-29 19:16:06] [B2_cnn_k7] ep 8 step 1000 loss 0.0529
+[2026-09-29 19:16:07] [B2_cnn_k7] ep 8 step 1500 loss 0.1031
+[2026-09-29 19:16:09] [B2_cnn_k7] ep 8 step 2000 loss 0.1687
+[2026-09-29 19:16:10] [B2_cnn_k7] ep 8 step 2500 loss 0.1132
+[2026-09-29 19:16:11] [B2_cnn_k7] ep 8 step 3000 loss 0.0987
+[2026-09-29 19:16:12] [B2_cnn_k7] ep 8 step 3500 loss 0.1828
+[2026-09-29 19:16:14] [B2_cnn_k7] epoch 8 train_loss=0.1025 val_loss=0.1648 val_acc=0.9415
+[2026-09-29 19:16:14] [B2_cnn_k7] best epoch 4 (val_loss 0.1552) -> task2_sentiment\member_nikhil\checkpoints\sentiment_nikhil_B_20260929-1913_B2_cnn_k7.pt
+[2026-09-29 19:16:15] [B2_cnn_k7] test: accuracy=0.9424 precision_macro=0.9426 recall_macro=0.9424 f1_macro=0.9424 precision_micro=0.9424 recall_micro=0.9424 f1_micro=0.9424 precision_weighted=0.9426 recall_weighted=0.9424 f1_weighted=0.9424 cm_tn=17702.0000 cm_fp=1298.0000 cm_fn=890.0000 cm_tp=18110.0000 roc_auc=0.9868 pr_auc=0.9871 mcc=0.8850 brier=0.0430 ece_15bin=0.0030 accuracy_ci95_low=0.9400 accuracy_ci95_high=0.9448 macro_f1_ci95_low=0.9400 macro_f1_ci95_high=0.9448 mcc_ci95_low=0.8803 mcc_ci95_high=0.8897
+[2026-09-29 19:16:15] [B3_bilstm_attn] arch=bilstm_attn params=4,170,497 spec={"name": "B3_bilstm_attn", "arch": "bilstm_attn", "params": {"emb_dim": 128, "dropout": 0.3, "hidden": 128}, "optim": {"name": "adamw", "lr": 0.0005, "weight_decay": 0.01, "batch_size": 64, "epochs": 8, "grad_clip": 5.0}}
+[2026-09-29 19:16:21] [B3_bilstm_attn] ep 1 step 500 loss 0.2686
+[2026-09-29 19:16:27] [B3_bilstm_attn] ep 1 step 1000 loss 0.3092
+[2026-09-29 19:16:32] [B3_bilstm_attn] ep 1 step 1500 loss 0.1768
+[2026-09-29 19:16:39] [B3_bilstm_attn] ep 1 step 2000 loss 0.2042
+[2026-09-29 19:16:45] [B3_bilstm_attn] ep 1 step 2500 loss 0.1662
+[2026-09-29 19:16:50] [B3_bilstm_attn] ep 1 step 3000 loss 0.1358
+[2026-09-29 19:16:57] [B3_bilstm_attn] ep 1 step 3500 loss 0.1053
+[2026-09-29 19:17:03] [B3_bilstm_attn] ep 1 step 4000 loss 0.1978
+[2026-09-29 19:17:09] [B3_bilstm_attn] ep 1 step 4500 loss 0.1669
+[2026-09-29 19:17:15] [B3_bilstm_attn] ep 1 step 5000 loss 0.1823
+[2026-09-29 19:17:22] [B3_bilstm_attn] ep 1 step 5500 loss 0.3008
+[2026-09-29 19:17:27] [B3_bilstm_attn] ep 1 step 6000 loss 0.2696
+[2026-09-29 19:17:34] [B3_bilstm_attn] ep 1 step 6500 loss 0.1384
+[2026-09-29 19:17:39] [B3_bilstm_attn] ep 1 step 7000 loss 0.2887
+[2026-09-29 19:17:45] [B3_bilstm_attn] ep 1 step 7500 loss 0.3039
+[2026-09-29 19:17:53] [B3_bilstm_attn] epoch 1 train_loss=0.2140 val_loss=0.1687 val_acc=0.9367
+[2026-09-29 19:17:59] [B3_bilstm_attn] ep 2 step 500 loss 0.1915
+[2026-09-29 19:18:04] [B3_bilstm_attn] ep 2 step 1000 loss 0.1911
+[2026-09-29 19:18:10] [B3_bilstm_attn] ep 2 step 1500 loss 0.3225
+[2026-09-29 19:18:17] [B3_bilstm_attn] ep 2 step 2000 loss 0.1284
+[2026-09-29 19:18:22] [B3_bilstm_attn] ep 2 step 2500 loss 0.1174
+[2026-09-29 19:18:28] [B3_bilstm_attn] ep 2 step 3000 loss 0.1791
+[2026-09-29 19:18:35] [B3_bilstm_attn] ep 2 step 3500 loss 0.1335
+[2026-09-29 19:18:40] [B3_bilstm_attn] ep 2 step 4000 loss 0.2838
+[2026-09-29 19:18:47] [B3_bilstm_attn] ep 2 step 4500 loss 0.2161
+[2026-09-29 19:18:53] [B3_bilstm_attn] ep 2 step 5000 loss 0.1028
+[2026-09-29 19:18:59] [B3_bilstm_attn] ep 2 step 5500 loss 0.2362
+[2026-09-29 19:19:05] [B3_bilstm_attn] ep 2 step 6000 loss 0.2014
+[2026-09-29 19:19:11] [B3_bilstm_attn] ep 2 step 6500 loss 0.0821
+[2026-09-29 19:19:17] [B3_bilstm_attn] ep 2 step 7000 loss 0.1357
+[2026-09-29 19:19:23] [B3_bilstm_attn] ep 2 step 7500 loss 0.0931
+[2026-09-29 19:19:30] [B3_bilstm_attn] epoch 2 train_loss=0.1528 val_loss=0.1487 val_acc=0.9446
+[2026-09-29 19:19:35] [B3_bilstm_attn] ep 3 step 500 loss 0.1447
+[2026-09-29 19:19:42] [B3_bilstm_attn] ep 3 step 1000 loss 0.1009
+[2026-09-29 19:19:48] [B3_bilstm_attn] ep 3 step 1500 loss 0.2136
+[2026-09-29 19:19:54] [B3_bilstm_attn] ep 3 step 2000 loss 0.0788
+[2026-09-29 19:20:00] [B3_bilstm_attn] ep 3 step 2500 loss 0.0450
+[2026-09-29 19:20:05] [B3_bilstm_attn] ep 3 step 3000 loss 0.1434
+[2026-09-29 19:20:11] [B3_bilstm_attn] ep 3 step 3500 loss 0.1381
+[2026-09-29 19:20:17] [B3_bilstm_attn] ep 3 step 4000 loss 0.0753
+[2026-09-29 19:20:23] [B3_bilstm_attn] ep 3 step 4500 loss 0.1724
+[2026-09-29 19:20:29] [B3_bilstm_attn] ep 3 step 5000 loss 0.1634
+[2026-09-29 19:20:35] [B3_bilstm_attn] ep 3 step 5500 loss 0.2219
+[2026-09-29 19:20:41] [B3_bilstm_attn] ep 3 step 6000 loss 0.0891
+[2026-09-29 19:20:47] [B3_bilstm_attn] ep 3 step 6500 loss 0.1044
+[2026-09-29 19:20:53] [B3_bilstm_attn] ep 3 step 7000 loss 0.1911
+[2026-09-29 19:20:59] [B3_bilstm_attn] ep 3 step 7500 loss 0.0488
+[2026-09-29 19:21:06] [B3_bilstm_attn] epoch 3 train_loss=0.1352 val_loss=0.1399 val_acc=0.9475
+[2026-09-29 19:21:12] [B3_bilstm_attn] ep 4 step 500 loss 0.0510
+[2026-09-29 19:21:18] [B3_bilstm_attn] ep 4 step 1000 loss 0.1004
+[2026-09-29 19:21:24] [B3_bilstm_attn] ep 4 step 1500 loss 0.0850
+[2026-09-29 19:21:30] [B3_bilstm_attn] ep 4 step 2000 loss 0.0638
+[2026-09-29 19:21:35] [B3_bilstm_attn] ep 4 step 2500 loss 0.1044
+[2026-09-29 19:21:40] [B3_bilstm_attn] ep 4 step 3000 loss 0.1346
+[2026-09-29 19:21:47] [B3_bilstm_attn] ep 4 step 3500 loss 0.0928
+[2026-09-29 19:21:53] [B3_bilstm_attn] ep 4 step 4000 loss 0.1818
+[2026-09-29 19:21:59] [B3_bilstm_attn] ep 4 step 4500 loss 0.0696
+[2026-09-29 19:22:05] [B3_bilstm_attn] ep 4 step 5000 loss 0.1132
+[2026-09-29 19:22:11] [B3_bilstm_attn] ep 4 step 5500 loss 0.1467
+[2026-09-29 19:22:16] [B3_bilstm_attn] ep 4 step 6000 loss 0.0736
+[2026-09-29 19:22:22] [B3_bilstm_attn] ep 4 step 6500 loss 0.2351
+[2026-09-29 19:22:29] [B3_bilstm_attn] ep 4 step 7000 loss 0.1888
+[2026-09-29 19:22:34] [B3_bilstm_attn] ep 4 step 7500 loss 0.2304
+[2026-09-29 19:22:41] [B3_bilstm_attn] epoch 4 train_loss=0.1242 val_loss=0.1385 val_acc=0.9490
+[2026-09-29 19:22:47] [B3_bilstm_attn] ep 5 step 500 loss 0.2023
+[2026-09-29 19:22:53] [B3_bilstm_attn] ep 5 step 1000 loss 0.1327
+[2026-09-29 19:22:59] [B3_bilstm_attn] ep 5 step 1500 loss 0.0560
+[2026-09-29 19:23:05] [B3_bilstm_attn] ep 5 step 2000 loss 0.1964
+[2026-09-29 19:23:11] [B3_bilstm_attn] ep 5 step 2500 loss 0.1881
+[2026-09-29 19:23:17] [B3_bilstm_attn] ep 5 step 3000 loss 0.1070
+[2026-09-29 19:23:23] [B3_bilstm_attn] ep 5 step 3500 loss 0.0256
+[2026-09-29 19:23:29] [B3_bilstm_attn] ep 5 step 4000 loss 0.2376
+[2026-09-29 19:23:35] [B3_bilstm_attn] ep 5 step 4500 loss 0.1084
+[2026-09-29 19:23:41] [B3_bilstm_attn] ep 5 step 5000 loss 0.1144
+[2026-09-29 19:23:47] [B3_bilstm_attn] ep 5 step 5500 loss 0.1587
+[2026-09-29 19:23:53] [B3_bilstm_attn] ep 5 step 6000 loss 0.1828
+[2026-09-29 19:23:59] [B3_bilstm_attn] ep 5 step 6500 loss 0.0390
+[2026-09-29 19:24:05] [B3_bilstm_attn] ep 5 step 7000 loss 0.1625
+[2026-09-29 19:24:11] [B3_bilstm_attn] ep 5 step 7500 loss 0.0818
+[2026-09-29 19:24:18] [B3_bilstm_attn] epoch 5 train_loss=0.1153 val_loss=0.1456 val_acc=0.9485
+[2026-09-29 19:24:24] [B3_bilstm_attn] ep 6 step 500 loss 0.0485
+[2026-09-29 19:24:30] [B3_bilstm_attn] ep 6 step 1000 loss 0.1205
+[2026-09-29 19:24:36] [B3_bilstm_attn] ep 6 step 1500 loss 0.1055
+[2026-09-29 19:24:42] [B3_bilstm_attn] ep 6 step 2000 loss 0.0724
+[2026-09-29 19:24:48] [B3_bilstm_attn] ep 6 step 2500 loss 0.1579
+[2026-09-29 19:24:54] [B3_bilstm_attn] ep 6 step 3000 loss 0.0744
+[2026-09-29 19:25:00] [B3_bilstm_attn] ep 6 step 3500 loss 0.1993
+[2026-09-29 19:25:06] [B3_bilstm_attn] ep 6 step 4000 loss 0.1216
+[2026-09-29 19:25:12] [B3_bilstm_attn] ep 6 step 4500 loss 0.1314
+[2026-09-29 19:25:18] [B3_bilstm_attn] ep 6 step 5000 loss 0.1226
+[2026-09-29 19:25:24] [B3_bilstm_attn] ep 6 step 5500 loss 0.0439
+[2026-09-29 19:25:30] [B3_bilstm_attn] ep 6 step 6000 loss 0.0775
+[2026-09-29 19:25:36] [B3_bilstm_attn] ep 6 step 6500 loss 0.1457
+[2026-09-29 19:25:41] [B3_bilstm_attn] ep 6 step 7000 loss 0.1225
+[2026-09-29 19:25:48] [B3_bilstm_attn] ep 6 step 7500 loss 0.1242
+[2026-09-29 19:25:55] [B3_bilstm_attn] epoch 6 train_loss=0.1080 val_loss=0.1393 val_acc=0.9511
+[2026-09-29 19:26:01] [B3_bilstm_attn] ep 7 step 500 loss 0.1001
+[2026-09-29 19:26:07] [B3_bilstm_attn] ep 7 step 1000 loss 0.1221
+[2026-09-29 19:26:13] [B3_bilstm_attn] ep 7 step 1500 loss 0.0536
+[2026-09-29 19:26:19] [B3_bilstm_attn] ep 7 step 2000 loss 0.0976
+[2026-09-29 19:26:25] [B3_bilstm_attn] ep 7 step 2500 loss 0.1238
+[2026-09-29 19:26:32] [B3_bilstm_attn] ep 7 step 3000 loss 0.0887
+[2026-09-29 19:26:38] [B3_bilstm_attn] ep 7 step 3500 loss 0.0799
+[2026-09-29 19:26:44] [B3_bilstm_attn] ep 7 step 4000 loss 0.1366
+[2026-09-29 19:26:50] [B3_bilstm_attn] ep 7 step 4500 loss 0.0853
+[2026-09-29 19:26:56] [B3_bilstm_attn] ep 7 step 5000 loss 0.1835
+[2026-09-29 19:27:02] [B3_bilstm_attn] ep 7 step 5500 loss 0.1017
+[2026-09-29 19:27:08] [B3_bilstm_attn] ep 7 step 6000 loss 0.1614
+[2026-09-29 19:27:14] [B3_bilstm_attn] ep 7 step 6500 loss 0.0416
+[2026-09-29 19:27:20] [B3_bilstm_attn] ep 7 step 7000 loss 0.0968
+[2026-09-29 19:27:26] [B3_bilstm_attn] ep 7 step 7500 loss 0.0790
+[2026-09-29 19:27:32] [B3_bilstm_attn] epoch 7 train_loss=0.1015 val_loss=0.1416 val_acc=0.9516
+[2026-09-29 19:27:38] [B3_bilstm_attn] ep 8 step 500 loss 0.0793
+[2026-09-29 19:27:44] [B3_bilstm_attn] ep 8 step 1000 loss 0.0647
+[2026-09-29 19:27:50] [B3_bilstm_attn] ep 8 step 1500 loss 0.1144
+[2026-09-29 19:27:55] [B3_bilstm_attn] ep 8 step 2000 loss 0.1200
+[2026-09-29 19:28:01] [B3_bilstm_attn] ep 8 step 2500 loss 0.0647
+[2026-09-29 19:28:08] [B3_bilstm_attn] ep 8 step 3000 loss 0.0439
+[2026-09-29 19:28:13] [B3_bilstm_attn] ep 8 step 3500 loss 0.1631
+[2026-09-29 19:28:19] [B3_bilstm_attn] ep 8 step 4000 loss 0.0484
+[2026-09-29 19:28:26] [B3_bilstm_attn] ep 8 step 4500 loss 0.0894
+[2026-09-29 19:28:32] [B3_bilstm_attn] ep 8 step 5000 loss 0.0436
+[2026-09-29 19:28:37] [B3_bilstm_attn] ep 8 step 5500 loss 0.0860
+[2026-09-29 19:28:43] [B3_bilstm_attn] ep 8 step 6000 loss 0.0467
+[2026-09-29 19:28:50] [B3_bilstm_attn] ep 8 step 6500 loss 0.0442
+[2026-09-29 19:28:56] [B3_bilstm_attn] ep 8 step 7000 loss 0.0710
+[2026-09-29 19:29:01] [B3_bilstm_attn] ep 8 step 7500 loss 0.0836
+[2026-09-29 19:29:08] [B3_bilstm_attn] epoch 8 train_loss=0.0957 val_loss=0.1378 val_acc=0.9517
+[2026-09-29 19:29:08] [B3_bilstm_attn] best epoch 8 (val_loss 0.1378) -> task2_sentiment\member_nikhil\checkpoints\sentiment_nikhil_B_20260929-1913_B3_bilstm_attn.pt
+[2026-09-29 19:29:14] [B3_bilstm_attn] test: accuracy=0.9538 precision_macro=0.9539 recall_macro=0.9538 f1_macro=0.9538 precision_micro=0.9538 recall_micro=0.9538 f1_micro=0.9538 precision_weighted=0.9539 recall_weighted=0.9538 f1_weighted=0.9538 cm_tn=17935.0000 cm_fp=1065.0000 cm_fn=692.0000 cm_tp=18308.0000 roc_auc=0.9910 pr_auc=0.9911 mcc=0.9077 brier=0.0354 ece_15bin=0.0163 accuracy_ci95_low=0.9518 accuracy_ci95_high=0.9557 macro_f1_ci95_low=0.9518 macro_f1_ci95_high=0.9557 mcc_ci95_low=0.9038 mcc_ci95_high=0.9115
+[2026-09-29 19:29:14] mcnemar B1_baseline_lasttoken vs B2_cnn_k7: {'b_base_right_exp_wrong': 1112, 'c_base_wrong_exp_right': 12075, 'chi2_cc': 9112.417077424736, 'p_chi2': 0.0, 'p_exact': 0.0}
+[2026-09-29 19:29:14] mcnemar B1_baseline_lasttoken vs B3_bilstm_attn: {'b_base_right_exp_wrong': 811, 'c_base_wrong_exp_right': 12205, 'chi2_cc': 9972.3762292563, 'p_chi2': 0.0, 'p_exact': 0.0}
+[2026-09-29 19:29:14] strongest model by val macro-F1: B3_bilstm_attn; wrote 20 error candidates
+[2026-09-29 19:29:14] done in 964s: outputs -> task2_sentiment\member_nikhil\outputs\sentiment_nikhil_B_20260929-1913
