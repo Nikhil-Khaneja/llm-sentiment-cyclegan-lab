@@ -2,7 +2,9 @@
 `submission.csv` (ID, FID, MiFID). The official evaluation script was not provided, so this follows
 the competition's Evaluation text:
   FID   = Frechet distance between the generated-image Inception features and the reference Monet
-          statistics in real_stats.npz (mu_real, sigma_real).
+          statistics in real_stats.npz (mu_real, sigma_real). Features use the extractor that
+          reproduces those stats (see kaggle_inception), not the pytorch-fid weights that evaluate.py
+          uses for the report metrics, so the two FIDs are not directly comparable.
   MiFID = mean cosine distance between generated and real Monet features, both subsampled to the same
           size. Each generated image is compared with its nearest real image (min cosine distance).
           The all-pairs mean is also printed as a cross-check.
@@ -19,12 +21,13 @@ from pathlib import Path
 
 import numpy as np
 import torch
+import torch.nn.functional as F
+import torchvision
 from PIL import Image
 from scipy import linalg
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE / "src"))
-import evaluate as E  # noqa: E402  (reuses the fixed pytorch-fid InceptionV3 instrument)
 from runtime import REPO_ROOT, pick_device  # noqa: E402
 
 ap = argparse.ArgumentParser()
@@ -48,11 +51,23 @@ def load_images(path):
             yield Image.open(f).convert("RGB")
 
 
-def features(imgs, device, bs=64):
-    net, out, buf = E.InceptionFeatures(device), [], []
+def kaggle_inception(device):
+    """The extractor that reproduces real_stats.npz: torchvision ImageNet Inception-v3, fc removed,
+    bilinear resize to 299, mean=std=0.5 (checked: real Monet images give per-image cosine 0.9999 vs
+    feats_real). Fixed measuring instrument only, never used to generate images."""
+    m = torchvision.models.inception_v3(weights=torchvision.models.Inception_V3_Weights.IMAGENET1K_V1,
+                                        transform_input=False)
+    m.fc = torch.nn.Identity()
+    return m.to(device).eval()
+
+
+def features(imgs, device, bs=50):
+    net, out, buf = kaggle_inception(device), [], []
 
     def flush():
-        out.append(net(torch.stack(buf).to(device) * 2 - 1))  # net expects [-1, 1]
+        x = F.interpolate(torch.stack(buf).to(device), size=(299, 299), mode="bilinear", align_corners=False)
+        with torch.no_grad():
+            out.append(net((x - 0.5) / 0.5).cpu().double().numpy())
         buf.clear()
 
     for im in imgs:
