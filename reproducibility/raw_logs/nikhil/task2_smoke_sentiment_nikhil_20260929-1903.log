@@ -1,0 +1,33 @@
+[2026-09-29 19:03:22] run_id=smoke_sentiment_nikhil_20260929-1903 config=task2_sentiment\member_nikhil\src\configs\smoke.yaml device=cuda hardware=NVIDIA GeForce RTX 5090
+[2026-09-29 19:03:22] config: {"run_name": "smoke_sentiment_nikhil", "seed": 42, "device": "auto", "write_metrics_report": false, "log_every": 20, "eval_batch_size": 512, "bootstrap": 200, "data": {"raw_dir": "task2_sentiment/data", "processed_dir": "data_processed/smoke", "max_train_samples": 6000, "max_test_samples": 2000, "val_frac": 0.1, "vocab_size": 30000, "min_freq": 2, "max_len": 256, "stem": true, "keep_negations": true}, "models": [{"name": "A1_baseline_meanpool", "arch": "mean_pool", "params": {"emb_dim": 128, "dropout": 0.3}, "optim": {"name": "adam", "lr": 0.001, "batch_size": 128, "epochs": 1, "grad_clip": 5.0}}, {"name": "A2_cnn_k345", "arch": "cnn", "params": {"emb_dim": 128, "dropout": 0.4, "channels": 128, "kernel_sizes": [3, 4, 5]}, "optim": {"name": "adamw", "lr": 0.0005, "weight_decay": 0.01, "batch_size": 128, "epochs": 1, "grad_clip": 5.0}}, {"name": "A3_bigru", "arch": "bigru", "params": {"emb_dim": 128, "dropout": 0.3, "hidden": 128}, "optim": {"name": "adamw", "lr": 0.0005, "weight_decay": 0.01, "batch_size": 64, "epochs": 1, "grad_clip": 5.0}}]}
+[2026-09-29 19:03:43] eda: {"train": {"rows": 560000, "missing_text": 0, "empty_text": 0, "duplicate_text": 0, "class_counts": {"0": 280000, "1": 280000}, "positive_share": 0.5, "words_mean": 133.0288732142857, "words_median": 97.0, "words_p95": 372.0, "words_max": 1052}, "test": {"rows": 38000, "missing_text": 0, "empty_text": 0, "duplicate_text": 0, "class_counts": {"0": 19000, "1": 19000}, "positive_share": 0.5, "words_mean": 132.55863157894737, "words_median": 97.0, "words_p95": 367.0, "words_max": 1007}, "train_test_text_overlap": 0}
+[2026-09-29 19:03:43] train: dropped 0 missing/malformed/duplicate rows (560,000 left)
+[2026-09-29 19:03:43] test: dropped 0 missing/malformed/duplicate rows (38,000 left)
+[2026-09-29 19:03:43] cleaning 8,000 reviews (stem=True, keep_negations=True)
+[2026-09-29 19:03:44] vocab=9,063 (of 15,520 distinct train tokens); tokens/review mean=65.9 p95=184; truncating at max_len=256 (1.45% of reviews truncated)
+[2026-09-29 19:03:44] splits: {'train': 5400, 'val': 600, 'test': 2000} test_unk_rate=3.435%
+[2026-09-29 19:03:44] preprocessing took 21.8s
+[2026-09-29 19:03:45] [A1_baseline_meanpool] arch=mean_pool params=1,160,193 spec={"name": "A1_baseline_meanpool", "arch": "mean_pool", "params": {"emb_dim": 128, "dropout": 0.3}, "optim": {"name": "adam", "lr": 0.001, "batch_size": 128, "epochs": 1, "grad_clip": 5.0}}
+[2026-09-29 19:03:46] [A1_baseline_meanpool] ep 1 step 20 loss 0.6824
+[2026-09-29 19:03:46] [A1_baseline_meanpool] ep 1 step 40 loss 0.6849
+[2026-09-29 19:03:46] [A1_baseline_meanpool] epoch 1 train_loss=0.6812 val_loss=0.6620 val_acc=0.6883
+[2026-09-29 19:03:46] [A1_baseline_meanpool] best epoch 1 (val_loss 0.6620) -> task2_sentiment\member_nikhil\checkpoints\smoke_sentiment_nikhil_20260929-1903_A1_baseline_meanpool.pt
+[2026-09-29 19:03:46] [A1_baseline_meanpool] test: accuracy=0.6730 precision_macro=0.6790 recall_macro=0.6707 f1_macro=0.6683 precision_micro=0.6730 recall_micro=0.6730 f1_micro=0.6730 precision_weighted=0.6784 recall_weighted=0.6730 f1_weighted=0.6692 cm_tn=792.0000 cm_fp=230.0000 cm_fn=424.0000 cm_tp=554.0000 roc_auc=0.7389 pr_auc=0.7329 mcc=0.3496 brier=0.2361 ece_15bin=0.1439 accuracy_ci95_low=0.6515 accuracy_ci95_high=0.6940 macro_f1_ci95_low=0.6463 macro_f1_ci95_high=0.6898 mcc_ci95_low=0.3053 mcc_ci95_high=0.3924
+[2026-09-29 19:03:46] [A2_cnn_k345] arch=cnn params=1,357,441 spec={"name": "A2_cnn_k345", "arch": "cnn", "params": {"emb_dim": 128, "dropout": 0.4, "channels": 128, "kernel_sizes": [3, 4, 5]}, "optim": {"name": "adamw", "lr": 0.0005, "weight_decay": 0.01, "batch_size": 128, "epochs": 1, "grad_clip": 5.0}}
+[2026-09-29 19:03:46] [A2_cnn_k345] ep 1 step 20 loss 0.6984
+[2026-09-29 19:03:46] [A2_cnn_k345] ep 1 step 40 loss 0.5907
+[2026-09-29 19:03:46] [A2_cnn_k345] epoch 1 train_loss=0.7087 val_loss=0.5512 val_acc=0.7783
+[2026-09-29 19:03:46] [A2_cnn_k345] best epoch 1 (val_loss 0.5512) -> task2_sentiment\member_nikhil\checkpoints\smoke_sentiment_nikhil_20260929-1903_A2_cnn_k345.pt
+[2026-09-29 19:03:46] [A2_cnn_k345] test: accuracy=0.7585 precision_macro=0.7716 recall_macro=0.7560 f1_macro=0.7543 precision_micro=0.7585 recall_micro=0.7585 f1_micro=0.7585 precision_weighted=0.7704 recall_weighted=0.7585 f1_weighted=0.7550 cm_tn=890.0000 cm_fp=132.0000 cm_fn=351.0000 cm_tp=627.0000 roc_auc=0.8588 pr_auc=0.8471 mcc=0.5274 brier=0.1857 ece_15bin=0.1390 accuracy_ci95_low=0.7395 accuracy_ci95_high=0.7785 macro_f1_ci95_low=0.7356 macro_f1_ci95_high=0.7741 mcc_ci95_low=0.4924 mcc_ci95_high=0.5620
+[2026-09-29 19:03:46] [A3_bigru] arch=bigru params=1,358,465 spec={"name": "A3_bigru", "arch": "bigru", "params": {"emb_dim": 128, "dropout": 0.3, "hidden": 128}, "optim": {"name": "adamw", "lr": 0.0005, "weight_decay": 0.01, "batch_size": 64, "epochs": 1, "grad_clip": 5.0}}
+[2026-09-29 19:03:47] [A3_bigru] ep 1 step 20 loss 0.6814
+[2026-09-29 19:03:47] [A3_bigru] ep 1 step 40 loss 0.5789
+[2026-09-29 19:03:47] [A3_bigru] ep 1 step 60 loss 0.6581
+[2026-09-29 19:03:47] [A3_bigru] ep 1 step 80 loss 0.6049
+[2026-09-29 19:03:47] [A3_bigru] epoch 1 train_loss=0.6432 val_loss=0.5412 val_acc=0.7400
+[2026-09-29 19:03:48] [A3_bigru] best epoch 1 (val_loss 0.5412) -> task2_sentiment\member_nikhil\checkpoints\smoke_sentiment_nikhil_20260929-1903_A3_bigru.pt
+[2026-09-29 19:03:48] [A3_bigru] test: accuracy=0.7335 precision_macro=0.7433 recall_macro=0.7311 f1_macro=0.7294 precision_micro=0.7335 recall_micro=0.7335 f1_micro=0.7335 precision_weighted=0.7424 recall_weighted=0.7335 f1_weighted=0.7301 cm_tn=857.0000 cm_fp=165.0000 cm_fn=368.0000 cm_tp=610.0000 roc_auc=0.8188 pr_auc=0.8158 mcc=0.4743 brier=0.1838 ece_15bin=0.0688 accuracy_ci95_low=0.7135 accuracy_ci95_high=0.7510 macro_f1_ci95_low=0.7099 macro_f1_ci95_high=0.7473 mcc_ci95_low=0.4379 mcc_ci95_high=0.5093
+[2026-09-29 19:03:48] mcnemar A1_baseline_meanpool vs A2_cnn_k345: {'b_base_right_exp_wrong': 160, 'c_base_wrong_exp_right': 331, 'chi2_cc': 58.85947046843177, 'p_chi2': 1.6934472369152263e-14, 'p_exact': 9.131530783635803e-15}
+[2026-09-29 19:03:48] mcnemar A1_baseline_meanpool vs A3_bigru: {'b_base_right_exp_wrong': 258, 'c_base_wrong_exp_right': 379, 'chi2_cc': 22.60596546310832, 'p_chi2': 1.9886616826180463e-06, 'p_exact': 1.8589074238644994e-06}
+[2026-09-29 19:03:48] strongest model by val macro-F1: A2_cnn_k345; wrote 20 error candidates
+[2026-09-29 19:03:48] done in 26s: outputs -> task2_sentiment\member_nikhil\outputs\smoke_sentiment_nikhil_20260929-1903
