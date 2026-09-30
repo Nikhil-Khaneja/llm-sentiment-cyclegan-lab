@@ -69,7 +69,56 @@ class BiGRUClassifier(nn.Module):
         return self.fc(self.drop(pooled)).squeeze(-1)
 
 
-REGISTRY = {"mean_pool": MeanPoolClassifier, "cnn": MultiKernelCNN, "bigru": BiGRUClassifier}
+class LastTokenClassifier(nn.Module):
+    """Member B baseline: embedding -> embedding of the last real token -> linear.
+
+    Reviews are right-padded, so the last real token sits at index length-1. There is no context
+    mixing at all, so this is a deliberately weak baseline (it only sees the review's final word).
+    """
+
+    def __init__(self, vocab_size, emb_dim, dropout, **_):
+        super().__init__()
+        self.emb = nn.Embedding(vocab_size, emb_dim, padding_idx=0)
+        self.drop = nn.Dropout(dropout)
+        self.fc = nn.Linear(emb_dim, 1)
+
+    def forward(self, x, lengths):
+        last = x.gather(1, (lengths.to(x.device) - 1).unsqueeze(1).long()).squeeze(1)  # [B]
+        return self.fc(self.drop(self.emb(last))).squeeze(-1)
+
+
+class BiLSTMAttnClassifier(nn.Module):
+    """Member B experiment: embedding -> 1-layer BiLSTM -> learned attention pooling -> linear.
+
+    Attention: score_t = v . tanh(W h_t), softmax over real tokens only (padding masked to -inf),
+    pooled = sum_t alpha_t h_t.
+    """
+
+    def __init__(self, vocab_size, emb_dim, dropout, hidden, attn_dim=None, **_):
+        super().__init__()
+        attn_dim = attn_dim or 2 * hidden
+        self.emb = nn.Embedding(vocab_size, emb_dim, padding_idx=0)
+        self.emb_drop = nn.Dropout(dropout)
+        self.lstm = nn.LSTM(emb_dim, hidden, num_layers=1, batch_first=True, bidirectional=True)
+        self.attn_proj = nn.Linear(2 * hidden, attn_dim)
+        self.attn_v = nn.Linear(attn_dim, 1, bias=False)
+        self.drop = nn.Dropout(dropout)
+        self.fc = nn.Linear(2 * hidden, 1)
+
+    def forward(self, x, lengths):
+        e = self.emb_drop(self.emb(x))
+        packed = nn.utils.rnn.pack_padded_sequence(e, lengths.cpu(), batch_first=True, enforce_sorted=False)
+        out, _ = self.lstm(packed)
+        h, _ = nn.utils.rnn.pad_packed_sequence(out, batch_first=True, total_length=x.size(1))  # [B, T, 2H]
+        scores = self.attn_v(torch.tanh(self.attn_proj(h))).squeeze(-1)                          # [B, T]
+        scores = scores.masked_fill(x == 0, float("-inf"))
+        alpha = torch.softmax(scores, dim=1).unsqueeze(-1)                                       # [B, T, 1]
+        pooled = (alpha * h).sum(1)
+        return self.fc(self.drop(pooled)).squeeze(-1)
+
+
+REGISTRY = {"mean_pool": MeanPoolClassifier, "cnn": MultiKernelCNN, "bigru": BiGRUClassifier,
+            "last_token": LastTokenClassifier, "bilstm_attn": BiLSTMAttnClassifier}
 
 
 def build(spec, vocab_size):
