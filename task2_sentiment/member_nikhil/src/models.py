@@ -111,7 +111,10 @@ class BiLSTMAttnClassifier(nn.Module):
         out, _ = self.lstm(packed)
         h, _ = nn.utils.rnn.pad_packed_sequence(out, batch_first=True, total_length=x.size(1))  # [B, T, 2H]
         scores = self.attn_v(torch.tanh(self.attn_proj(h))).squeeze(-1)                          # [B, T]
-        scores = scores.masked_fill(x == 0, float("-inf"))
+        # mask by length, not by pad id: a review that cleans to zero tokens has length 1 (one <pad>),
+        # and masking on x == 0 would leave no real position -> softmax over all -inf -> NaN
+        pad = torch.arange(x.size(1), device=x.device)[None, :] >= lengths.to(x.device)[:, None]
+        scores = scores.masked_fill(pad, float("-inf"))
         alpha = torch.softmax(scores, dim=1).unsqueeze(-1)                                       # [B, T, 1]
         pooled = (alpha * h).sum(1)
         return self.fc(self.drop(pooled)).squeeze(-1)
