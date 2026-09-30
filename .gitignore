@@ -29,3 +29,5 @@ venv/
 */member_*/checkpoints/smoke_*
 */member_*/data_processed/smoke/
 */member_*/checkpoints/quick_*
+task3_gan/data/*.zip
+task3_gan/data/real_stats.npz
