@@ -1,0 +1,8 @@
+{
+  "train_time_sec": 13.32215391699998,
+  "train_images_per_sec": 19.282519554990955,
+  "nan_inf_steps": 0,
+  "peak_gpu_memory_allocated_mb_train": 10484.43017578125,
+  "peak_gpu_memory_reserved_mb_train": 10796.0,
+  "peak_process_ram_mb": 1948.56640625
+}

@@ -34,7 +34,7 @@ Raw logs are in `reproducibility/raw_logs/task3_gan_anushka/` and are unedited. 
 
 - `task3_gan/data/monet_jpg/` (300 images) and `task3_gan/data/photo_jpg/` (7,038 images), 256x256 JPEG. Not committed; unzip the course `dataset.zip` so that these two folders exist.
 - Split: photos are shuffled with seed 3963 and 1,000 are held out for evaluation (listed in `outputs/<run>/photo_holdout_files.txt`). All 300 Monet paintings are used for training.
-- Preprocessing: training images are resized to 143x143, then randomly cropped to 128x128 and randomly flipped at every step. Evaluation images are resized to 128x128.
+- Preprocessing: training images are resized to 286x286, then randomly cropped to 256x256 and randomly flipped at every step. Evaluation images are used at 256x256, the native size of the dataset.
 
 ## How to reproduce
 
