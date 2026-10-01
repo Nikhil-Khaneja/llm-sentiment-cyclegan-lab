@@ -1,0 +1,43 @@
+# Task 1 — Nikhil's GPT (Two-Member Model Plan / Member B): 2 blocks x 8 heads.
+run_name: gpt_nikhil_2L8H_B
+seed: 1337
+device: auto            # auto = cuda > mps > cpu
+write_metrics_report: true   # copy final metrics to member_nikhil/metrics_report.csv
+
+data:
+  raw_path: task1_llm/data/tinystories_raw.txt   # from task1_llm/data/download_tinystories.py
+  processed_dir: data_processed
+  block_size: 128        # characters of context
+  n_train: 100000        # training sequences
+  n_val: 10000           # validation sequences
+  val_story_frac: 0.1    # stories held out for validation before chunking
+
+model:
+  d_model: 256
+  n_heads: 8             # head_dim = 32
+  n_layers: 2
+  d_ff: 1024
+  dropout: 0.10
+
+train:
+  batch_size: 64
+  eval_batch_size: 256
+  epochs: 12
+  lr: 2.5e-4
+  min_lr: 1.0e-5
+  warmup_steps: 500
+  weight_decay: 0.01
+  grad_clip: 1.0
+  spike_ratio: 1.3
+  log_every: 100
+
+generate:
+  max_new_tokens: 400
+  temperature: 0.9
+  samples_per_prompt: 3   # plus one greedy sample per prompt
+  prompts:
+    - "Once upon a time, there was a little girl named"
+    - "Tom and his dog went to the park. "
+    - "One day, a big bear"
+    - "The sun was hot and"
+    - "Lily wanted to"

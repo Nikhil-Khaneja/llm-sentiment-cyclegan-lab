@@ -3,7 +3,6 @@ import json
 import os
 import platform
 import random
-import resource
 import subprocess
 import sys
 import time
@@ -12,6 +11,11 @@ from pathlib import Path
 
 import numpy as np
 import torch
+
+try:  # POSIX only; Windows falls back to psutil
+    import resource
+except ImportError:
+    resource = None
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
 
@@ -76,8 +80,12 @@ class PeakMemory:
 
     def report_mb(self):
         self.sample()
-        rss = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
-        rss_mb = rss / 2**20 if sys.platform == "darwin" else rss / 2**10  # bytes on macOS, KB on Linux
+        if resource is not None:
+            rss = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+            rss_mb = rss / 2**20 if sys.platform == "darwin" else rss / 2**10  # bytes on macOS, KB on Linux
+        else:
+            import psutil  # peak working set on Windows
+            rss_mb = psutil.Process().memory_info().peak_wset / 2**20
         return {"peak_accelerator_mem_mb": round(self.peak_accel / 2**20, 1), "peak_process_rss_mb": round(rss_mb, 1)}
 
 

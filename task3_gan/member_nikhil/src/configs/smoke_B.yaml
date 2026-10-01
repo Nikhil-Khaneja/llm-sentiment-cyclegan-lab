@@ -1,0 +1,47 @@
+# SMOKE TEST — same networks as cyclegan_nikhil.yaml on 24 images per domain, 2 epochs.
+run_name: smoke_cyclegan_nikhil_B
+seed: 7
+device: auto
+write_metrics_report: false
+log_every: 5
+
+data:
+  root: task3_gan/data       # see task3_gan/data/README.md
+  monet_dir: monet_jpg       # domain A
+  photo_dir: photo_jpg       # domain B
+  image_size: 128            # training crop
+  load_size: 143             # resize before random crop (same 1.12 ratio as 286 -> 256 in the paper)
+  monet_holdout: 0           # only ~300 Monets: all used for training; Monet->Photo eval uses them too
+  photo_holdout: 8
+  epoch_size: null           # null = size of the larger training domain (photos)
+  max_images: 24
+
+model:
+  ngf: 32                    # generator base channels
+  n_blocks: 9                # residual blocks
+  ndf: 64                    # discriminator base channels
+
+train:
+  batch_size: 1
+  num_workers: 0
+  lr: 2.0e-4
+  betas: [0.5, 0.999]
+  epochs_constant: 1
+  epochs_decay: 1
+  lambda_cycle: 10
+  lambda_identity: 5
+  pool_size: 50              # history of generated images shown to the discriminators
+  checkpoint_every: 1
+
+eval:
+  batch_size: 32
+  kid_subset_size: 8
+  prdc_k: 3
+  audit_samples: 6
+  save_predictions: false
+  make_submission: true
+
+submission:                  # Photo -> Monet on ALL photos, direct generator output
+  infer_size: 256            # the generator is fully convolutional; run it at Kaggle resolution
+  output_size: 256
+  zip_name: smoke_images.zip
