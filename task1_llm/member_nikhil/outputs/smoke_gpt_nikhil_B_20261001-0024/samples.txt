@@ -1,0 +1,32 @@
+===== [greedy] prompt: 'Once upon a time, there was a little girl named'
+Once upon a time, there was a little girl named the the the the the the the the the the the the the the the
+
+===== [temperature=0.9] prompt: 'Once upon a time, there was a little girl named'
+Once upon a time, there was a little girl namedishe: fe ing x lo an teheLuwaIowin tzherut witRhelin' hery g
+
+===== [greedy] prompt: 'Tom and his dog went to the park. '
+Tom and his dog went to the park. the the the the the the the the the the the the the the the 
+
+===== [temperature=0.9] prompt: 'Tom and his dog went to the park. '
+Tom and his dog went to the park. Xnoud the PphemeTthoy lsig itpe atyHe nyhermicwed.t onltig
+i
+
+===== [greedy] prompt: 'One day, a big bear'
+One day, a big bear the the the the the the the the the the the the the the the
+
+===== [temperature=0.9] prompt: 'One day, a big bear'
+One day, a big bear2 s bnd g6 and doul. le toniIs tg tiil. AwhVan. oouson 6re t
+
+===== [greedy] prompt: 'The sun was hot and'
+The sun was hot and the the the the the the the the the the the the the the the
+
+===== [temperature=0.9] prompt: 'The sun was hot and'
+The sun was hot and wecKanois tiuhk YalelpB the"Pare nst
++oetl I uis jhe m5d n3
+
+===== [greedy] prompt: 'Lily wanted to'
+Lily wanted to t the the the the the the the the the the the the the the t
+
+===== [temperature=0.9] prompt: 'Lily wanted to'
+Lily wanted ton tX;astWonds ann celeZance the Uokimiuir nired: f tos?unn. 
+
