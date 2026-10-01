@@ -1,0 +1,34 @@
+{
+  "member": "anushka",
+  "task": "task3_gan",
+  "run_id": "20261001_222504",
+  "run_kind": "smoke",
+  "python": "3.11.13 | packaged by conda-forge | (main, Jun  4 2025, 14:48:23) [GCC 13.3.0]",
+  "platform": "Linux-6.18.40.1-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+  "torch": "2.8.0+cu128",
+  "cuda": "12.8",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "cpu": "AMD Ryzen 9 7950X 16-Core Processor",
+  "seed": 3963,
+  "config_file": "task3_gan/member_anushka/src/config.json",
+  "run_config": "task3_gan/member_anushka/outputs/smoke_run_20261001_222504/config.json",
+  "environment": [
+    "task3_gan/member_anushka/src/Dockerfile",
+    "task3_gan/member_anushka/outputs/smoke_run_20261001_222504/task3_gan_anushka_requirements.txt"
+  ],
+  "raw_log": "reproducibility/raw_logs/task3_gan_anushka/smoke_training_log_20261001_222504.txt",
+  "outputs_dir": "task3_gan/member_anushka/outputs/smoke_run_20261001_222504",
+  "checkpoint_to_results": {
+    "task3_gan/member_anushka/outputs/smoke_run_20261001_222504/checkpoints/cyclegan_20261001_222504_epoch002.pt": [
+      "task3_gan/member_anushka/outputs/smoke_run_20261001_222504/full_metrics_report.csv",
+      "task3_gan/member_anushka/outputs/smoke_run_20261001_222504/submission.csv",
+      "task3_gan/member_anushka/outputs/smoke_run_20261001_222504/pred_A2B",
+      "task3_gan/member_anushka/outputs/smoke_run_20261001_222504/pred_B2A"
+    ]
+  },
+  "generators_only_file": "task3_gan/member_anushka/outputs/smoke_run_20261001_222504/checkpoints/generators_20261001_222504_epoch002.pt",
+  "intermediate_checkpoints": [
+    "task3_gan/member_anushka/outputs/smoke_run_20261001_222504/checkpoints/cyclegan_20261001_222504_epoch001.pt",
+    "task3_gan/member_anushka/outputs/smoke_run_20261001_222504/checkpoints/cyclegan_20261001_222504_epoch002.pt"
+  ]
+}

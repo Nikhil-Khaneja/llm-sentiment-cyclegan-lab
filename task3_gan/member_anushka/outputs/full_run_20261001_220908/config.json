@@ -10,9 +10,11 @@
   "lambda_cycle": 10.0,
   "lambda_identity": 5.0,
   "learning_rate": 0.0002,
-  "adam_betas": [0.5, 0.999],
+  "adam_betas": [
+    0.5,
+    0.999
+  ],
   "batch_size": 1,
-  "torch_compile": true,
   "epochs_constant_lr": 25,
   "epochs_linear_decay": 25,
   "image_pool_size": 50,
