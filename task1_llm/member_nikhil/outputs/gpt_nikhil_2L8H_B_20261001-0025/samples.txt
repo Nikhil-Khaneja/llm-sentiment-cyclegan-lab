@@ -1,0 +1,107 @@
+===== [greedy] prompt: 'Once upon a time, there was a little girl named'
+Once upon a time, there was a little girl named Lily. She loved to play outside in the park. One day, she went to the park with her mommy and daddy. Lily was so happy that she had to be careful with her friends.
+The little girl was so happy that she had to be a good friend. She was so happy that she could help her mom find her toys and they were so happy.
+The little girl was so happy that she had to be careful with her friends. She was so happ
+
+===== [temperature=0.9] prompt: 'Once upon a time, there was a little girl named'
+Once upon a time, there was a little girl named Lucy. She loved to play with her toys and told herself to others on the wave and the shiny flowers. Sometimes they both started to feel the park. They wait for the family, but it was not for the bush.
+But then, they see a book or a special car and played with their toys. The tiger sprayed and had their corn feathers. Some day, the flowers comfortable peared a big, lightning displaying his room. C
+
+===== [temperature=0.9] prompt: 'Once upon a time, there was a little girl named'
+Once upon a time, there was a little girl named Lily. She loved to play outside and show everywhere her that she would do not see.
+They solved her mom and dad followed her. The end.
+But no one day, just knew that all her mom said in the valuable. When she got home, she opened the door and saw a tunnel. As she looked around, the tree back.
+One day they saw a big rare and wanted to do some paper. The brave light his friend said, "See, let's stan
+
+===== [temperature=0.9] prompt: 'Once upon a time, there was a little girl named'
+Once upon a time, there was a little girl named Lily. She was very happy and she would come in a big, she went to the park to poke. She would have fun something special and they could hurt it.
+Once upon a time, there was a bridge named Bob liked to see the bunny. One day, the firework was a star that sunflower pictures. It had a pile of fur, there was an empty lamp. The family was so excited! She had a lot of fun and a chair to enjoy.
+"Can I p
+
+===== [greedy] prompt: 'Tom and his dog went to the park. '
+Tom and his dog went to the park. They saw a big box of cars and started to cry. They were so happy to have fun. They were happy and they were happy.
+The little girl was so happy that she had to be careful with her friends. She was so happy that she could have a big smile on her face.
+The little girl was so happy that she had to be a good friend. She was so happy that she could help her mom find her toys and they were so happy.
+Th
+
+===== [temperature=0.9] prompt: 'Tom and his dog went to the park. '
+Tom and his dog went to the park. They asked Dad him what he could help him. 
+One day, the bear spent sparkled him or tear her a bin. It was cold and told her them when we can go home and play.
+Lily put on her bike, and her little boy caught her and said, "Stop! Lily and Tom is scared. Thank you. We should also see?"
+In the end, the cat was full of hiding stop and making so it was weak away and wanted something special. They playe
+
+===== [temperature=0.9] prompt: 'Tom and his dog went to the park. '
+Tom and his dog went to the park. They found a big house when they saw a big dog chair. The lion children and picked up the cat and ran away with him.
+They were happy. They hugged and said thank you for their food. They were surprised everyone all the painter went to the park.
+Anna and Ben were playing in the park. They liked to play with many trees. They learned that it's important to be good things up and spread it. They don't w
+
+===== [temperature=0.9] prompt: 'Tom and his dog went to the park. '
+Tom and his dog went to the park. Tom was so big and sad and sorry. He told his mom it was so proud. Tom was sad and sad.
+The bear had a lot of friends. He had a big tree with a hat lot of fun he had. It had a very special peeking. They were so proud of himself for paper and promised to never give up him back.
+Once upon a time, there was a little girl named Lily. She loved to play with her toys and never wanted to go on an adventu
+
+===== [greedy] prompt: 'One day, a big bear'
+One day, a big bear came to visit him. He was so happy that he had to be careful with his friends.
+The little girl was so happy that she had to be a good friend. She was so happy that she could help her mom find her toys and they were so happy.
+The little girl was so happy that she had to be careful with her friends. She was so happy that she could have a big smile on her face.
+The little girl was so happy that she 
+
+===== [temperature=0.9] prompt: 'One day, a big bear'
+One day, a big bear walk in the garden with many scissors.
+Once upon a time, there was a little girl named Lucy. She loved to play outside in the sky. Every day, she would be mad, and discovered her car. She loved the chicken friends liked to see if they wanted to explore.
+Then, Pelie skipped and grabbed the water had made his spotted something idea. "Please, you have to be careful with you?"
+The bird thanked the be
+
+===== [temperature=0.9] prompt: 'One day, a big bear'
+One day, a big bear started to walk and closed him, "Why are you so good."
+Once upon a time, there was a little girl named Lily. She loved to play outside in the sun with her friends. One day, Lily's friend Ben, Max" waved goodbye and said, "I love you, Max."
+Her mom said, "I know you can give me you okay?" From that day on, Tom and his mom came across a princess to each other and said, "Sorry, I have a big mess! Le
+
+===== [temperature=0.9] prompt: 'One day, a big bear'
+One day, a big bear felt like him like to play with. You can go." So, he realized that he wanted to eat them, but he was not knowing he should not touch it. The house was very happy.
+"No, what is a gem?" asks Lily thought of a funny noise.
+One day, Lily took a bath and said "Thank you, Mom. You are happy. I want to be your friend. You could not find this idea."
+She smiled and followed her. The animal smiled and said
+
+===== [greedy] prompt: 'The sun was hot and'
+The sun was hot and said, "I want to share you too, but I want to share you too. I will be friends."
+The little girl was so happy that she had to be careful with her friends. She was so happy that she could have a big smile on her face.
+The little girl was so happy that she had to be a good friend. She was so happy that she could help her mom find her toys and they were so happy.
+The little girl was so happy that sh
+
+===== [temperature=0.9] prompt: 'The sun was hot and'
+The sun was hot and Mia had a great day. The blue happily early had so much fun twins which. The little bird filled with their balls and people each other.
+Sunny was so happy that she had a great friend. She was happy that made her tall of her work everything about her, so she could not excite the park.
+The little girl was so excited! She wanted to be too strong and hungry. She picked up the birds to Danny with her 
+
+===== [temperature=0.9] prompt: 'The sun was hot and'
+The sun was hot and shiny bright clay with green colourful colors. The snake was so happy to read it was this tools and up to them.
+"Let's eat," he said. Her mom said, "It's asked my sweeteeter if you wanted to have a passroom. It was the jug and smiled and laughed. Clara loved her the park and danced to leave it in the park.
+Lily and Ben were scared and asked. They hugged her friends about the girl's snack. They ha
+
+===== [temperature=0.9] prompt: 'The sun was hot and'
+The sun was hot and hudged the price were still playing.
+Lily's mom hugged her and said, "Ouch, it's enough, mommy! We can understand makes people and scared, never doesn't like them. But something with my wings. It made a loud snowman. The roof had to make his apple of makeup and ran incredible to them to do. The boat was very proud of himself. It had treasure to play with many colors. She was so surprised, so she 
+
+===== [greedy] prompt: 'Lily wanted to'
+Lily wanted to play with her toys and her friends. She was so happy that she could have a big smile on her face.
+The little girl was so happy that she had to be a good friend. She was so happy that she could help her mom find her toys and they were so happy.
+The little girl was so happy that she had to be careful with her friends. She was so happy that she could have a big smile on her face.
+The little girl was
+
+===== [temperature=0.9] prompt: 'Lily wanted to'
+Lily wanted to see what he was wrong. He jumped into the room and shakes and sounds. So, they saw a box and put it in the sky, watching store about the barber.
+Sam was so excited to serve the water too tired. He ran to his parents and began to hurt him. He smiled and said that they could not find it.
+One day, as they went to the park walked home. He had a branch and a hidden on it. He was so excited!
+Once upon 
+
+===== [temperature=0.9] prompt: 'Lily wanted to'
+Lily wanted to play with her toys of cheese with animals and her words. Everyone stopped from the birds, and they both have to see the sneezers around.
+The bird splashed with it everyone milked. But he wanted to eat tomorrow it. He walked down the street and the new friends. They made their moms and said, "Oh no!" Sam says.
+Lily talked to the tree and saw a big look. She saw that the wodd she had found the mill
+
+===== [temperature=0.9] prompt: 'Lily wanted to'
+Lily wanted to see what she did. They had many blocks and fun. They did not know what happened! They always took some juice out of them and fell over to do something wonderful time they were alone.
+"Ben, what an end of can use the words and saved goodbye to the things?" she asked.
+One day, Ben decided to try it away and sad. He did not mean to your mom. He was trying to have a good day. He wanted to play with h
+
