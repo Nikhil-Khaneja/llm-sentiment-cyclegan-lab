@@ -1,0 +1,14 @@
+{
+ "parameter_count": {
+  "G_AB": 2850563,
+  "G_BA": 2850563,
+  "D_A": 2764737,
+  "D_B": 2764737
+ },
+ "train_time_sec": 5.507230799994431,
+ "nan_inf_steps": 0,
+ "train_images_per_sec": 17.86723372480639,
+ "peak_accelerator_mem_mb": 463.3,
+ "peak_process_rss_mb": 1480.2,
+ "hardware": "NVIDIA GeForce RTX 5090"
+}
