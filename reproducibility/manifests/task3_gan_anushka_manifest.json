@@ -1,0 +1,42 @@
+{
+  "member": "anushka",
+  "task": "task3_gan",
+  "run_id": "20261001_222745",
+  "run_kind": "full",
+  "python": "3.11.13 | packaged by conda-forge | (main, Jun  4 2025, 14:48:23) [GCC 13.3.0]",
+  "platform": "Linux-6.18.40.1-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+  "torch": "2.8.0+cu128",
+  "cuda": "12.8",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "cpu": "AMD Ryzen 9 7950X 16-Core Processor",
+  "seed": 3963,
+  "config_file": "task3_gan/member_anushka/src/config.json",
+  "run_config": "task3_gan/member_anushka/outputs/full_run_20261001_222745/config.json",
+  "environment": [
+    "task3_gan/member_anushka/src/Dockerfile",
+    "reproducibility/manifests/task3_gan_anushka_requirements.txt"
+  ],
+  "raw_log": "reproducibility/raw_logs/task3_gan_anushka/full_training_log_20261001_222745.txt",
+  "outputs_dir": "task3_gan/member_anushka/outputs/full_run_20261001_222745",
+  "checkpoint_to_results": {
+    "task3_gan/member_anushka/checkpoints/cyclegan_20261001_222745_epoch050.pt": [
+      "task3_gan/member_anushka/full_metrics_report.csv",
+      "task3_gan/member_anushka/submission.csv",
+      "task3_gan/member_anushka/outputs/pred_A2B",
+      "task3_gan/member_anushka/outputs/pred_B2A"
+    ]
+  },
+  "generators_only_file": "task3_gan/member_anushka/checkpoints/generators_20261001_222745_epoch050.pt",
+  "intermediate_checkpoints": [
+    "task3_gan/member_anushka/checkpoints/cyclegan_20261001_222745_epoch005.pt",
+    "task3_gan/member_anushka/checkpoints/cyclegan_20261001_222745_epoch010.pt",
+    "task3_gan/member_anushka/checkpoints/cyclegan_20261001_222745_epoch015.pt",
+    "task3_gan/member_anushka/checkpoints/cyclegan_20261001_222745_epoch020.pt",
+    "task3_gan/member_anushka/checkpoints/cyclegan_20261001_222745_epoch025.pt",
+    "task3_gan/member_anushka/checkpoints/cyclegan_20261001_222745_epoch030.pt",
+    "task3_gan/member_anushka/checkpoints/cyclegan_20261001_222745_epoch035.pt",
+    "task3_gan/member_anushka/checkpoints/cyclegan_20261001_222745_epoch040.pt",
+    "task3_gan/member_anushka/checkpoints/cyclegan_20261001_222745_epoch045.pt",
+    "task3_gan/member_anushka/checkpoints/cyclegan_20261001_222745_epoch050.pt"
+  ]
+}
