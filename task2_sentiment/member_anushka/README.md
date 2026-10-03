@@ -1,8 +1,8 @@
-# DATA266 Lab 1 — Part 2
+# DATA266 Lab 1 — Task 2
 
 ## Yelp Polarity Sentiment Classification
 
-This project implements and evaluates three binary sentiment classifiers for the Yelp Polarity dataset. All textual embeddings are learned from scratch; no pretrained embeddings or pretrained language models are used.
+This folder contains Anushka’s Task 2 implementation for binary sentiment classification on the Yelp Polarity dataset. Three models were trained independently using PyTorch. All embeddings were learned from scratch, with no pretrained embeddings or pretrained language models.
 
 ## Models
 
@@ -12,7 +12,7 @@ This project implements and evaluates three binary sentiment classifiers for the
 
 ## Dataset and preprocessing
 
-The experiment uses the `fancyzhx/yelp_polarity` dataset:
+The experiment uses `fancyzhx/yelp_polarity`. The original training data was divided into stratified training and validation splits, while the original test split was retained for final evaluation.
 
 | Split | Examples | Class 0 | Class 1 |
 |---|---:|---:|---:|
@@ -20,35 +20,36 @@ The experiment uses the `fancyzhx/yelp_polarity` dataset:
 | Validation | 56,000 | 28,000 | 28,000 |
 | Test | 38,000 | 19,000 | 19,000 |
 
-Reviews are lowercased, punctuation and special characters are removed, selected stopwords are removed, and the text is tokenized. The vocabulary is learned from the training split only and limited to 30,000 tokens. Sequences are padded or truncated to 200 tokens.
+Reviews were lowercased, punctuation and special characters were removed, selected stopwords were removed, and the cleaned text was tokenized. The vocabulary was learned from the training split only and capped at 30,000 tokens. Sequences were padded or truncated to 200 tokens.
 
-## Configuration
+## Configuration and hardware
 
-- Seed: `3963`
-- Device: Tesla T4 GPU using CUDA
+- Runtime: Google Colab
+- GPU: Tesla T4
+- Random seed: `3963`
 - Batch size: `64`
 - Epochs: `10`
 - Embedding dimension: `128`
 - Dropout: `0.30`
 - Optimizer: AdamW
 - Baseline learning rate: `0.001`
-- Experimental learning rate: `0.0005`
+- Experimental-model learning rate: `0.0005`
 - Weight decay: `0.0001`
 
-## Main results
+## Test results
 
-| Model | Accuracy | Macro-F1 | Training time (sec) | Peak GPU memory (MB) |
-|---|---:|---:|---:|---:|
-| Baseline | 0.9350 | 0.9350 | 488.15 | 90.76 |
-| CNN | 0.9407 | 0.9407 | 882.22 | 198.65 |
-| BiGRU | 0.9476 | 0.9476 | 828.05 | 355.36 |
+| Model | Accuracy | Macro-F1 | ROC-AUC | PR-AUC | MCC | Training time (sec) | Peak GPU memory (MB) |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Baseline | 0.9350 | 0.9350 | 0.9813 | 0.9812 | 0.8701 | 465.62 | 90.76 |
+| CNN | 0.9426 | 0.9426 | 0.9856 | 0.9846 | 0.8851 | 888.58 | 198.65 |
+| BiGRU | 0.9476 | 0.9476 | 0.9865 | 0.9862 | 0.8953 | 843.36 | 355.36 |
 
-The BiGRU achieved the strongest overall test performance and was selected as the strongest model for error-review generation. The long-review slice was the weakest robustness slice for all models, primarily because sequences longer than 200 tokens are truncated.
+The BiGRU achieved the strongest overall performance and was selected for the required 20-example error review.
 
-## Generated artifacts
+## Task 2 folder contents
 
 ```text
-Part2/
+task2_sentiment/member_anushka/
 ├── src/
 │   ├── Part2_MemberA_Yelp_Sentiment.ipynb
 │   ├── config.json
@@ -62,27 +63,49 @@ Part2/
 │   ├── cnn_training_log.txt
 │   └── bigru_training_log.txt
 ├── outputs/
-│   ├── data_analysis.csv
-│   ├── data_distribution.png
 │   ├── metrics_report.csv
 │   ├── mcnemar_tests.csv
 │   ├── slice_robustness.csv
+│   ├── error_review_20.csv
 │   ├── error_review_20_template.csv
-│   ├── baseline_evaluation.png
-│   ├── cnn_evaluation.png
-│   └── bigru_evaluation.png
+│   ├── data_analysis.csv
+│   ├── data_distribution.png
+│   └── evaluation plots
 ├── metrics_report.csv
-├── README.md
 ├── results.md
 └── failure_analysis.md
 ```
 
-## Reproducibility
+## Repository-level reproducibility artifacts
 
-Run the notebook from the first cell after selecting a CUDA GPU. Set `RUN_FULL_TRAINING = True`, confirm that Cell 4 reports `Device: cuda` and `GPU: Tesla T4`, and preserve the generated logs and checkpoints as the evidence trail for the experiment.
+The shared reproducibility artifacts are stored at the repository root, as required by the team repository structure:
+
+```text
+reproducibility/
+├── manifests/
+│   ├── task2_sentiment_anushka_manifest.json
+│   └── task2_sentiment_anushka_requirements.txt
+└── raw_logs/
+    └── task2_sentiment_anushka/
+        ├── baseline_training_log.txt
+        ├── cnn_training_log.txt
+        └── bigru_training_log.txt
+```
+
+The manifest maps the executed notebook, configuration, checkpoints, metrics, and raw logs. The raw logs are retained as evidence from the three model runs. The detailed metrics table is available at both `task2_sentiment/member_anushka/metrics_report.csv` and `outputs/metrics_report.csv`.
+
+## Error review
+
+`outputs/error_review_20.csv` contains the selected 20 model errors required by the assignment:
+
+- 5 confident false positives
+- 5 confident false negatives
+- 5 near-threshold errors
+- 5 slice-specific failures
+
+The columns `reviewed_error_type`, `observation`, and `testable_fix` must be completed after manually inspecting the selected review text.
 
 ## Documentation
 
-- `results.md` summarizes preprocessing, architecture, metrics, statistical comparisons, and robustness results.
-- `failure_analysis.md` discusses overfitting, model-specific weaknesses, and review-length failures.
-- `AI_use.md` documents the technical role of AI assistance and the academic-integrity boundary.
+- `results.md` documents preprocessing, architectures, hyperparameters, metrics, statistical tests, hardware, and robustness results.
+- `failure_analysis.md` documents overfitting, model-specific weaknesses, review-length failures, and testable improvements.
