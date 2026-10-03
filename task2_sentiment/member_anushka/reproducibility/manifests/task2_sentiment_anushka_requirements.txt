@@ -1,0 +1,12 @@
+# Packages explicitly installed by the executed Task 2 notebook.
+datasets
+scikit-learn
+scipy
+statsmodels
+nltk
+tqdm
+matplotlib
+pandas
+
+# PyTorch was preinstalled in the Google Colab runtime.
+torch

@@ -1,0 +1,23 @@
+{
+  "member": "anushka",
+  "task": "task2_sentiment",
+  "run_kind": "full",
+  "runtime": "Google Colab",
+  "gpu": "Tesla T4",
+  "seed": 3963,
+  "dataset": "fancyzhx/yelp_polarity",
+  "config_file": "task2_sentiment/member_anushka/src/config.json",
+  "source_notebook": "task2_sentiment/member_anushka/src/Part2_MemberA_Yelp_Sentiment.ipynb",
+  "raw_logs": [
+    "reproducibility/raw_logs/task2_sentiment_anushka/baseline_training_log.txt",
+    "reproducibility/raw_logs/task2_sentiment_anushka/cnn_training_log.txt",
+    "reproducibility/raw_logs/task2_sentiment_anushka/bigru_training_log.txt"
+  ],
+  "checkpoints": {
+    "baseline": "task2_sentiment/member_anushka/checkpoints/baseline.pt",
+    "cnn": "task2_sentiment/member_anushka/checkpoints/cnn.pt",
+    "bigru": "task2_sentiment/member_anushka/checkpoints/bigru.pt"
+  },
+  "metrics": "task2_sentiment/member_anushka/metrics_report.csv",
+  "note": "Python and package versions were not printed by the executed notebook; requirements lists the packages explicitly installed by its first cell."
+}

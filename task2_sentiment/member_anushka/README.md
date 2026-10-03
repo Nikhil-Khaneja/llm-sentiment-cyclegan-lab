@@ -49,15 +49,14 @@ The BiGRU achieved the strongest overall test performance and was selected as th
 
 ```text
 Part2/
-├── notebooks/
-│   └── Part2_MemberA_Yelp_Sentiment.ipynb
+├── src/
+│   ├── Part2_MemberA_Yelp_Sentiment.ipynb
+│   ├── config.json
+│   └── vocabulary.json
 ├── checkpoints/
 │   ├── baseline.pt
 │   ├── cnn.pt
 │   └── bigru.pt
-├── configs/
-│   ├── config.json
-│   └── vocabulary.json
 ├── logs/
 │   ├── baseline_training_log.txt
 │   ├── cnn_training_log.txt
@@ -72,10 +71,10 @@ Part2/
 │   ├── baseline_evaluation.png
 │   ├── cnn_evaluation.png
 │   └── bigru_evaluation.png
+├── metrics_report.csv
 ├── README.md
 ├── results.md
-├── failure_analysis.md
-└── AI_use.md
+└── failure_analysis.md
 ```
 
 ## Reproducibility

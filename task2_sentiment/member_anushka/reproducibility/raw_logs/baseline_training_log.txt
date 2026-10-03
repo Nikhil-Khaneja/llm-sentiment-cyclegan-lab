@@ -1,0 +1,10 @@
+Epoch 1: train_loss=0.212774, val_loss=0.183796, train_accuracy=0.916218, val_accuracy=0.929768
+Epoch 2: train_loss=0.167040, val_loss=0.179212, train_accuracy=0.936960, val_accuracy=0.931304
+Epoch 3: train_loss=0.156808, val_loss=0.180089, train_accuracy=0.940796, val_accuracy=0.931054
+Epoch 4: train_loss=0.150608, val_loss=0.179215, train_accuracy=0.942829, val_accuracy=0.931304
+Epoch 5: train_loss=0.145911, val_loss=0.181302, train_accuracy=0.944772, val_accuracy=0.931482
+Epoch 6: train_loss=0.141619, val_loss=0.184833, train_accuracy=0.946107, val_accuracy=0.931482
+Epoch 7: train_loss=0.137990, val_loss=0.189939, train_accuracy=0.947510, val_accuracy=0.931518
+Epoch 8: train_loss=0.133948, val_loss=0.190168, train_accuracy=0.948942, val_accuracy=0.930482
+Epoch 9: train_loss=0.129761, val_loss=0.191380, train_accuracy=0.950440, val_accuracy=0.931071
+Epoch 10: train_loss=0.125698, val_loss=0.197281, train_accuracy=0.952248, val_accuracy=0.931518
