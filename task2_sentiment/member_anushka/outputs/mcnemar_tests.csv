@@ -1,0 +1,3 @@
+comparison,baseline_only_correct,experimental_only_correct,chi2_statistic,p_value
+baseline_vs_cnn,1030,1318,35.08049403747871,3.1635388127565557e-09
+baseline_vs_bigru,860,1340,104.29136363636364,1.7464862712552654e-24
