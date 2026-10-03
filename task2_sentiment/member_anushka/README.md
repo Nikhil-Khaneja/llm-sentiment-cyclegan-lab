@@ -85,4 +85,3 @@ Run the notebook from the first cell after selecting a CUDA GPU. Set `RUN_FULL_T
 
 - `results.md` summarizes preprocessing, architecture, metrics, statistical comparisons, and robustness results.
 - `failure_analysis.md` discusses overfitting, model-specific weaknesses, and review-length failures.
-- `AI_use.md` documents the technical role of AI assistance and the academic-integrity boundary.
