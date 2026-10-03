@@ -1,0 +1,24 @@
+{
+  "member": "Anushka",
+  "seed": 3963,
+  "dataset": "fancyzhx/yelp_polarity",
+  "max_vocab": 30000,
+  "max_length": 200,
+  "embedding_dim": 128,
+  "dropout": 0.3,
+  "batch_size": 64,
+  "recurrent_batch_size": 64,
+  "epochs": 10,
+  "learning_rate": 0.0005,
+  "baseline_learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "cnn_channels": 128,
+  "cnn_kernels": [
+    3,
+    4,
+    5
+  ],
+  "bigru_hidden_size": 128,
+  "num_workers": 2,
+  "bootstrap_repetitions": 1000
+}
