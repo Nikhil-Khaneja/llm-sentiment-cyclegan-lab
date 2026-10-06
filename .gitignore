@@ -31,3 +31,5 @@ venv/
 */member_*/checkpoints/quick_*
 task3_gan/data/*.zip
 task3_gan/data/real_stats.npz
+# Track Nikhil's Task 3 leaderboard file (course-script scores)
+!task3_gan/member_nikhil/submission.csv
