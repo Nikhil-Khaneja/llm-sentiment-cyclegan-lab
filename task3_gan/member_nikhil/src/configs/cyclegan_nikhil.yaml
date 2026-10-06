@@ -1,4 +1,4 @@
-# Task 3 — Nikhil's CycleGAN (Plan 1 / Member A): 6 residual blocks, 64 base channels, batch 2.
+# Task 3 — Member A lineup (6 residual blocks, 64 channels, batch 2), kept as a recorded run. Nikhil's model is cyclegan_nikhil_B.yaml.
 run_name: cyclegan_nikhil_r6c64
 seed: 7
 device: auto

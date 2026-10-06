@@ -1,4 +1,4 @@
-# Task 1 — Nikhil's GPT (Plan 1 / Member A): deeper & narrower-per-head than teammate's.
+# Task 1 — Member A lineup (4 blocks x 4 heads), kept as a recorded run. Nikhil's model is gpt_nikhil_B.yaml.
 run_name: gpt_nikhil_4L4H
 seed: 1337
 device: auto            # auto = cuda > mps > cpu

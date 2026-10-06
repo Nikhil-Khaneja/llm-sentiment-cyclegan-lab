@@ -1,4 +1,4 @@
-# Task 2 — Nikhil's model lineup (Plan 1 / Member A): mean-pool baseline, multi-kernel CNN, BiGRU.
+# Task 2 — Member A lineup (mean-pool, CNN k=3/4/5, BiGRU), kept for reference. Nikhil's models are in sentiment_nikhil_B.yaml.
 run_name: sentiment_nikhil
 seed: 42
 device: auto
