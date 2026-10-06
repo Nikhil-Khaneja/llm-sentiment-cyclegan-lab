@@ -1,0 +1,253 @@
+[2026-10-01 00:25:02] run_id=gpt_nikhil_2L8H_B_20261001-0025 config=task1_llm\member_nikhil\src\configs\gpt_nikhil_B.yaml device=cuda hardware=NVIDIA GeForce RTX 5090
+[2026-10-01 00:25:02] config: {"run_name": "gpt_nikhil_2L8H_B", "seed": 1337, "device": "auto", "write_metrics_report": true, "data": {"raw_path": "task1_llm/data/tinystories_raw.txt", "processed_dir": "data_processed", "block_size": 128, "n_train": 100000, "n_val": 10000, "val_story_frac": 0.1}, "model": {"d_model": 256, "n_heads": 8, "n_layers": 2, "d_ff": 1024, "dropout": 0.1}, "train": {"batch_size": 64, "eval_batch_size": 256, "epochs": 12, "lr": 0.00025, "min_lr": 1e-05, "warmup_steps": 500, "weight_decay": 0.01, "grad_clip": 1.0, "spike_ratio": 1.3, "log_every": 100}, "generate": {"max_new_tokens": 400, "temperature": 0.9, "samples_per_prompt": 3, "prompts": ["Once upon a time, there was a little girl named", "Tom and his dog went to the park. ", "One day, a big bear", "The sun was hot and", "Lily wanted to"]}}
+[2026-10-01 00:25:07] data: {'stories': 208918, 'train_chars_pool': 32212131, 'val_chars_pool': 3578896, 'vocab_size': 80, 'train_seqs': 100000, 'val_seqs': 10000, 'block_size': 128}
+[2026-10-01 00:25:07] model: {'d_model': 256, 'n_heads': 8, 'n_layers': 2, 'd_ff': 1024, 'dropout': 0.1} params=1,653,840
+[2026-10-01 00:25:08] steps/epoch=1563 total_steps=18756
+[2026-10-01 00:25:09] ep 1 step 0/18756 loss 4.5215 lr 5.00e-07 grad 6.642
+[2026-10-01 00:25:09] ep 1 step 100/18756 loss 2.8788 lr 5.05e-05 grad 1.249
+[2026-10-01 00:25:10] ep 1 step 200/18756 loss 2.4288 lr 1.01e-04 grad 0.572
+[2026-10-01 00:25:11] ep 1 step 300/18756 loss 2.3047 lr 1.50e-04 grad 0.567
+[2026-10-01 00:25:12] ep 1 step 400/18756 loss 2.2028 lr 2.01e-04 grad 1.207
+[2026-10-01 00:25:13] ep 1 step 500/18756 loss 2.0984 lr 2.50e-04 grad 0.795
+[2026-10-01 00:25:14] ep 1 step 600/18756 loss 1.9688 lr 2.50e-04 grad 1.272
+[2026-10-01 00:25:14] ep 1 step 700/18756 loss 1.7372 lr 2.50e-04 grad 0.966
+[2026-10-01 00:25:15] ep 1 step 800/18756 loss 1.6173 lr 2.50e-04 grad 0.992
+[2026-10-01 00:25:16] ep 1 step 900/18756 loss 1.5751 lr 2.50e-04 grad 1.022
+[2026-10-01 00:25:17] ep 1 step 1000/18756 loss 1.5101 lr 2.50e-04 grad 0.977
+[2026-10-01 00:25:18] ep 1 step 1100/18756 loss 1.4593 lr 2.49e-04 grad 1.099
+[2026-10-01 00:25:19] ep 1 step 1200/18756 loss 1.3917 lr 2.49e-04 grad 1.027
+[2026-10-01 00:25:19] ep 1 step 1300/18756 loss 1.3429 lr 2.49e-04 grad 1.015
+[2026-10-01 00:25:20] ep 1 step 1400/18756 loss 1.3203 lr 2.49e-04 grad 1.024
+[2026-10-01 00:25:21] ep 1 step 1500/18756 loss 1.3191 lr 2.48e-04 grad 1.000
+[2026-10-01 00:25:22] epoch epoch=1 step=1563 train_loss_running=1.8879 train_eval_loss=1.1778 train_eval_acc=0.6334 val_loss=1.1862 val_acc=0.6312 val_ppl=3.2747 val_bpc=1.7114 lr_end=0.0002
+[2026-10-01 00:25:22] saved best checkpoint -> task1_llm\member_nikhil\checkpoints\gpt_nikhil_2L8H_B_20261001-0025_best.pt
+[2026-10-01 00:25:23] ep 2 step 1600/18756 loss 1.2790 lr 2.48e-04 grad 0.983
+[2026-10-01 00:25:24] ep 2 step 1700/18756 loss 1.2324 lr 2.47e-04 grad 0.931
+[2026-10-01 00:25:24] ep 2 step 1800/18756 loss 1.2310 lr 2.47e-04 grad 0.931
+[2026-10-01 00:25:25] ep 2 step 1900/18756 loss 1.1906 lr 2.47e-04 grad 0.923
+[2026-10-01 00:25:26] ep 2 step 2000/18756 loss 1.2052 lr 2.46e-04 grad 0.896
+[2026-10-01 00:25:27] ep 2 step 2100/18756 loss 1.1952 lr 2.45e-04 grad 0.923
+[2026-10-01 00:25:28] ep 2 step 2200/18756 loss 1.1736 lr 2.45e-04 grad 0.917
+[2026-10-01 00:25:28] ep 2 step 2300/18756 loss 1.1034 lr 2.44e-04 grad 0.884
+[2026-10-01 00:25:29] ep 2 step 2400/18756 loss 1.1462 lr 2.44e-04 grad 0.897
+[2026-10-01 00:25:30] ep 2 step 2500/18756 loss 1.1766 lr 2.43e-04 grad 0.898
+[2026-10-01 00:25:31] ep 2 step 2600/18756 loss 1.1377 lr 2.42e-04 grad 0.876
+[2026-10-01 00:25:32] ep 2 step 2700/18756 loss 1.1093 lr 2.42e-04 grad 0.824
+[2026-10-01 00:25:32] ep 2 step 2800/18756 loss 1.1231 lr 2.41e-04 grad 0.845
+[2026-10-01 00:25:33] ep 2 step 2900/18756 loss 1.1058 lr 2.40e-04 grad 0.859
+[2026-10-01 00:25:34] ep 2 step 3000/18756 loss 1.1124 lr 2.39e-04 grad 0.880
+[2026-10-01 00:25:35] ep 2 step 3100/18756 loss 1.1251 lr 2.38e-04 grad 0.837
+[2026-10-01 00:25:35] epoch epoch=2 step=3126 train_loss_running=1.1668 train_eval_loss=1.0017 train_eval_acc=0.6854 val_loss=1.0116 val_acc=0.6823 val_ppl=2.7499 val_bpc=1.4594 lr_end=0.0002
+[2026-10-01 00:25:35] saved best checkpoint -> task1_llm\member_nikhil\checkpoints\gpt_nikhil_2L8H_B_20261001-0025_best.pt
+[2026-10-01 00:25:36] ep 3 step 3200/18756 loss 1.0903 lr 2.37e-04 grad 0.864
+[2026-10-01 00:25:37] ep 3 step 3300/18756 loss 1.0960 lr 2.36e-04 grad 0.851
+[2026-10-01 00:25:38] ep 3 step 3400/18756 loss 1.0847 lr 2.35e-04 grad 0.789
+[2026-10-01 00:25:39] ep 3 step 3500/18756 loss 1.0497 lr 2.34e-04 grad 0.794
+[2026-10-01 00:25:40] ep 3 step 3600/18756 loss 1.0730 lr 2.33e-04 grad 0.821
+[2026-10-01 00:25:41] ep 3 step 3700/18756 loss 1.0869 lr 2.32e-04 grad 0.797
+[2026-10-01 00:25:43] ep 3 step 3800/18756 loss 1.0574 lr 2.31e-04 grad 0.794
+[2026-10-01 00:25:44] ep 3 step 3900/18756 loss 1.0777 lr 2.30e-04 grad 0.797
+[2026-10-01 00:25:45] ep 3 step 4000/18756 loss 1.0764 lr 2.29e-04 grad 0.785
+[2026-10-01 00:25:46] ep 3 step 4100/18756 loss 1.0279 lr 2.28e-04 grad 0.814
+[2026-10-01 00:25:47] ep 3 step 4200/18756 loss 1.0530 lr 2.26e-04 grad 0.768
+[2026-10-01 00:25:48] ep 3 step 4300/18756 loss 1.0403 lr 2.25e-04 grad 0.762
+[2026-10-01 00:25:49] ep 3 step 4400/18756 loss 1.0447 lr 2.24e-04 grad 0.774
+[2026-10-01 00:25:51] ep 3 step 4500/18756 loss 1.0226 lr 2.23e-04 grad 0.754
+[2026-10-01 00:25:52] ep 3 step 4600/18756 loss 1.0292 lr 2.21e-04 grad 0.770
+[2026-10-01 00:25:54] epoch epoch=3 step=4689 train_loss_running=1.0528 train_eval_loss=0.9399 train_eval_acc=0.7035 val_loss=0.9519 val_acc=0.6997 val_ppl=2.5906 val_bpc=1.3733 lr_end=0.0002
+[2026-10-01 00:25:54] saved best checkpoint -> task1_llm\member_nikhil\checkpoints\gpt_nikhil_2L8H_B_20261001-0025_best.pt
+[2026-10-01 00:25:54] ep 4 step 4700/18756 loss 0.9945 lr 2.20e-04 grad 0.752
+[2026-10-01 00:25:55] ep 4 step 4800/18756 loss 1.0675 lr 2.19e-04 grad 0.789
+[2026-10-01 00:25:56] ep 4 step 4900/18756 loss 1.0374 lr 2.17e-04 grad 0.789
+[2026-10-01 00:25:57] ep 4 step 5000/18756 loss 0.9943 lr 2.16e-04 grad 0.718
+[2026-10-01 00:25:58] ep 4 step 5100/18756 loss 1.0384 lr 2.14e-04 grad 0.742
+[2026-10-01 00:25:59] ep 4 step 5200/18756 loss 1.0256 lr 2.13e-04 grad 0.731
+[2026-10-01 00:26:00] ep 4 step 5300/18756 loss 1.0166 lr 2.11e-04 grad 0.772
+[2026-10-01 00:26:01] ep 4 step 5400/18756 loss 1.0050 lr 2.10e-04 grad 0.728
+[2026-10-01 00:26:02] ep 4 step 5500/18756 loss 0.9982 lr 2.08e-04 grad 0.737
+[2026-10-01 00:26:04] ep 4 step 5600/18756 loss 0.9615 lr 2.07e-04 grad 0.718
+[2026-10-01 00:26:05] ep 4 step 5700/18756 loss 0.9718 lr 2.05e-04 grad 0.712
+[2026-10-01 00:26:06] ep 4 step 5800/18756 loss 0.9676 lr 2.03e-04 grad 0.724
+[2026-10-01 00:26:07] ep 4 step 5900/18756 loss 0.9386 lr 2.02e-04 grad 0.682
+[2026-10-01 00:26:08] ep 4 step 6000/18756 loss 0.9941 lr 2.00e-04 grad 0.740
+[2026-10-01 00:26:09] ep 4 step 6100/18756 loss 1.0002 lr 1.98e-04 grad 0.719
+[2026-10-01 00:26:10] ep 4 step 6200/18756 loss 0.9934 lr 1.97e-04 grad 0.732
+[2026-10-01 00:26:12] epoch epoch=4 step=6252 train_loss_running=1.0008 train_eval_loss=0.9052 train_eval_acc=0.7136 val_loss=0.9186 val_acc=0.7097 val_ppl=2.5057 val_bpc=1.3252 lr_end=0.0002
+[2026-10-01 00:26:12] saved best checkpoint -> task1_llm\member_nikhil\checkpoints\gpt_nikhil_2L8H_B_20261001-0025_best.pt
+[2026-10-01 00:26:12] ep 5 step 6300/18756 loss 0.9453 lr 1.95e-04 grad 0.699
+[2026-10-01 00:26:13] ep 5 step 6400/18756 loss 0.9818 lr 1.93e-04 grad 0.735
+[2026-10-01 00:26:14] ep 5 step 6500/18756 loss 1.0113 lr 1.92e-04 grad 0.748
+[2026-10-01 00:26:16] ep 5 step 6600/18756 loss 0.9600 lr 1.90e-04 grad 0.687
+[2026-10-01 00:26:17] ep 5 step 6700/18756 loss 0.9818 lr 1.88e-04 grad 0.714
+[2026-10-01 00:26:18] ep 5 step 6800/18756 loss 0.9592 lr 1.86e-04 grad 0.717
+[2026-10-01 00:26:19] ep 5 step 6900/18756 loss 0.9551 lr 1.84e-04 grad 0.696
+[2026-10-01 00:26:20] ep 5 step 7000/18756 loss 0.9523 lr 1.82e-04 grad 0.689
+[2026-10-01 00:26:21] ep 5 step 7100/18756 loss 0.9219 lr 1.81e-04 grad 0.701
+[2026-10-01 00:26:22] ep 5 step 7200/18756 loss 0.9768 lr 1.79e-04 grad 0.714
+[2026-10-01 00:26:24] ep 5 step 7300/18756 loss 0.9548 lr 1.77e-04 grad 0.697
+[2026-10-01 00:26:25] ep 5 step 7400/18756 loss 0.9633 lr 1.75e-04 grad 0.702
+[2026-10-01 00:26:26] ep 5 step 7500/18756 loss 0.9358 lr 1.73e-04 grad 0.683
+[2026-10-01 00:26:27] ep 5 step 7600/18756 loss 0.9458 lr 1.71e-04 grad 0.677
+[2026-10-01 00:26:28] ep 5 step 7700/18756 loss 0.9474 lr 1.69e-04 grad 0.675
+[2026-10-01 00:26:29] ep 5 step 7800/18756 loss 0.9805 lr 1.67e-04 grad 0.700
+[2026-10-01 00:26:30] epoch epoch=5 step=7815 train_loss_running=0.9698 train_eval_loss=0.8805 train_eval_acc=0.7204 val_loss=0.8950 val_acc=0.7162 val_ppl=2.4474 val_bpc=1.2912 lr_end=0.0002
+[2026-10-01 00:26:30] saved best checkpoint -> task1_llm\member_nikhil\checkpoints\gpt_nikhil_2L8H_B_20261001-0025_best.pt
+[2026-10-01 00:26:31] ep 6 step 7900/18756 loss 0.9566 lr 1.65e-04 grad 0.697
+[2026-10-01 00:26:32] ep 6 step 8000/18756 loss 0.9765 lr 1.63e-04 grad 0.731
+[2026-10-01 00:26:33] ep 6 step 8100/18756 loss 1.0140 lr 1.61e-04 grad 0.721
+[2026-10-01 00:26:34] ep 6 step 8200/18756 loss 0.9280 lr 1.59e-04 grad 0.682
+[2026-10-01 00:26:36] ep 6 step 8300/18756 loss 0.9840 lr 1.57e-04 grad 0.695
+[2026-10-01 00:26:37] ep 6 step 8400/18756 loss 0.9486 lr 1.55e-04 grad 0.720
+[2026-10-01 00:26:38] ep 6 step 8500/18756 loss 0.9306 lr 1.53e-04 grad 0.694
+[2026-10-01 00:26:39] ep 6 step 8600/18756 loss 0.9545 lr 1.51e-04 grad 0.704
+[2026-10-01 00:26:40] ep 6 step 8700/18756 loss 0.9019 lr 1.49e-04 grad 0.649
+[2026-10-01 00:26:41] ep 6 step 8800/18756 loss 0.9262 lr 1.47e-04 grad 0.686
+[2026-10-01 00:26:42] ep 6 step 8900/18756 loss 0.9234 lr 1.45e-04 grad 0.675
+[2026-10-01 00:26:43] ep 6 step 9000/18756 loss 0.9710 lr 1.43e-04 grad 0.724
+[2026-10-01 00:26:45] ep 6 step 9100/18756 loss 0.9549 lr 1.41e-04 grad 0.694
+[2026-10-01 00:26:46] ep 6 step 9200/18756 loss 0.9352 lr 1.39e-04 grad 0.672
+[2026-10-01 00:26:47] ep 6 step 9300/18756 loss 0.8812 lr 1.37e-04 grad 0.670
+[2026-10-01 00:26:48] epoch epoch=6 step=9378 train_loss_running=0.9478 train_eval_loss=0.8640 train_eval_acc=0.7256 val_loss=0.8802 val_acc=0.7210 val_ppl=2.4115 val_bpc=1.2699 lr_end=0.0001
+[2026-10-01 00:26:48] saved best checkpoint -> task1_llm\member_nikhil\checkpoints\gpt_nikhil_2L8H_B_20261001-0025_best.pt
+[2026-10-01 00:26:49] ep 7 step 9400/18756 loss 0.9213 lr 1.35e-04 grad 0.674
+[2026-10-01 00:26:50] ep 7 step 9500/18756 loss 0.9680 lr 1.33e-04 grad 0.728
+[2026-10-01 00:26:51] ep 7 step 9600/18756 loss 0.9530 lr 1.31e-04 grad 0.691
+[2026-10-01 00:26:52] ep 7 step 9700/18756 loss 0.9606 lr 1.29e-04 grad 0.695
+[2026-10-01 00:26:53] ep 7 step 9800/18756 loss 0.8821 lr 1.26e-04 grad 0.660
+[2026-10-01 00:26:54] ep 7 step 9900/18756 loss 0.9547 lr 1.24e-04 grad 0.723
+[2026-10-01 00:26:55] ep 7 step 10000/18756 loss 0.9668 lr 1.22e-04 grad 0.696
+[2026-10-01 00:26:57] ep 7 step 10100/18756 loss 0.9442 lr 1.20e-04 grad 0.717
+[2026-10-01 00:26:58] ep 7 step 10200/18756 loss 0.9422 lr 1.18e-04 grad 0.707
+[2026-10-01 00:26:59] ep 7 step 10300/18756 loss 0.9240 lr 1.16e-04 grad 0.669
+[2026-10-01 00:27:00] ep 7 step 10400/18756 loss 0.8968 lr 1.14e-04 grad 0.672
+[2026-10-01 00:27:01] ep 7 step 10500/18756 loss 0.9173 lr 1.12e-04 grad 0.692
+[2026-10-01 00:27:02] ep 7 step 10600/18756 loss 0.8956 lr 1.10e-04 grad 0.654
+[2026-10-01 00:27:04] ep 7 step 10700/18756 loss 0.9667 lr 1.08e-04 grad 0.708
+[2026-10-01 00:27:05] ep 7 step 10800/18756 loss 0.9012 lr 1.06e-04 grad 0.683
+[2026-10-01 00:27:06] ep 7 step 10900/18756 loss 0.9197 lr 1.04e-04 grad 0.672
+[2026-10-01 00:27:07] epoch epoch=7 step=10941 train_loss_running=0.9319 train_eval_loss=0.8505 train_eval_acc=0.7290 val_loss=0.8671 val_acc=0.7246 val_ppl=2.3800 val_bpc=1.2510 lr_end=0.0001
+[2026-10-01 00:27:07] saved best checkpoint -> task1_llm\member_nikhil\checkpoints\gpt_nikhil_2L8H_B_20261001-0025_best.pt
+[2026-10-01 00:27:08] ep 8 step 11000/18756 loss 0.9499 lr 1.02e-04 grad 0.687
+[2026-10-01 00:27:09] ep 8 step 11100/18756 loss 0.8850 lr 9.99e-05 grad 0.661
+[2026-10-01 00:27:10] ep 8 step 11200/18756 loss 0.9527 lr 9.79e-05 grad 0.720
+[2026-10-01 00:27:11] ep 8 step 11300/18756 loss 0.9471 lr 9.59e-05 grad 0.707
+[2026-10-01 00:27:12] ep 8 step 11400/18756 loss 0.9229 lr 9.40e-05 grad 0.693
+[2026-10-01 00:27:14] ep 8 step 11500/18756 loss 0.8895 lr 9.20e-05 grad 0.679
+[2026-10-01 00:27:15] ep 8 step 11600/18756 loss 0.9354 lr 9.01e-05 grad 0.710
+[2026-10-01 00:27:16] ep 8 step 11700/18756 loss 0.9118 lr 8.81e-05 grad 0.678
+[2026-10-01 00:27:17] ep 8 step 11800/18756 loss 0.9283 lr 8.62e-05 grad 0.686
+[2026-10-01 00:27:18] ep 8 step 11900/18756 loss 0.9354 lr 8.43e-05 grad 0.689
+[2026-10-01 00:27:19] ep 8 step 12000/18756 loss 0.8678 lr 8.24e-05 grad 0.649
+[2026-10-01 00:27:20] ep 8 step 12100/18756 loss 0.9196 lr 8.05e-05 grad 0.678
+[2026-10-01 00:27:22] ep 8 step 12200/18756 loss 0.9255 lr 7.86e-05 grad 0.686
+[2026-10-01 00:27:23] ep 8 step 12300/18756 loss 0.9134 lr 7.67e-05 grad 0.682
+[2026-10-01 00:27:24] ep 8 step 12400/18756 loss 0.9108 lr 7.49e-05 grad 0.695
+[2026-10-01 00:27:25] ep 8 step 12500/18756 loss 0.8803 lr 7.31e-05 grad 0.699
+[2026-10-01 00:27:26] epoch epoch=8 step=12504 train_loss_running=0.9195 train_eval_loss=0.8412 train_eval_acc=0.7318 val_loss=0.8592 val_acc=0.7271 val_ppl=2.3612 val_bpc=1.2395 lr_end=0.0001
+[2026-10-01 00:27:26] saved best checkpoint -> task1_llm\member_nikhil\checkpoints\gpt_nikhil_2L8H_B_20261001-0025_best.pt
+[2026-10-01 00:27:27] ep 9 step 12600/18756 loss 0.9051 lr 7.13e-05 grad 0.682
+[2026-10-01 00:27:28] ep 9 step 12700/18756 loss 0.9194 lr 6.95e-05 grad 0.676
+[2026-10-01 00:27:29] ep 9 step 12800/18756 loss 0.9316 lr 6.77e-05 grad 0.702
+[2026-10-01 00:27:30] ep 9 step 12900/18756 loss 0.9042 lr 6.59e-05 grad 0.677
+[2026-10-01 00:27:31] ep 9 step 13000/18756 loss 0.8830 lr 6.42e-05 grad 0.673
+[2026-10-01 00:27:32] ep 9 step 13100/18756 loss 0.9246 lr 6.25e-05 grad 0.680
+[2026-10-01 00:27:33] ep 9 step 13200/18756 loss 0.8892 lr 6.08e-05 grad 0.682
+[2026-10-01 00:27:34] ep 9 step 13300/18756 loss 0.8987 lr 5.91e-05 grad 0.668
+[2026-10-01 00:27:36] ep 9 step 13400/18756 loss 0.9156 lr 5.75e-05 grad 0.703
+[2026-10-01 00:27:37] ep 9 step 13500/18756 loss 0.9136 lr 5.58e-05 grad 0.687
+[2026-10-01 00:27:38] ep 9 step 13600/18756 loss 0.9277 lr 5.42e-05 grad 0.674
+[2026-10-01 00:27:39] ep 9 step 13700/18756 loss 0.9141 lr 5.26e-05 grad 0.693
+[2026-10-01 00:27:40] ep 9 step 13800/18756 loss 0.9507 lr 5.11e-05 grad 0.719
+[2026-10-01 00:27:41] ep 9 step 13900/18756 loss 0.9424 lr 4.95e-05 grad 0.707
+[2026-10-01 00:27:42] ep 9 step 14000/18756 loss 0.9141 lr 4.80e-05 grad 0.679
+[2026-10-01 00:27:44] epoch epoch=9 step=14067 train_loss_running=0.9102 train_eval_loss=0.8334 train_eval_acc=0.7340 val_loss=0.8520 val_acc=0.7293 val_ppl=2.3444 val_bpc=1.2292 lr_end=0.0000
+[2026-10-01 00:27:44] saved best checkpoint -> task1_llm\member_nikhil\checkpoints\gpt_nikhil_2L8H_B_20261001-0025_best.pt
+[2026-10-01 00:27:44] ep 10 step 14100/18756 loss 0.8898 lr 4.65e-05 grad 0.681
+[2026-10-01 00:27:45] ep 10 step 14200/18756 loss 0.9111 lr 4.50e-05 grad 0.682
+[2026-10-01 00:27:47] ep 10 step 14300/18756 loss 0.8669 lr 4.36e-05 grad 0.690
+[2026-10-01 00:27:48] ep 10 step 14400/18756 loss 0.9157 lr 4.22e-05 grad 0.702
+[2026-10-01 00:27:49] ep 10 step 14500/18756 loss 0.8836 lr 4.08e-05 grad 0.676
+[2026-10-01 00:27:50] ep 10 step 14600/18756 loss 0.8461 lr 3.94e-05 grad 0.657
+[2026-10-01 00:27:51] ep 10 step 14700/18756 loss 0.8888 lr 3.81e-05 grad 0.687
+[2026-10-01 00:27:52] ep 10 step 14800/18756 loss 0.9198 lr 3.67e-05 grad 0.724
+[2026-10-01 00:27:53] ep 10 step 14900/18756 loss 0.8870 lr 3.55e-05 grad 0.680
+[2026-10-01 00:27:54] ep 10 step 15000/18756 loss 0.9079 lr 3.42e-05 grad 0.699
+[2026-10-01 00:27:56] ep 10 step 15100/18756 loss 0.9388 lr 3.30e-05 grad 0.695
+[2026-10-01 00:27:57] ep 10 step 15200/18756 loss 0.8619 lr 3.18e-05 grad 0.671
+[2026-10-01 00:27:58] ep 10 step 15300/18756 loss 0.9192 lr 3.06e-05 grad 0.705
+[2026-10-01 00:27:59] ep 10 step 15400/18756 loss 0.8773 lr 2.95e-05 grad 0.676
+[2026-10-01 00:28:00] ep 10 step 15500/18756 loss 0.9052 lr 2.83e-05 grad 0.699
+[2026-10-01 00:28:01] ep 10 step 15600/18756 loss 0.8994 lr 2.73e-05 grad 0.686
+[2026-10-01 00:28:02] epoch epoch=10 step=15630 train_loss_running=0.9031 train_eval_loss=0.8285 train_eval_acc=0.7358 val_loss=0.8476 val_acc=0.7308 val_ppl=2.3341 val_bpc=1.2229 lr_end=0.0000
+[2026-10-01 00:28:02] saved best checkpoint -> task1_llm\member_nikhil\checkpoints\gpt_nikhil_2L8H_B_20261001-0025_best.pt
+[2026-10-01 00:28:03] ep 11 step 15700/18756 loss 0.8931 lr 2.62e-05 grad 0.680
+[2026-10-01 00:28:04] ep 11 step 15800/18756 loss 0.8890 lr 2.52e-05 grad 0.670
+[2026-10-01 00:28:06] ep 11 step 15900/18756 loss 0.8798 lr 2.42e-05 grad 0.681
+[2026-10-01 00:28:07] ep 11 step 16000/18756 loss 0.8766 lr 2.32e-05 grad 0.685
+[2026-10-01 00:28:08] ep 11 step 16100/18756 loss 0.9070 lr 2.23e-05 grad 0.695
+[2026-10-01 00:28:09] ep 11 step 16200/18756 loss 0.8994 lr 2.14e-05 grad 0.700
+[2026-10-01 00:28:10] ep 11 step 16300/18756 loss 0.9563 lr 2.06e-05 grad 0.740
+[2026-10-01 00:28:11] ep 11 step 16400/18756 loss 0.8917 lr 1.97e-05 grad 0.706
+[2026-10-01 00:28:12] ep 11 step 16500/18756 loss 0.9409 lr 1.89e-05 grad 0.717
+[2026-10-01 00:28:14] ep 11 step 16600/18756 loss 0.9168 lr 1.82e-05 grad 0.692
+[2026-10-01 00:28:15] ep 11 step 16700/18756 loss 0.8710 lr 1.74e-05 grad 0.680
+[2026-10-01 00:28:16] ep 11 step 16800/18756 loss 0.8995 lr 1.67e-05 grad 0.691
+[2026-10-01 00:28:17] ep 11 step 16900/18756 loss 0.8449 lr 1.61e-05 grad 0.657
+[2026-10-01 00:28:18] ep 11 step 17000/18756 loss 0.8742 lr 1.54e-05 grad 0.702
+[2026-10-01 00:28:19] ep 11 step 17100/18756 loss 0.8783 lr 1.48e-05 grad 0.679
+[2026-10-01 00:28:21] epoch epoch=11 step=17193 train_loss_running=0.8985 train_eval_loss=0.8257 train_eval_acc=0.7367 val_loss=0.8454 val_acc=0.7315 val_ppl=2.3288 val_bpc=1.2196 lr_end=0.0000
+[2026-10-01 00:28:21] saved best checkpoint -> task1_llm\member_nikhil\checkpoints\gpt_nikhil_2L8H_B_20261001-0025_best.pt
+[2026-10-01 00:28:21] ep 12 step 17200/18756 loss 0.8992 lr 1.43e-05 grad 0.685
+[2026-10-01 00:28:22] ep 12 step 17300/18756 loss 0.9092 lr 1.37e-05 grad 0.713
+[2026-10-01 00:28:23] ep 12 step 17400/18756 loss 0.8724 lr 1.33e-05 grad 0.698
+[2026-10-01 00:28:24] ep 12 step 17500/18756 loss 0.8625 lr 1.28e-05 grad 0.680
+[2026-10-01 00:28:25] ep 12 step 17600/18756 loss 0.9340 lr 1.24e-05 grad 0.708
+[2026-10-01 00:28:27] ep 12 step 17700/18756 loss 0.8932 lr 1.20e-05 grad 0.720
+[2026-10-01 00:28:28] ep 12 step 17800/18756 loss 0.8739 lr 1.16e-05 grad 0.671
+[2026-10-01 00:28:29] ep 12 step 17900/18756 loss 0.8972 lr 1.13e-05 grad 0.696
+[2026-10-01 00:28:30] ep 12 step 18000/18756 loss 0.9333 lr 1.10e-05 grad 0.706
+[2026-10-01 00:28:31] ep 12 step 18100/18756 loss 0.9285 lr 1.08e-05 grad 0.707
+[2026-10-01 00:28:32] ep 12 step 18200/18756 loss 0.8866 lr 1.05e-05 grad 0.699
+[2026-10-01 00:28:34] ep 12 step 18300/18756 loss 0.8527 lr 1.04e-05 grad 0.680
+[2026-10-01 00:28:35] ep 12 step 18400/18756 loss 0.8893 lr 1.02e-05 grad 0.684
+[2026-10-01 00:28:36] ep 12 step 18500/18756 loss 0.8855 lr 1.01e-05 grad 0.689
+[2026-10-01 00:28:37] ep 12 step 18600/18756 loss 0.8925 lr 1.00e-05 grad 0.683
+[2026-10-01 00:28:38] ep 12 step 18700/18756 loss 0.8772 lr 1.00e-05 grad 0.686
+[2026-10-01 00:28:39] epoch epoch=12 step=18756 train_loss_running=0.8961 train_eval_loss=0.8242 train_eval_acc=0.7369 val_loss=0.8440 val_acc=0.7320 val_ppl=2.3257 val_bpc=1.2177 lr_end=0.0000
+[2026-10-01 00:28:39] saved best checkpoint -> task1_llm\member_nikhil\checkpoints\gpt_nikhil_2L8H_B_20261001-0025_best.pt
+[2026-10-01 00:28:39] saved last checkpoint -> task1_llm\member_nikhil\checkpoints\gpt_nikhil_2L8H_B_20261001-0025_last.pt
+[2026-10-01 00:29:06] metric train_cross_entropy = 0.824232742881775
+[2026-10-01 00:29:06] metric train_cross_entropy_running_last_epoch = 0.8960629022789002
+[2026-10-01 00:29:06] metric val_cross_entropy = 0.8440268076896668
+[2026-10-01 00:29:06] metric val_perplexity = 2.3257133465226376
+[2026-10-01 00:29:06] metric val_bits_per_char = 1.217673289831225
+[2026-10-01 00:29:06] metric generalization_gap = 0.01979406480789181
+[2026-10-01 00:29:06] metric val_top1_next_char_accuracy = 0.7320140625
+[2026-10-01 00:29:06] metric train_top1_next_char_accuracy = 0.7369328125
+[2026-10-01 00:29:06] metric distinct_1_temp0.9 = 0.31265508684863524
+[2026-10-01 00:29:06] metric distinct_2_temp0.9 = 0.7713567839195979
+[2026-10-01 00:29:06] metric distinct_3_temp0.9 = 0.9211195928753181
+[2026-10-01 00:29:06] metric repeated_4gram_rate_temp0.9 = 0.0
+[2026-10-01 00:29:06] metric distinct_1_greedy = 0.15081206496519722
+[2026-10-01 00:29:06] metric distinct_2_greedy = 0.24178403755868544
+[2026-10-01 00:29:06] metric distinct_3_greedy = 0.2826603325415677
+[2026-10-01 00:29:06] metric repeated_4gram_rate_greedy = 0.25976659250241385
+[2026-10-01 00:29:06] metric grad_norm_mean = 0.7566961667943951
+[2026-10-01 00:29:06] metric grad_norm_max = 6.709066390991211
+[2026-10-01 00:29:06] metric grad_norm_p99 = 1.2013996779918672
+[2026-10-01 00:29:06] metric grad_clip_fraction = 0.048091277457880145
+[2026-10-01 00:29:06] metric loss_spike_count = 0
+[2026-10-01 00:29:06] metric nan_inf_steps = 0
+[2026-10-01 00:29:06] metric parameter_count = 1653840
+[2026-10-01 00:29:06] metric train_tokens_per_sec = 759303.3888712283
+[2026-10-01 00:29:06] metric generation_tokens_per_sec = 313.69920466202916
+[2026-10-01 00:29:06] metric peak_accelerator_memory_mb = 540.6
+[2026-10-01 00:29:06] metric peak_process_rss_mb = 1499.5
+[2026-10-01 00:29:06] metric total_training_time_sec = 211.20378429999982
+[2026-10-01 00:29:06] metric pure_training_time_sec = 202.2906814999733
+[2026-10-01 00:29:06] metric epochs = 12
+[2026-10-01 00:29:06] metric best_epoch = 12
+[2026-10-01 00:29:06] metric hardware = NVIDIA GeForce RTX 5090
+[2026-10-01 00:29:06] metric checkpoint = task1_llm\member_nikhil\checkpoints\gpt_nikhil_2L8H_B_20261001-0025_best.pt
+[2026-10-01 00:29:06] metric run_id = gpt_nikhil_2L8H_B_20261001-0025
+[2026-10-01 00:29:07] done: outputs -> task1_llm\member_nikhil\outputs\gpt_nikhil_2L8H_B_20261001-0025

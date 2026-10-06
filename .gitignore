@@ -1,15 +1,19 @@
 # Raw datasets (shared, large) — download via scripts, don't commit
 task1_llm/data/*
 !task1_llm/data/.gitkeep
+!task1_llm/data/download_tinystories.py
 task2_sentiment/data/*
 !task2_sentiment/data/.gitkeep
+!task2_sentiment/data/download_yelp.py
 task3_gan/data/monet_jpg/*
 !task3_gan/data/monet_jpg/.gitkeep
 task3_gan/data/photo_jpg/*
 !task3_gan/data/photo_jpg/.gitkeep
+task3_gan/data/pilot_monet2photo/
 
 # Generated files not required to be committed
 */member_*/submission.csv
+*/member_*/*images.zip
 
 # Python
 __pycache__/
@@ -20,3 +24,12 @@ venv/
 
 # OS
 .DS_Store
+
+# Smoke-test weights and cached preprocessing (reproducible in ~1-3 min; logs/outputs are kept)
+*/member_*/checkpoints/smoke_*
+*/member_*/data_processed/smoke/
+*/member_*/checkpoints/quick_*
+task3_gan/data/*.zip
+task3_gan/data/real_stats.npz
+# Track Nikhil's Task 3 leaderboard file (course-script scores)
+!task3_gan/member_nikhil/submission.csv

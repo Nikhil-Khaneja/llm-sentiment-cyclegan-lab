@@ -1,0 +1,122 @@
+{
+  "created": "2026-09-29T19:03:48",
+  "git_commit_at_launch": "bfbf77bdfae74fa9936f576d005b75482200619d",
+  "python": "3.12.10",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "hardware": "NVIDIA GeForce RTX 5090",
+  "device": "cuda",
+  "packages": {
+    "torch": "2.8.0+cu128",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "matplotlib": "3.9.4",
+    "scikit-learn": "1.6.1",
+    "scipy": "1.13.1",
+    "datasets": "4.5.0",
+    "nltk": "3.9.2",
+    "pyyaml": "6.0.3"
+  },
+  "config": {
+    "run_name": "smoke_sentiment_nikhil",
+    "seed": 42,
+    "device": "auto",
+    "write_metrics_report": false,
+    "log_every": 20,
+    "eval_batch_size": 512,
+    "bootstrap": 200,
+    "data": {
+      "raw_dir": "task2_sentiment/data",
+      "processed_dir": "data_processed/smoke",
+      "max_train_samples": 6000,
+      "max_test_samples": 2000,
+      "val_frac": 0.1,
+      "vocab_size": 30000,
+      "min_freq": 2,
+      "max_len": 256,
+      "stem": true,
+      "keep_negations": true
+    },
+    "models": [
+      {
+        "name": "A1_baseline_meanpool",
+        "arch": "mean_pool",
+        "params": {
+          "emb_dim": 128,
+          "dropout": 0.3
+        },
+        "optim": {
+          "name": "adam",
+          "lr": 0.001,
+          "batch_size": 128,
+          "epochs": 1,
+          "grad_clip": 5.0
+        }
+      },
+      {
+        "name": "A2_cnn_k345",
+        "arch": "cnn",
+        "params": {
+          "emb_dim": 128,
+          "dropout": 0.4,
+          "channels": 128,
+          "kernel_sizes": [
+            3,
+            4,
+            5
+          ]
+        },
+        "optim": {
+          "name": "adamw",
+          "lr": 0.0005,
+          "weight_decay": 0.01,
+          "batch_size": 128,
+          "epochs": 1,
+          "grad_clip": 5.0
+        }
+      },
+      {
+        "name": "A3_bigru",
+        "arch": "bigru",
+        "params": {
+          "emb_dim": 128,
+          "dropout": 0.3,
+          "hidden": 128
+        },
+        "optim": {
+          "name": "adamw",
+          "lr": 0.0005,
+          "weight_decay": 0.01,
+          "batch_size": 64,
+          "epochs": 1,
+          "grad_clip": 5.0
+        }
+      }
+    ]
+  },
+  "task": "task2_sentiment",
+  "member": "nikhil",
+  "run_id": "smoke_sentiment_nikhil_20260929-1903",
+  "config_file": "task2_sentiment\\member_nikhil\\src\\configs\\smoke.yaml",
+  "raw_log": "reproducibility\\raw_logs\\nikhil\\task2_smoke_sentiment_nikhil_20260929-1903.log",
+  "outputs_dir": "task2_sentiment\\member_nikhil\\outputs\\smoke_sentiment_nikhil_20260929-1903",
+  "checkpoints": {
+    "A1_baseline_meanpool": "task2_sentiment\\member_nikhil\\checkpoints\\smoke_sentiment_nikhil_20260929-1903_A1_baseline_meanpool.pt",
+    "A2_cnn_k345": "task2_sentiment\\member_nikhil\\checkpoints\\smoke_sentiment_nikhil_20260929-1903_A2_cnn_k345.pt",
+    "A3_bigru": "task2_sentiment\\member_nikhil\\checkpoints\\smoke_sentiment_nikhil_20260929-1903_A3_bigru.pt"
+  },
+  "strongest_model_for_error_review": "A2_cnn_k345",
+  "headline": {
+    "A1_baseline_meanpool": {
+      "test_accuracy": 0.673,
+      "test_f1_macro": 0.6683028364672122
+    },
+    "A2_cnn_k345": {
+      "test_accuracy": 0.7585,
+      "test_f1_macro": 0.754250437121311
+    },
+    "A3_bigru": {
+      "test_accuracy": 0.7335,
+      "test_f1_macro": 0.7293723189517316
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "created": "2026-10-01T00:29:07",
+  "git_commit_at_launch": "016744c18fc456cce857b455b3d0c6f9baec45ad",
+  "python": "3.12.10",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "hardware": "NVIDIA GeForce RTX 5090",
+  "device": "cuda",
+  "packages": {
+    "torch": "2.8.0+cu128",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "matplotlib": "3.9.4",
+    "scikit-learn": "1.6.1",
+    "scipy": "1.13.1",
+    "datasets": "4.5.0",
+    "nltk": "3.9.2",
+    "pyyaml": "6.0.3"
+  },
+  "config": {
+    "run_name": "gpt_nikhil_2L8H_B",
+    "seed": 1337,
+    "device": "auto",
+    "write_metrics_report": true,
+    "data": {
+      "raw_path": "task1_llm/data/tinystories_raw.txt",
+      "processed_dir": "data_processed",
+      "block_size": 128,
+      "n_train": 100000,
+      "n_val": 10000,
+      "val_story_frac": 0.1
+    },
+    "model": {
+      "d_model": 256,
+      "n_heads": 8,
+      "n_layers": 2,
+      "d_ff": 1024,
+      "dropout": 0.1
+    },
+    "train": {
+      "batch_size": 64,
+      "eval_batch_size": 256,
+      "epochs": 12,
+      "lr": 0.00025,
+      "min_lr": 1e-05,
+      "warmup_steps": 500,
+      "weight_decay": 0.01,
+      "grad_clip": 1.0,
+      "spike_ratio": 1.3,
+      "log_every": 100
+    },
+    "generate": {
+      "max_new_tokens": 400,
+      "temperature": 0.9,
+      "samples_per_prompt": 3,
+      "prompts": [
+        "Once upon a time, there was a little girl named",
+        "Tom and his dog went to the park. ",
+        "One day, a big bear",
+        "The sun was hot and",
+        "Lily wanted to"
+      ]
+    }
+  },
+  "task": "task1_llm",
+  "member": "nikhil",
+  "run_id": "gpt_nikhil_2L8H_B_20261001-0025",
+  "config_file": "task1_llm\\member_nikhil\\src\\configs\\gpt_nikhil_B.yaml",
+  "raw_log": "reproducibility\\raw_logs\\nikhil\\task1_gpt_nikhil_2L8H_B_20261001-0025.log",
+  "outputs_dir": "task1_llm\\member_nikhil\\outputs\\gpt_nikhil_2L8H_B_20261001-0025",
+  "checkpoints": {
+    "best (used for all reported metrics)": "task1_llm\\member_nikhil\\checkpoints\\gpt_nikhil_2L8H_B_20261001-0025_best.pt",
+    "last": "task1_llm\\member_nikhil\\checkpoints\\gpt_nikhil_2L8H_B_20261001-0025_last.pt"
+  },
+  "processed_data": "task1_llm\\member_nikhil\\data_processed",
+  "headline": {
+    "train_cross_entropy": 0.824232742881775,
+    "train_cross_entropy_running_last_epoch": 0.8960629022789002,
+    "val_cross_entropy": 0.8440268076896668,
+    "val_perplexity": 2.3257133465226376,
+    "val_bits_per_char": 1.217673289831225,
+    "generalization_gap": 0.01979406480789181,
+    "val_top1_next_char_accuracy": 0.7320140625,
+    "train_top1_next_char_accuracy": 0.7369328125
+  }
+}

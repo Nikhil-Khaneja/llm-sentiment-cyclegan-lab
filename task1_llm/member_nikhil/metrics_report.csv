@@ -1,0 +1,35 @@
+metric,value,notes
+train_cross_entropy,0.824232742881775,"best ckpt, eval mode, 10k-seq train subset (nats/char)"
+train_cross_entropy_running_last_epoch,0.8960629022789002,"mean step loss over final epoch, dropout on"
+val_cross_entropy,0.8440268076896668,"best ckpt, 10k val sequences (nats/char)"
+val_perplexity,2.3257133465226376,exp(val CE)
+val_bits_per_char,1.217673289831225,val CE / ln 2
+generalization_gap,0.01979406480789181,val CE - train CE (eval mode)
+val_top1_next_char_accuracy,0.7320140625,
+train_top1_next_char_accuracy,0.7369328125,
+distinct_1_temp0.9,0.31265508684863524,"word-level, pooled over temperature samples"
+distinct_2_temp0.9,0.7713567839195979,
+distinct_3_temp0.9,0.9211195928753181,
+repeated_4gram_rate_temp0.9,0.0,within-sample repeated word 4-grams
+distinct_1_greedy,0.15081206496519722,
+distinct_2_greedy,0.24178403755868544,
+distinct_3_greedy,0.2826603325415677,
+repeated_4gram_rate_greedy,0.25976659250241385,
+grad_norm_mean,0.7566961667943951,pre-clip L2 norm over all steps
+grad_norm_max,6.709066390991211,
+grad_norm_p99,1.2013996779918672,
+grad_clip_fraction,0.048091277457880145,share of steps with norm > 1.0
+loss_spike_count,0,step loss > 1.3x EMA after warm-up
+nan_inf_steps,0,
+parameter_count,1653840,
+train_tokens_per_sec,759303.3888712283,"training steps only, excludes eval"
+generation_tokens_per_sec,313.69920466202916,"batch 1, full forward per token (no KV cache)"
+peak_accelerator_memory_mb,540.6,cuda
+peak_process_rss_mb,1499.5,
+total_training_time_sec,211.20378429999982,train + per-epoch eval
+pure_training_time_sec,202.2906814999733,
+epochs,12,
+best_epoch,12,
+hardware,NVIDIA GeForce RTX 5090,
+checkpoint,task1_llm\member_nikhil\checkpoints\gpt_nikhil_2L8H_B_20261001-0025_best.pt,
+run_id,gpt_nikhil_2L8H_B_20261001-0025,

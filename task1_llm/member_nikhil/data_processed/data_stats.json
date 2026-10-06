@@ -1,0 +1,9 @@
+{
+ "stories": 208918,
+ "train_chars_pool": 32212131,
+ "val_chars_pool": 3578896,
+ "vocab_size": 80,
+ "train_seqs": 100000,
+ "val_seqs": 10000,
+ "block_size": 128
+}

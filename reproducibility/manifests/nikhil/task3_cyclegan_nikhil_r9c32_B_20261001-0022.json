@@ -1,0 +1,105 @@
+{
+  "created": "2026-10-01T08:03:42",
+  "git_commit_at_launch": "f27e2b99f1bdd4b52db91929cb503685ffcf37ba",
+  "python": "3.12.10",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "hardware": "NVIDIA GeForce RTX 5090",
+  "device": "cuda",
+  "packages": {
+    "torch": "2.8.0+cu128",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "matplotlib": "3.9.4",
+    "scikit-learn": "1.6.1",
+    "scipy": "1.13.1",
+    "datasets": "4.5.0",
+    "nltk": "3.9.2",
+    "pyyaml": "6.0.3"
+  },
+  "config": {
+    "run_name": "cyclegan_nikhil_r9c32_B",
+    "seed": 7,
+    "device": "auto",
+    "write_metrics_report": true,
+    "log_every": 500,
+    "data": {
+      "root": "task3_gan/data",
+      "monet_dir": "monet_jpg",
+      "photo_dir": "photo_jpg",
+      "image_size": 128,
+      "load_size": 143,
+      "monet_holdout": 0,
+      "photo_holdout": 1000,
+      "epoch_size": null,
+      "max_images": null
+    },
+    "model": {
+      "ngf": 32,
+      "n_blocks": 9,
+      "ndf": 64
+    },
+    "train": {
+      "batch_size": 1,
+      "num_workers": 4,
+      "lr": 0.0002,
+      "betas": [
+        0.5,
+        0.999
+      ],
+      "epochs_constant": 25,
+      "epochs_decay": 25,
+      "lambda_cycle": 10,
+      "lambda_identity": 5,
+      "pool_size": 50,
+      "checkpoint_every": 5
+    },
+    "eval": {
+      "batch_size": 32,
+      "kid_subset_size": 1000,
+      "prdc_k": 5,
+      "audit_samples": 30,
+      "save_predictions": true,
+      "make_submission": true
+    },
+    "submission": {
+      "infer_size": 256,
+      "output_size": 256,
+      "zip_name": "images.zip"
+    }
+  },
+  "task": "task3_gan",
+  "member": "nikhil",
+  "run_id": "cyclegan_nikhil_r9c32_B_20261001-0022",
+  "config_file": "task3_gan\\member_nikhil\\src\\configs\\cyclegan_nikhil_B.yaml",
+  "raw_log": "reproducibility\\raw_logs\\nikhil\\task3_cyclegan_nikhil_r9c32_B_20261001-0022.log",
+  "outputs_dir": "task3_gan\\member_nikhil\\outputs\\cyclegan_nikhil_r9c32_B_20261001-0022",
+  "checkpoints": {
+    "final (used for all reported metrics + Kaggle)": "task3_gan\\member_nikhil\\checkpoints\\cyclegan_nikhil_r9c32_B_20261001-0022_epoch050.pt",
+    "intermediate": [
+      "task3_gan\\member_nikhil\\checkpoints\\cyclegan_nikhil_r9c32_B_20261001-0022_epoch005.pt",
+      "task3_gan\\member_nikhil\\checkpoints\\cyclegan_nikhil_r9c32_B_20261001-0022_epoch010.pt",
+      "task3_gan\\member_nikhil\\checkpoints\\cyclegan_nikhil_r9c32_B_20261001-0022_epoch015.pt",
+      "task3_gan\\member_nikhil\\checkpoints\\cyclegan_nikhil_r9c32_B_20261001-0022_epoch020.pt",
+      "task3_gan\\member_nikhil\\checkpoints\\cyclegan_nikhil_r9c32_B_20261001-0022_epoch025.pt",
+      "task3_gan\\member_nikhil\\checkpoints\\cyclegan_nikhil_r9c32_B_20261001-0022_epoch030.pt",
+      "task3_gan\\member_nikhil\\checkpoints\\cyclegan_nikhil_r9c32_B_20261001-0022_epoch035.pt",
+      "task3_gan\\member_nikhil\\checkpoints\\cyclegan_nikhil_r9c32_B_20261001-0022_epoch040.pt",
+      "task3_gan\\member_nikhil\\checkpoints\\cyclegan_nikhil_r9c32_B_20261001-0022_epoch045.pt",
+      "task3_gan\\member_nikhil\\checkpoints\\cyclegan_nikhil_r9c32_B_20261001-0022_epoch050.pt"
+    ]
+  },
+  "train_stats": {
+    "parameter_count": {
+      "G_AB": 2850563,
+      "G_BA": 2850563,
+      "D_A": 2764737,
+      "D_B": 2764737
+    },
+    "train_time_sec": 27580.319601500043,
+    "nan_inf_steps": 0,
+    "train_images_per_sec": 22.70353283582545,
+    "peak_accelerator_mem_mb": 464.4,
+    "peak_process_rss_mb": 1491.4,
+    "hardware": "NVIDIA GeForce RTX 5090"
+  }
+}

@@ -1,0 +1,34 @@
+# Task 2 — Member A lineup (mean-pool, CNN k=3/4/5, BiGRU), kept for reference. Nikhil's models are in sentiment_nikhil_B.yaml.
+run_name: sentiment_nikhil
+seed: 42
+device: auto
+write_metrics_report: true
+log_every: 500
+eval_batch_size: 512
+bootstrap: 1000              # resamples for 95% CIs
+
+data:
+  raw_dir: task2_sentiment/data      # from task2_sentiment/data/download_yelp.py
+  processed_dir: data_processed
+  max_train_samples: null            # null = all 560k (minus dropped rows)
+  max_test_samples: null             # null = all 38k
+  val_frac: 0.1                      # stratified hold-out from the official train split
+  vocab_size: 30000                  # incl. <pad>, <unk>
+  min_freq: 2
+  max_len: 256                       # tokens after cleaning; longer reviews are truncated
+  stem: true                         # Porter stemming
+  keep_negations: true               # keep not/no/never/but/... out of the stopword list
+
+models:
+  - name: A1_baseline_meanpool
+    arch: mean_pool
+    params: {emb_dim: 128, dropout: 0.30}
+    optim: {name: adam, lr: 1.0e-3, batch_size: 128, epochs: 8, grad_clip: 5.0}
+  - name: A2_cnn_k345
+    arch: cnn
+    params: {emb_dim: 128, dropout: 0.40, channels: 128, kernel_sizes: [3, 4, 5]}
+    optim: {name: adamw, lr: 5.0e-4, weight_decay: 0.01, batch_size: 128, epochs: 8, grad_clip: 5.0}
+  - name: A3_bigru
+    arch: bigru
+    params: {emb_dim: 128, dropout: 0.30, hidden: 128}
+    optim: {name: adamw, lr: 5.0e-4, weight_decay: 0.01, batch_size: 64, epochs: 8, grad_clip: 5.0}

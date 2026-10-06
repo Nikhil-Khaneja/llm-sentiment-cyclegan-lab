@@ -1,0 +1,33 @@
+{
+ "train": {
+  "rows": 560000,
+  "missing_text": 0,
+  "empty_text": 0,
+  "duplicate_text": 0,
+  "class_counts": {
+   "0": 280000,
+   "1": 280000
+  },
+  "positive_share": 0.5,
+  "words_mean": 133.0288732142857,
+  "words_median": 97.0,
+  "words_p95": 372.0,
+  "words_max": 1052
+ },
+ "test": {
+  "rows": 38000,
+  "missing_text": 0,
+  "empty_text": 0,
+  "duplicate_text": 0,
+  "class_counts": {
+   "0": 19000,
+   "1": 19000
+  },
+  "positive_share": 0.5,
+  "words_mean": 132.55863157894737,
+  "words_median": 97.0,
+  "words_p95": 367.0,
+  "words_max": 1007
+ },
+ "train_test_text_overlap": 0
+}

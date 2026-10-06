@@ -1,0 +1,34 @@
+# SMOKE TEST — same three models as sentiment_nikhil_B.yaml on 6k train / 2k test reviews, 1 epoch each.
+run_name: smoke_sentiment_nikhil_B
+seed: 42
+device: auto
+write_metrics_report: false
+log_every: 20
+eval_batch_size: 512
+bootstrap: 200               # resamples for 95% CIs
+
+data:
+  raw_dir: task2_sentiment/data      # from task2_sentiment/data/download_yelp.py
+  processed_dir: data_processed/smoke
+  max_train_samples: 6000
+  max_test_samples: 2000
+  val_frac: 0.1                      # stratified hold-out from the official train split
+  vocab_size: 30000                  # incl. <pad>, <unk>
+  min_freq: 2
+  max_len: 256                       # tokens after cleaning; longer reviews are truncated
+  stem: true                         # Porter stemming
+  keep_negations: true               # keep not/no/never/but/... out of the stopword list
+
+models:
+  - name: B1_baseline_lasttoken
+    arch: last_token
+    params: {emb_dim: 128, dropout: 0.30}
+    optim: {name: adam, lr: 1.0e-3, batch_size: 128, epochs: 1, grad_clip: 5.0}
+  - name: B2_cnn_k7
+    arch: cnn
+    params: {emb_dim: 128, dropout: 0.40, channels: 128, kernel_sizes: [7]}
+    optim: {name: adamw, lr: 5.0e-4, weight_decay: 0.01, batch_size: 128, epochs: 1, grad_clip: 5.0}
+  - name: B3_bilstm_attn
+    arch: bilstm_attn
+    params: {emb_dim: 128, dropout: 0.30, hidden: 128}
+    optim: {name: adamw, lr: 5.0e-4, weight_decay: 0.01, batch_size: 64, epochs: 1, grad_clip: 5.0}

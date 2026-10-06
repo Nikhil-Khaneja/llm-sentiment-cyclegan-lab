@@ -1,0 +1,72 @@
+[
+ {
+  "prompt": "Once upon a time, there was a little girl named",
+  "mode": "greedy",
+  "temperature": null,
+  "text": "Once upon a time, there was a little girl named the the the the the the the the the the the the the an the ",
+  "continuation": " the the the the the the the the the the the the the an the "
+ },
+ {
+  "prompt": "Once upon a time, there was a little girl named",
+  "mode": "temperature",
+  "temperature": 0.8,
+  "text": "Once upon a time, there was a little girl namedur cilnd tI hed acEishe fad d ilevedo8ore bPant her he. bado",
+  "continuation": "ur cilnd tI hed acEishe fad d ilevedo8ore bPant her he. bado"
+ },
+ {
+  "prompt": "Tom and his dog went to the park. ",
+  "mode": "greedy",
+  "temperature": null,
+  "text": "Tom and his dog went to the park. the the and and the the the the the and and and the the the ",
+  "continuation": "the the and and the the the the the and and and the the the "
+ },
+ {
+  "prompt": "Tom and his dog went to the park. ",
+  "mode": "temperature",
+  "temperature": 0.8,
+  "text": "Tom and his dog went to the park. Uil8ilky acp3 )3 t the therfanben wad l. fmar ans e. tthe on",
+  "continuation": "Uil8ilky acp3 )3 t the therfanben wad l. fmar ans e. tthe on"
+ },
+ {
+  "prompt": "One day, a big bear",
+  "mode": "greedy",
+  "temperature": null,
+  "text": "One day, a big beare the the the the the the the the the and an the the the the",
+  "continuation": "e the the the the the the the the the and an the the the the"
+ },
+ {
+  "prompt": "One day, a big bear",
+  "mode": "temperature",
+  "temperature": 0.8,
+  "text": "One day, a big bearcangany ond d t wed. gSmonno fy c itheathan1y ade he.5in gs ",
+  "continuation": "cangany ond d t wed. gSmonno fy c itheathan1y ade he.5in gs "
+ },
+ {
+  "prompt": "The sun was hot and",
+  "mode": "greedy",
+  "temperature": null,
+  "text": "The sun was hot and the the the the and and the the the the and the the the and",
+  "continuation": " the the the the and and the the the the and the the the and"
+ },
+ {
+  "prompt": "The sun was hot and",
+  "mode": "temperature",
+  "temperature": 0.8,
+  "text": "The sun was hot and wane e/asas bsheFinenel ny . ncco 8utadmUu tmitkere wEe tgo",
+  "continuation": " wane e/asas bsheFinenel ny . ncco 8utadmUu tmitkere wEe tgo"
+ },
+ {
+  "prompt": "Lily wanted to",
+  "mode": "greedy",
+  "temperature": null,
+  "text": "Lily wanted to the the the the the the the and the the the the the and and",
+  "continuation": " the the the the the the the and the the the the the and and"
+ },
+ {
+  "prompt": "Lily wanted to",
+  "mode": "temperature",
+  "temperature": 0.8,
+  "text": "Lily wanted to tind a ,7Xhed top R stcan anead Resh f DAu wed sut& wa mza/",
+  "continuation": " tind a ,7Xhed top R stcan anead Resh f DAu wed sut& wa mza/"
+ }
+]

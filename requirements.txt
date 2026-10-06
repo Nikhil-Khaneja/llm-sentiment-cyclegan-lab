@@ -1,0 +1,16 @@
+datasets==4.5.0
+ipykernel==6.31.0
+lpips==0.1.4
+matplotlib==3.9.4
+nbconvert==7.17.1
+nbformat==5.10.4
+nltk==3.9.2
+numpy==2.0.2
+pandas==2.3.3
+pillow==11.3.0
+pytorch-fid==0.3.0
+PyYAML==6.0.3
+scikit-learn==1.6.1
+scipy==1.13.1
+torch==2.8.0
+torchvision==0.23.0
