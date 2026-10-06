@@ -1,6 +1,10 @@
-"""Local estimate of the Kaggle score (FID, MiFID) for a folder or zip of 256x256 JPGs, and writes
-`submission.csv` (ID, FID, MiFID). The official evaluation script was not provided, so this follows
-the competition's Evaluation text:
+"""UNOFFICIAL scorer. Do not upload its output to Kaggle: it does not match the course evaluation script
+(task3_gan/member_nikhil/evaluate_local.py), which scores the first 300 real vs 300 generated images with
+ImageNet normalisation and pairs cosine distances by index. On the same Member B images this scorer
+reported FID 84.35 / MiFID 0.245 while the course script gives 108.03 / 0.413.
+
+Local estimate of FID and MiFID for a folder or zip of 256x256 JPGs against the reference stats in
+real_stats.npz, writing (ID, FID, MiFID). It follows the competition's Evaluation text:
   FID   = Frechet distance between the generated-image Inception features and the reference Monet
           statistics in real_stats.npz (mu_real, sigma_real). Features use the extractor that
           reproduces those stats (see kaggle_inception), not the pytorch-fid weights that evaluate.py
@@ -33,7 +37,7 @@ from runtime import REPO_ROOT, pick_device  # noqa: E402
 ap = argparse.ArgumentParser()
 ap.add_argument("--images", required=True, help="images.zip or a folder of jpgs")
 ap.add_argument("--stats", default=str(REPO_ROOT / "task3_gan/data/real_stats.npz"))
-ap.add_argument("--out", default=str(HERE / "submission.csv"))
+ap.add_argument("--out", default=str(HERE / "kaggle_score_estimate.csv"))  # never the upload file
 ap.add_argument("--id", type=int, default=1)
 ap.add_argument("--seed", type=int, default=0)
 a = ap.parse_args()
