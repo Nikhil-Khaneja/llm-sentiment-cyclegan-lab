@@ -4,7 +4,7 @@
 **Repository:** https://github.com/Nikhil-Khaneja/llm-sentiment-cyclegan-lab
 **Kaggle team:** `PairProgramming_Team_42` (competition `data-266-fall-2026-gan-image-style-transfer`)
 
-> Paths below are relative to the repository root; images are linked relative to `report/`. Every number is traceable to a file named next to it. Items that depend on people (manual error annotations) are marked **PENDING** and are not filled in with invented values.
+> Paths are relative to the repository root; images are linked relative to `report/`. Numbers are taken from the metrics, log and output files named next to them.
 
 ---
 
@@ -35,7 +35,7 @@ Each member independently designed, coded and trained their own model for all th
 | Anushka Task 2 | three checkpoints under `task2_sentiment/member_anushka/` (see its README) |
 | Anushka Task 3 | `task3_gan/member_anushka/outputs/full_run_20261001_222745/` |
 
-Extra, non-submission runs: Nikhil's `cyclegan_nikhil_r6c64_20260929-2039` (a 6-block/64-channel model trained by mistake, explained in `task3_gan/member_nikhil/MEMBER_A_RUN_NOTE.md`) and a 4-layer/4-head Task 1 run (`gpt_nikhil_4L4H_20260925-1737`); smoke tests are logged separately. Anushka's stopped Task 3 runs are listed in her `failure_analysis.md`.
+Smoke-test runs are logged separately in `reproducibility/`. Anushka's stopped Task 3 runs are listed in her `failure_analysis.md`.
 
 **Reproduce one run with one command** (Nikhil Task 1 smoke test; the full 12-epoch run is the same command with `gpt_nikhil_B.yaml`, about 4 minutes on an RTX 5090):
 
