@@ -300,7 +300,7 @@ Reference FID of untranslated inputs: Nikhil ≈126.0, Anushka 122.7. Anushka's 
 | Submission FID / MiFID (avg) | 108.032 / 0.4129 | 96.886 / 0.4097 |
 | Kaggle public score | −54.2222 (6 Oct 2026) | −48.6479 (2 Oct 2026), **team rank 21** |
 
-Leaderboard context on 6 Oct 2026 (50 teams): top −39.78, rank 10 at −46.99, rank 20 at −48.50. Rank 21 maps to 8 bonus points in the rubric table. The submission is the direct inference output of each member's own CycleGAN; Inception and LPIPS networks are used only as fixed measuring instruments. Course-script FID/MiFID is the first 300 real vs 300 generated images, both directions averaged (`evaluate_local.py`). Evidence: Nikhil `task3_gan/member_nikhil/{full_metrics_report.csv, submission.csv, submission_course_script.csv}`, Anushka `task3_gan/member_anushka/{full_metrics_report.csv, submission.csv}`.
+**Final submitted scores:** no further Kaggle submissions were made after 6 Oct 2026, so these are the final scores. Team 42's best is −48.6479 (Anushka's file), rank 21 of 50. No private-leaderboard score was recorded. Leaderboard context on 6 Oct 2026 (50 teams): top −39.78, rank 10 at −46.99, rank 20 at −48.50. Rank 21 maps to 8 bonus points in the rubric table. The submission is the direct inference output of each member's own CycleGAN; Inception and LPIPS networks are used only as fixed measuring instruments. Course-script FID/MiFID is the first 300 real vs 300 generated images, both directions averaged (`evaluate_local.py`). Evidence: Nikhil `task3_gan/member_nikhil/{full_metrics_report.csv, submission.csv, submission_course_script.csv}`, Anushka `task3_gan/member_anushka/{full_metrics_report.csv, submission.csv}`.
 
 Figures — Nikhil loss curves (LSGAN adversarial, cycle/identity L1, gradient norms, total generator loss) and epoch-50 samples (rows: Monet input, A→B translation, reconstruction; then photo input, B→A translation, reconstruction):
 
@@ -351,12 +351,12 @@ Images: `outputs/full_run_20261001_222745/failure_candidates_*.jpg`. Proposed: d
 - Hardware disclosed: Nikhil NVIDIA RTX 5090 for all runs (PyTorch 2.8.0, CUDA 12.8); Anushka RTX 5090 (Task 1), Tesla T4 (Task 2), RTX 4090 (Task 3) as recorded in her results files and manifests.
 - Model checkpoints are tracked with Git LFS.
 
-## 7. Open items before submission
+## 7. Status of remaining items
 
-1. **Task 2 error reviews** — Nikhil: re-read the §4.3 table against the full reviews. Anushka: confirm the annotations added to `error_review_20.csv`.
-2. **Nikhil's `results.md` "why" paragraphs (Tasks 1–3)** — his own design rationale; not written here because it records his intent. His `failure_analysis.md` files are now filled in.
-3. **Kaggle** — record final public/private scores and rank on deadline day.
-4. **Team number and PDF** — export this file to `report/DATA266_Lab1_Report_Team_42.pdf` (the repository link is above).
+- Anushka's Task 2 error-review annotations were checked by Anushka (reported by Nikhil), and her `failure_analysis.md` now matches them.
+- Nikhil's `results.md` rationale paragraphs (Tasks 1–3) record his own design reasoning and are not part of this report.
+- No human audit was performed for Task 3 (see §5.4 limitations).
+- Kaggle: final scores are those in §5.2; no further submissions were made.
 
 ## References
 
