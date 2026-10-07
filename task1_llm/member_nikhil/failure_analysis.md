@@ -46,19 +46,22 @@ Repeated word 4-gram rate in this sample: 0.15
 > The little girl was so happy that she had to be a good friend. She was so happy that she could help her mom find her toys and they were so happy.
 > Th
 
-## Case 1
-- Snippet: **[TODO – Nikhil]**
-- Failure type (repetition, broken grammar, loss of coherence, hallucination, …): **[TODO – Nikhil]**
-- Observation: **[TODO – Nikhil]**
+## Case 1 — Repetition (sentence-level loop)
+- Snippet (greedy, prompt "Lily wanted to"; sample repeated word 4-gram rate 0.36): "…The little girl was so happy that she had to be a good friend. She was so happy that she could help her mom find her toys and they were so happy. The little girl was so happy that she had to be careful with her friends. She was so happy that she could have a big smile on her face. The little girl was"
+- Failure type: repetition.
+- Observation: after two sentences the output cycles through the same "The little girl was so happy that she…" sentences. Greedy decoding always takes the most likely character, and this is a very frequent TinyStories template, so once inside it nothing breaks the cycle. The same paragraphs appear after four of the five prompts (candidates 1–5), so it behaves as an attractor. At temperature 0.9 the repeated 4-gram rate is 0.000 versus 0.260 for greedy, which points to decoding rather than missing knowledge.
 
-## Case 2
-- Snippet: **[TODO – Nikhil]**
-- Failure type: **[TODO – Nikhil]**
-- Observation: **[TODO – Nikhil]**
+## Case 2 — Loss of coherence (character identity changes)
+- Snippet (greedy, prompt "One day, a big bear"): "One day, a big bear came to visit him. He was so happy that he had to be careful with his friends. The little girl was so happy that she had to be a good friend…"
+- Failure type: loss of coherence.
+- Observation: the story starts with a bear ("him", "he") and then switches to "the little girl" with no transition. With a 128-character context the opening sentence falls out of the window, so the model continues from the nearest local text, which is the looped paragraph from Case 1, not from the story's subject.
 
-## Case 3
-- Snippet: **[TODO – Nikhil]**
-- Failure type: **[TODO – Nikhil]**
-- Observation: **[TODO – Nikhil]**
+## Case 3 — Broken meaning / hallucination with internal repetition
+- Snippet (greedy, prompt "The sun was hot and"): "The sun was hot and said, \"I want to share you too, but I want to share you too. I will be friends.\""
+- Failure type: broken semantics (hallucinated speaker) plus repetition.
+- Observation: spelling and punctuation are correct, which fits 73% next-character accuracy, but the sun is the speaker, "share you" has no sensible object, and the clause "I want to share you too" repeats. The model learned word and quotation formation but not constraints on who can speak or what can be shared; a 2-block model has limited capacity for this.
 
-**[TODO – Nikhil]** Optional: what would you try to reduce these failures?
+## What I would try
+- Top-p or n-gram blocking at decode time (temperature 0.9 already removes the loops, at some cost to coherence).
+- A longer context (256 or more) so earlier sentences stay visible.
+- Word- or BPE-level tokens, so attention operates over words and names.
