@@ -3,7 +3,7 @@
 Smoke test (from repo root):
     python task3_gan/member_nikhil/src/train.py --config task3_gan/member_nikhil/src/configs/smoke.yaml
 Full run (GPU):
-    python task3_gan/member_nikhil/src/train.py --config task3_gan/member_nikhil/src/configs/cyclegan_nikhil.yaml
+    python task3_gan/member_nikhil/src/train.py --config task3_gan/member_nikhil/src/configs/cyclegan_nikhil_B.yaml
 Resume an interrupted run from its latest checkpoint (same run_id, same log file):
     python task3_gan/member_nikhil/src/train.py --config ... --resume task3_gan/member_nikhil/checkpoints/<run_id>_epoch010.pt
 """

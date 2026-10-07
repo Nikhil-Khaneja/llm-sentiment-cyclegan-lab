@@ -48,5 +48,4 @@ Loss curves: `outputs/gpt_nikhil_2L8H_B_20261001-0025/loss_curves.png`. Gradient
 
 ## Notes
 - Evidence: raw log and manifest in `reproducibility/raw_logs/nikhil/` and `reproducibility/manifests/nikhil/` (run `task1_gpt_nikhil_2L8H_B_20261001-0025`), best and last checkpoints in `checkpoints/`, executed notebook `src/task1_gpt_nikhil.ipynb`.
-- An earlier full run with the other lineup (4 blocks × 4 heads, `gpt_nikhil_4L4H_20260925-1737`) is also in `outputs/` as a recorded run; it is not this submission.
 - Comparison with the other member is in the team report.

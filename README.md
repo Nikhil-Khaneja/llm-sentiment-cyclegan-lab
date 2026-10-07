@@ -105,8 +105,6 @@ ResNet generators with 9 residual blocks and 32 base channels, two 70×70 PatchG
 
 Key artifacts: `src/task3_cyclegan_nikhil.ipynb`, `checkpoints/…_epoch050.pt`, `outputs/cyclegan_nikhil_r9c32_B_*/` (loss curves, samples, 30-sample blinded human-audit sheets), `outputs/pred_A2B/`, `outputs/pred_B2A/`, `full_metrics_report.csv`, `submission.csv`, `submission_course_script.csv`, `evaluate_local.py` (the course script, writes `submission.csv`), `evaluate_full.py` (KID, precision/recall, LPIPS and the rest, writes `full_metrics_report.csv`), and `kaggle_score.py` (an unofficial estimate that does not match the course script).
 
-`MEMBER_A_RUN_NOTE.md` in that folder explains one extra run: a 6-block / 64-channel CycleGAN (`cyclegan_nikhil_r6c64_*`) that follows the plan's Member A design, trained on Nikhil’s GPU by mistake and kept only as a recorded run. It is not Nikhil’s Task 3 submission.
-
 ## Reproducibility and evidence
 
 The repository-level reproducibility folders follow the lab specification:

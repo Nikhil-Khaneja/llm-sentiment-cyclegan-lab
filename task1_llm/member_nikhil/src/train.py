@@ -3,7 +3,7 @@
 Smoke test (from repo root, ~1 min):
     python task1_llm/member_nikhil/src/train.py --config task1_llm/member_nikhil/src/configs/smoke.yaml
 Full run:
-    python task1_llm/member_nikhil/src/train.py --config task1_llm/member_nikhil/src/configs/gpt_nikhil.yaml
+    python task1_llm/member_nikhil/src/train.py --config task1_llm/member_nikhil/src/configs/gpt_nikhil_B.yaml
 """
 import argparse
 import csv

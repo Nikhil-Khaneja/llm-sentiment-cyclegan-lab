@@ -42,5 +42,4 @@ Leaderboard files (course evaluation script, first 300 real vs 300 generated ima
 ## Notes
 - Evidence: raw log and manifest under `reproducibility/*/nikhil/` (run `task3_cyclegan_nikhil_r9c32_B_20261001-0022`), checkpoints in `checkpoints/`, predictions in `outputs/pred_A2B/` and `outputs/pred_B2A/`, executed notebook `src/task3_cyclegan_nikhil.ipynb`.
 - `evaluate_local.py` is the course script (writes `submission.csv`); `evaluate_full.py` computes the other metrics (writes `full_metrics_report.csv`). `kaggle_score.py` is an unofficial estimate that does not match the course script.
-- `MEMBER_A_RUN_NOTE.md` explains an extra recorded run with the plan's Member A design that is not this submission.
 - Human audit: blinded sheets are in `outputs/cyclegan_nikhil_r9c32_B_20261001-0022/human_audit/`; ratings and agreement are still to be added.
