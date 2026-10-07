@@ -47,7 +47,7 @@ Raw datasets are not committed. The `data/` directories are reserved for locally
 | 2 — test accuracy | B1 **0.654**, B2 **0.942**, B3 **0.954** (macro-F1 0.954) | baseline 0.935, CNN 0.943, BiGRU **0.948** (macro-F1 0.948), up to 4.09 M params, 10 epochs |
 | 3 — FID / MiFID (course script) | 108.03 / 0.413, 11.2 M params, 50 epochs | **96.89 / 0.410**, 28.29 M params, 50 epochs (`task3_gan/member_anushka/submission.csv`) |
 
-Task 3 FID and MiFID come from the course evaluation script (`task3_gan/data/Part3_Evaluation_Script.ipynb`, run through each member's `evaluate_local.py`): first 300 real versus 300 generated images, both directions averaged. This is the method behind the Kaggle leaderboard score, the negated mean of FID and MiFID. Nikhil's per-direction values are FID 107.73 / 108.34 and MiFID 0.404 / 0.422 for Photo→Monet / Monet→Photo, in `task3_gan/member_nikhil/submission_course_script.csv`. The two members' models differ in size, so the Task 1 numbers are not a controlled comparison. Team 42's leaderboard entry (rank 21 on 2026-10-06, score −48.6479) is Anushka's file. Full metric tables are in each member's `metrics_report.csv` / `full_metrics_report.csv`.
+Task 3 FID and MiFID come from the course evaluation script (`task3_gan/data/Part3_Evaluation_Script.ipynb`, run through each member's `evaluate_local.py`): first 300 real versus 300 generated images, both directions averaged. This is the method behind the Kaggle leaderboard score, the negated mean of FID and MiFID. Nikhil's per-direction values are FID 107.73 / 108.34 and MiFID 0.404 / 0.422 for Photo→Monet / Monet→Photo, in `task3_gan/member_nikhil/submission_course_script.csv`. The two members' models differ in size, so the Task 1 numbers are not a controlled comparison. Team 42's leaderboard entry (rank 21 on 2026-10-06, score −48.6479) is Anushka's file. Nikhil’s own submission, made after joining the team, scored −54.2222; the team’s best score counts. Full metric tables are in each member's `metrics_report.csv` / `full_metrics_report.csv`.
 
 ## Anushka’s work
 
@@ -104,8 +104,6 @@ Location: `task3_gan/member_nikhil/` — config `src/configs/cyclegan_nikhil_B.y
 ResNet generators with 9 residual blocks and 32 base channels, two 70×70 PatchGAN discriminators, LSGAN loss, cycle weight 10, identity weight 5, Adam (2e-4, β 0.5/0.999), batch 1, 128 px training crops, 50 epochs (25 constant + 25 linear decay), checkpoints every 5 epochs, image history pool of 50. No pretrained model touches training or the submitted images; Inception and LPIPS networks are used only as fixed measuring instruments.
 
 Key artifacts: `src/task3_cyclegan_nikhil.ipynb`, `checkpoints/…_epoch050.pt`, `outputs/cyclegan_nikhil_r9c32_B_*/` (loss curves, samples, 30-sample blinded human-audit sheets), `outputs/pred_A2B/`, `outputs/pred_B2A/`, `full_metrics_report.csv`, `submission.csv`, `submission_course_script.csv`, `evaluate_local.py` (the course script, writes `submission.csv`), `evaluate_full.py` (KID, precision/recall, LPIPS and the rest, writes `full_metrics_report.csv`), and `kaggle_score.py` (an unofficial estimate that does not match the course script).
-
-`MEMBER_A_RUN_NOTE.md` in that folder explains one extra run: a 6-block / 64-channel CycleGAN (`cyclegan_nikhil_r6c64_*`) that follows the plan's Member A design, trained on Nikhil’s GPU by mistake and kept only as a recorded run. It is not Nikhil’s Task 3 submission.
 
 ## Reproducibility and evidence
 
