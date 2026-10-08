@@ -39,6 +39,8 @@ Nikhil is Member B and Anushka is Member A in the two-member plan (`docs/assignm
 
 Raw datasets are not committed. The `data/` directories are reserved for locally prepared datasets described in the assignment.
 
+**Datasets (zipped, read access):** [Google Drive folder](https://drive.google.com/drive/folders/1IS5704z67rqnUW1CgcMpX0_vndpdk5Ze?usp=drive_link)
+
 ## Results at a glance
 
 | Task | Nikhil (Member B) | Anushka (Member A) |
@@ -145,7 +147,7 @@ pip install -r requirements.txt
 pip install torch==2.8.0 torchvision==0.23.0 --index-url https://download.pytorch.org/whl/cu128
 ```
 
-Shared datasets (not committed):
+Shared datasets (not committed). Zipped copies are on [Google Drive](https://drive.google.com/drive/folders/1IS5704z67rqnUW1CgcMpX0_vndpdk5Ze?usp=drive_link) (read access); or download them with:
 
 ```bash
 python task1_llm/data/download_tinystories.py       # -> task1_llm/data/tinystories_raw.txt
