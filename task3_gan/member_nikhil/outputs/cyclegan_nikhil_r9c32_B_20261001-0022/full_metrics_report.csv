@@ -55,5 +55,5 @@ train,peak_accelerator_mem_mb_eval,934.2
 train,hardware,NVIDIA GeForce RTX 5090
 train,checkpoint,task3_gan\member_nikhil\checkpoints\cyclegan_nikhil_r9c32_B_20261001-0022_epoch050.pt
 train,human_audit_score,fill in: python src/audit_agreement.py
-train,kaggle_public_score,fill in after submission
-train,kaggle_rank,fill in after submission
+train,kaggle_public_score,-54.2222 (submitted 6 Oct 2026; team PairProgramming_Team_42)
+train,kaggle_rank,21 of 50 (team rank on 6 Oct 2026; set by the team best entry -48.6479 from Anushka)
